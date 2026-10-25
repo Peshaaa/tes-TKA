@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>English Exam 2026 - CBT Format</title>
+    <title>TKA Mega Exam Platform (90 Minutes)</title>
     <style>
         :root {
             --primary: #0056b3;
@@ -17,17 +17,28 @@
         
         /* Navbar */
         .navbar { display: flex; justify-content: space-between; align-items: center; background: white; padding: 15px 30px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); position: sticky; top: 0; z-index: 100; }
-        .navbar h2 { margin: 0; color: var(--primary); font-size: 22px; }
-        .timer-box { background: var(--wrong); color: white; padding: 8px 15px; border-radius: 5px; font-size: 20px; font-weight: bold; letter-spacing: 1px; }
+        .navbar h2 { margin: 0; color: var(--primary); font-size: 22px; cursor: pointer; }
+        .timer-box { background: var(--wrong); color: white; padding: 8px 15px; border-radius: 5px; font-size: 20px; font-weight: bold; letter-spacing: 1px; display: none; }
 
         /* Main Container */
-        .container { max-width: 900px; margin: 30px auto; padding: 0 20px; transition: margin-right 0.3s; }
+        .container { max-width: 900px; margin: 30px auto; padding: 0 20px; }
         
-        /* Question Box */
+        /* Home Screen Dashboard */
+        #home-screen { display: block; text-align: center; padding: 40px 20px; }
+        #home-screen h1 { color: #222; margin-bottom: 10px; }
+        #home-screen p { color: #666; margin-bottom: 40px; font-size: 16px; }
+        .subject-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; max-width: 800px; margin: 0 auto; }
+        .subject-card { background: white; padding: 30px; border-radius: 10px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); cursor: pointer; transition: transform 0.2s, box-shadow 0.2s; border-top: 5px solid var(--primary); }
+        .subject-card:hover { transform: translateY(-5px); box-shadow: 0 6px 20px rgba(0,0,0,0.1); }
+        .subject-card h3 { margin-top: 0; color: var(--primary); font-size: 20px; }
+        .subject-card p { color: #778; font-size: 14px; margin-bottom: 0; }
+
+        /* Quiz Screen */
+        #quiz-screen { display: none; }
         .quiz-card { background: white; padding: 30px; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); margin-bottom: 20px; }
-        .question-title { font-size: 18px; line-height: 1.6; margin-bottom: 25px; }
+        .question-title { font-size: 16px; line-height: 1.6; margin-bottom: 25px; }
         .options-list { display: flex; flex-direction: column; gap: 12px; }
-        .option-label { display: flex; align-items: center; padding: 15px; background: #f8f9fa; border: 1px solid #dee2e6; border-radius: 6px; cursor: pointer; transition: all 0.2s; font-size: 16px; }
+        .option-label { display: flex; align-items: center; padding: 15px; background: #f8f9fa; border: 1px solid #dee2e6; border-radius: 6px; cursor: pointer; transition: all 0.2s; font-size: 15px; }
         .option-label:hover { background: #e9ecef; border-color: #adb5bd; }
         .option-label input { margin-right: 15px; transform: scale(1.2); cursor: pointer; }
         
@@ -42,7 +53,7 @@
         .btn-submit:hover { background: #218838; }
 
         /* Slide-out Panel (CPNS Style) */
-        .panel-toggle { position: fixed; top: 50%; right: 0; transform: translateY(-50%); background: var(--primary); color: white; border: none; padding: 15px 10px; cursor: pointer; border-radius: 8px 0 0 8px; z-index: 1001; font-weight: bold; box-shadow: -2px 0 5px rgba(0,0,0,0.2); transition: right 0.3s ease; }
+        .panel-toggle { position: fixed; top: 50%; right: 0; transform: translateY(-50%); background: var(--primary); color: white; border: none; padding: 15px 10px; cursor: pointer; border-radius: 8px 0 0 8px; z-index: 1001; font-weight: bold; box-shadow: -2px 0 5px rgba(0,0,0,0.2); transition: right 0.3s ease; display: none; }
         .side-panel { position: fixed; top: 0; right: -350px; width: 350px; height: 100vh; background: white; box-shadow: -5px 0 15px rgba(0,0,0,0.1); z-index: 1000; transition: right 0.3s ease; display: flex; flex-direction: column; }
         .side-panel.open { right: 0; }
         .panel-toggle.open { right: 350px; }
@@ -60,15 +71,12 @@
         #results-screen { display: none; }
         .score-card { background: white; padding: 40px; text-align: center; border-radius: 8px; margin-bottom: 30px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); }
         .score-card h1 { font-size: 48px; color: var(--primary); margin: 10px 0; }
-        
         .review-card { background: white; padding: 25px; border-radius: 8px; margin-bottom: 20px; box-shadow: 0 2px 8px rgba(0,0,0,0.05); border-left: 5px solid #ccc; }
         .review-card.correct-card { border-left-color: var(--answered); }
         .review-card.wrong-card { border-left-color: var(--wrong); }
-        
         .status-badge { display: inline-block; padding: 6px 12px; border-radius: 4px; font-weight: bold; color: white; margin-bottom: 15px; font-size: 14px; }
         .badge-correct { background: var(--answered); }
         .badge-wrong { background: var(--wrong); }
-        
         .explanation-box { background: #eef2f5; padding: 15px; border-radius: 6px; margin-top: 15px; border-left: 4px solid var(--primary); }
     </style>
 </head>
@@ -76,12 +84,41 @@
 
     <!-- Top Navbar -->
     <div class="navbar">
-        <h2>English Exam 2026</h2>
+        <h2 onclick="goHome()">TKA Mega Exam Portal</h2>
         <div class="timer-box" id="timer">90:00</div>
     </div>
 
-    <!-- Main Quiz Area -->
-    <div class="container" id="quiz-container">
+    <!-- HOME SCREEN (Subject Selection) -->
+    <div class="container" id="home-screen">
+        <h1>Select an Exam Subject</h1>
+        <p>Choose a subject below to begin your 90-minute timed evaluation test.</p>
+        
+        <div class="subject-grid">
+            <div class="subject-card" onclick="startExam('english')">
+                <h3>English Language</h3>
+                <p>30 Questions • Passages, Infographics & Tables</p>
+            </div>
+            <div class="subject-card" onclick="startExam('math')">
+                <h3>Mathematics</h3>
+                <p>30 Questions • Algebra, Geometry & Logic</p>
+            </div>
+            <div class="subject-card" onclick="startExam('indonesian')">
+                <h3>Bahasa Indonesia</h3>
+                <p>30 Questions • Literasi, Analisis Teks & EYD</p>
+            </div>
+            <div class="subject-card" onclick="startExam('biology')">
+                <h3>Biology</h3>
+                <p>30 Questions • Cell Biology, Ecology & Genetics</p>
+            </div>
+            <div class="subject-card" onclick="startExam('chemistry')">
+                <h3>Chemistry</h3>
+                <p>30 Questions • Stoichiometry, Reactions & Equilibrium</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- QUIZ SCREEN -->
+    <div class="container" id="quiz-screen">
         <div class="quiz-card">
             <div class="question-title" id="question-text">Loading question...</div>
             <div class="options-list" id="options-container"></div>
@@ -97,530 +134,89 @@
     <!-- Slide-out Right Panel -->
     <button class="panel-toggle" id="panel-toggle" onclick="togglePanel()">◀<br>N<br>O<br>M<br>O<br>R</button>
     <div class="side-panel" id="side-panel">
-        <div class="panel-header">Question Navigator</div>
-        <div class="grid-container" id="grid-container">
-            <!-- Grid boxes generated by JS -->
-        </div>
+        <div class="panel-header" id="panel-subject-title">Question Navigator</div>
+        <div class="grid-container" id="grid-container"></div>
         <div class="panel-footer">
             <button class="btn-finish-all" onclick="confirmSubmit()">Selesai Ujian</button>
         </div>
     </div>
 
-    <!-- Results Area -->
+    <!-- RESULTS SCREEN -->
     <div class="container" id="results-screen">
         <div class="score-card">
-            <h2>Exam Finished!</h2>
-            <p>Here is your final score:</p>
+            <h2>Exam Completed!</h2>
+            <p>Your Final Score:</p>
             <h1 id="final-score-text">0 / 30</h1>
+            <button class="btn btn-next" onclick="goHome()" style="margin-top: 15px;">Back to Subject Menu</button>
         </div>
-        <h3 style="margin-bottom: 20px;">Review Answers:</h3>
-        <div id="review-container">
-            <!-- Reviews generated by JS -->
-        </div>
+        <h3 style="margin-bottom: 20px;">Detailed Review & Explanations:</h3>
+        <div id="review-container"></div>
     </div>
 
     <script>
-        // Paste ALL 30 questions here. I have formatted the first 3 for you as an example.
-        // --- TEXT 1: Embedded Passage Layout ---
-        const text1HTML = `
-        <div style="background: #f8f9fa; padding: 15px; border-left: 4px solid #0056b3; margin-bottom: 20px; font-size: 14px; line-height: 1.6;">
-            <strong style="font-size: 16px;">TEXT 1: The Clockwork Nightingale</strong><br><br>
-            In a grand palace of an ancient empire, a master clockmaker crafted a mechanical nightingale that could sing the sweetest melodies. The Emperor loved it dearly, keeping it on a velvet pillow beside his throne. One evening, a sleek, modern imported singing bird made of polished chrome arrived as a gift from a foreign land. The chrome bird sang louder, faster, and had a flashing LED display. The court quickly grew bored of the old clockwork nightingale, praising the shiny newcomer. The humble clockwork bird quietly stepped back, content with its quiet gears.<br><br>
-            Months later, during a severe thunderstorm, a sudden power surge fried the delicate electronic components in the modern chrome bird, causing it to fall silent forever. The emperor tried to fix it, but it was beyond repair. When the palace plunged into darkness during a blackout, only the wind-up clockwork nightingale continued to tick reliably, filling the halls with its gentle, enduring song. The Emperor learned that flashy novelty can never truly replace dependable craftsmanship.
-        </div>
-        `;
+        // --- ALL SUBJECT DATA REPOSITORIES ---
+        const allSubjects = {
+            english: [
+                // (English questions 1-30 are loaded here - shortened placeholder comment for structure clarity)
+                { id: 1, text: "<strong>English Q1 Example</strong><br>What was Unit-733 programmed to do?", type: "single", options: ["Option A", "Option B", "Deliver packages on time", "Option D"], correct: [2], explanation: "Correct because text states it was built to deliver on time." }
+                // ... (Keep your English 30 questions here)
+            ],
+            math: [
+                // BLANK TEMPLATE FOR MATH: Add 30 questions here following this exact structure
+                { id: 1, text: "<strong>Math Q1:</strong> Solve for x: 2x + 4 = 10", type: "single", options: ["x = 2", "x = 3", "x = 4", "x = 5"], correct: [1], explanation: "2x = 6, so x = 3." }
+            ],
+            indonesian: [
+                // BLANK TEMPLATE FOR INDONESIAN: Add 30 questions here
+                { id: 1, text: "<strong>Indonesian Q1:</strong> Apa gagasan utama paragraf...", type: "single", options: ["Opsi A", "Opsi B", "Opsi C", "Opsi D"], correct: [0], explanation: "Penjelasan bahasa Indonesia." }
+            ],
+            biology: [
+                // BLANK TEMPLATE FOR BIOLOGY: Add 30 questions here
+                { id: 1, text: "<strong>Biology Q1:</strong> What is the powerhouse of the cell?", type: "single", options: ["Nucleus", "Ribosome", "Mitochondria", "Golgi apparatus"], correct: [2], explanation: "Mitochondria generates chemical energy." }
+            ],
+            chemistry: [
+                // BLANK TEMPLATE FOR CHEMISTRY: Add 30 questions here
+                { id: 1, text: "<strong>Chemistry Q1:</strong> What is the chemical symbol for Gold?", type: "single", options: ["Ag", "Au", "Pb", "Fe"], correct: [1], explanation: "Au comes from the Latin word 'aurum'." }
+            ]
+        };
 
-        const quizData = [
-            {
-                id: 1,
-                text: text1HTML + "According to the text, what caused the modern chrome bird to stop working permanently?",
-                type: "single",
-                options: [
-                    "A power surge during a severe thunderstorm",
-                    "The Emperor accidentally dropped it on the floor",
-                    "It ran out of velvet pillows to rest upon",
-                    "The master clockmaker took its gears apart out of jealousy"
-                ],
-                correct: [0],
-                explanation: "The text explicitly states: 'during a severe thunderstorm, a sudden power surge fried the delicate electronic components in the modern chrome bird, causing it to fall silent forever.'"
-            },
-            {
-                id: 2,
-                text: text1HTML + "Which option best summarizes the story?",
-                type: "single",
-                options: [
-                    "Beginning: An Emperor bought a new bird. Problem: The birds fought over the throne. Solution: The clockwork bird left the palace. Lesson: Birds of a feather flock together.",
-                    "Beginning: A clockwork nightingale served the Emperor until a flashy chrome bird arrived and stole attention, but when a storm fried the chrome bird, the reliable clockwork bird proved its enduring value.",
-                    "Beginning: A thunderstorm hit the palace. Problem: The palace lost electricity. Solution: The Emperor fixed the chrome bird. Lesson: Modern technology is always superior.",
-                    "Beginning: A clockwork bird was broken. Problem: No one could fix it. Solution: A foreign merchant brought a new chrome bird. Lesson: Always buy imported gifts."
-                ],
-                correct: [1],
-                explanation: "Option 2 accurately outlines the entire arc: the initial situation with the clockwork bird, the arrival of the chrome bird shifting attention, the climax (the storm destroying the chrome bird), and the resolution/moral."
-            },
-            {
-                id: 3,
-                text: text1HTML + "Based on the text, which of the following words best describe the clockwork nightingale?<br><em>(Select all that apply)</em>",
-                type: "multiple",
-                options: [
-                    "Humble",
-                    "Arrogant",
-                    "Reliable",
-                    "Jealous",
-                    "Enduring"
-                ],
-                correct: [0, 2, 4],
-                explanation: "The text describes the clockwork bird as 'humble' (stepping back quietly), 'reliable' (ticking reliably during the blackout), and 'enduring' (surviving the storm and continuing its song)."
-            },
-            {
-                id: 4,
-                text: text1HTML + "If the palace had not experienced a thunderstorm and power surge, what would most likely have happened in the story?",
-                type: "single",
-                options: [
-                    "The court would have likely continued favoring the flashy chrome bird over the old clockwork one.",
-                    "The clockwork bird would have learned how to flash LED lights.",
-                    "The Emperor would have thrown both birds out of the palace.",
-                    "The chrome bird would have started singing clockwork melodies."
-                ],
-                correct: [0],
-                explanation: "Since the court 'quickly grew bored of the old clockwork nightingale, praising the shiny newcomer', without the storm event exposing the chrome bird's fragility, the court's preference for flashy novelty would have likely persisted."
-            },
-            {
-                id: 5,
-                text: text1HTML + "Which of the following statements convey the moral message of the story?<br><em>(Select all that apply)</em>",
-                type: "multiple",
-                options: [
-                    "Flashy novelty and external showiness do not always equal true reliability.",
-                    "Old things should always be thrown away immediately when new technology arrives.",
-                    "True craftsmanship and dependability stand the test of time.",
-                    "Silence is always better than loud music.",
-                    "True character and quality reveal themselves when flashiness fails."
-                ],
-                correct: [0, 2, 4],
-                explanation: "The story highlights that flashy things can fail under pressure, whereas genuine craftsmanship and reliability endure, teaching us to value substance over superficial novelty."
-            },
-            {
-                id: 6,
-                text: text1HTML + "Which sentences from the text show that the clockwork bird handled being pushed aside with grace?<br><em>(Select all that apply)</em>",
-                type: "multiple",
-                options: [
-                    "\"The Emperor loved it dearly, keeping it on a velvet pillow beside his throne.\"",
-                    "\"The humble clockwork bird quietly stepped back, content with its quiet gears.\"",
-                    "\"The chrome bird sang louder, faster, and had a flashing LED display.\"",
-                    "\"only the wind-up clockwork nightingale continued to tick reliably...\"",
-                    "\"The court quickly grew bored of the old clockwork nightingale...\""
-                ],
-                correct: [1, 3],
-                explanation: "Sentence 2 shows its humble reaction ('quietly stepped back, content with its quiet gears'), and sentence 4 demonstrates its faithful persistence when needed most."
-            }
-        ];
-
-        // --- TEXT 2: Embedded Passage Layout ---
-        const text2HTML = `
-        <div style="background: #f8f9fa; padding: 15px; border-left: 4px solid #0056b3; margin-bottom: 20px; font-size: 14px; line-height: 1.6;">
-            <strong style="font-size: 16px;">TEXT 2: Optimizing Your Digital Workspace for Deep Focus</strong><br><br>
-            In a world full of constant notifications, maintaining deep focus during study or work sessions requires intentional habits. Here is a step-by-step guide to setting up a distraction-free digital workspace.<br><br>
-            1. <strong>Declutter Your Desktop:</strong> Delete unnecessary files and keep only essential active project folders on your computer screen. Visual clutter increases cognitive load and mental fatigue.<br>
-            2. <strong>Enable "Do Not Disturb":</strong> Turn off non-essential application pop-ups and messaging notifications. Interruptions break your workflow and waste valuable time recovering your focus.<br>
-            3. <strong>Use Monochrome Display Mode:</strong> Switch your screen settings to grayscale or low color saturation. This reduces the dopamine reward loop triggered by colorful app icons, making you less likely to mindlessly scroll.<br>
-            4. <strong>Establish Digital Boundaries:</strong> Set specific windows of time to check emails or messaging apps rather than reacting to every alert instantly.<br>
-            5. <strong>Close Background Tabs:</strong> Keep only the tabs open that are strictly necessary for your current task to save RAM and prevent digital distraction.<br>
-            *(Source: Modern Productivity & Cognitive Health Handbook)*
-        </div>
-        `;
-
-        quizData.push(
-            {
-                id: 7,
-                text: text2HTML + "According to the text, what is the purpose of switching your screen to monochrome display mode?",
-                type: "single",
-                options: [
-                    "To save computer battery life and prevent overheating",
-                    "To reduce the dopamine reward loop triggered by colorful app icons and prevent mindless scrolling",
-                    "To make text easier to read in low-light environments",
-                    "To completely block access to the internet during study sessions"
-                ],
-                correct: [1],
-                explanation: "The text explicitly states: 'This reduces the dopamine reward loop triggered by colorful app icons, making you less likely to mindlessly scroll.'"
-            },
-            {
-                id: 8,
-                text: text2HTML + "Based on the text, which of the following habits are categorized as effective 'Digital Focus Strategies'?<br><em>(Select all that apply)</em>",
-                type: "multiple",
-                options: [
-                    "Keeping dozens of browser tabs open for future entertainment",
-                    "Enabling 'Do Not Disturb' mode to block non-essential pop-ups",
-                    "Responding to every single message alert instantly as it arrives",
-                    "Decluttering desktop screens to remove visual clutter and fatigue",
-                    "Setting designated windows of time to check emails instead of reacting constantly"
-                ],
-                correct: [1, 3, 4],
-                explanation: "Enabling DND, decluttering desktops, and setting specific time windows for emails are all explicitly recommended digital focus strategies."
-            },
-            {
-                id: 9,
-                text: text2HTML + "Choose the sequence that best reflects a logical step-by-step approach to cleaning up a cluttered computer environment before starting an intense study session.",
-                type: "single",
-                options: [
-                    "Check emails -> Close unrelated tabs -> Turn on color saturation -> Download more games",
-                    "Delete unnecessary desktop files -> Close extra background browser tabs -> Enable 'Do Not Disturb' mode -> Set specific messaging time windows",
-                    "Ignore notifications -> Open social media -> Declutter desktop last -> Turn off the computer",
-                    "Switch to monochrome mode -> Leave all browser tabs open -> Keep notifications popping up"
-                ],
-                correct: [1],
-                explanation: "This sequence logically follows the text's guidelines: starting with desktop decluttering, closing extra tabs, disabling notifications, and managing time boundaries."
-            },
-            {
-                id: 10,
-                text: text2HTML + "Which of the following statements reflect the author's primary purpose in writing the text?<br><em>(Select all that apply)</em>",
-                type: "multiple",
-                options: [
-                    "To guide readers on how to reduce digital distractions and maintain deep focus",
-                    "To encourage users to delete all modern technology and stop using computers",
-                    "To provide actionable habits for managing cognitive load in a digital environment",
-                    "To explain how computer RAM and color saturation work technically",
-                    "To help students and professionals optimize their daily digital workspace routines"
-                ],
-                correct: [0, 2, 4],
-                explanation: "The author's goal is to offer a practical, step-by-step framework to help users minimize digital interruptions and protect their focus."
-            },
-            {
-                id: 11,
-                text: text2HTML + "According to the text, what is the negative consequence of allowing constant application pop-ups and notifications during work?",
-                type: "single",
-                options: [
-                    "It causes the computer screen to switch to monochrome mode automatically.",
-                    "It breaks your workflow and wastes valuable time recovering your focus.",
-                    "It permanently damages your computer's storage drive.",
-                    "It increases the number of active project folders on your desktop."
-                ],
-                correct: [1],
-                explanation: "The text states: 'Interruptions break your workflow and waste valuable time recovering your focus.'"
-            },
-            {
-                id: 12,
-                text: text2HTML + "If a student wants to apply these steps to prevent mindless phone or computer checking while preparing for an exam, which actions should they take?<br><em>(Select all that apply)</em>",
-                type: "multiple",
-                options: [
-                    "Turning on grayscale or monochrome mode to make apps look less stimulating",
-                    "Leaving all entertainment tabs open right next to study materials",
-                    "Establishing strict time windows for checking communication apps",
-                    "Silencing non-essential alerts using 'Do Not Disturb'",
-                    "Responding immediately to every notification sound to stay updated"
-                ],
-                correct: [0, 2, 3],
-                explanation: "Applying the text means using monochrome mode, scheduling app checks, and silencing alerts—avoiding open distractions or instant replies."
-            }
-        );
-
-        // --- TEXT 3: Embedded Passage Layout ---
-        const text3HTML = `
-        <div style="background: #f8f9fa; padding: 15px; border-left: 4px solid #0056b3; margin-bottom: 20px; font-size: 14px; line-height: 1.6;">
-            <strong style="font-size: 16px;">TEXT 3: The Bioluminescent Bay of Raja Ampat</strong><br><br>
-            Hidden among the limestone islands of West Papua, the hidden lagoon of Teluk Glowing in Raja Ampat offers one of the most mesmerizing natural spectacles on Earth. Unlike typical tropical bays that turn pitch black after sunset, this secluded marine sanctuary comes alive with an ethereal blue-green glow as night falls. Millions of microscopic marine organisms known as dinoflagellates emit natural light whenever the warm water is disturbed by movement.<br><br>
-            When a traditional wooden boat glides across the surface, or when a school of fish darts through the shallows, brilliant trails of neon light ripple through the water like underwater fireworks. The surrounding jungle canopy remains quiet and dark, framing the shimmering bay in striking contrast. Because the area is heavily protected from commercial boat traffic and artificial light pollution, the ecosystem remains pristine, allowing visitors to witness a completely undisturbed natural wonder.
-        </div>
-        `;
-
-        quizData.push(
-            {
-                id: 13,
-                text: text3HTML + "Which of the following descriptions about the lagoon of Teluk Glowing are explicitly mentioned in the text?<br><em>(Select all that apply)</em>",
-                type: "multiple",
-                options: [
-                    "It is located among the limestone islands of West Papua.",
-                    "It glows with an ethereal blue-green light at night.",
-                    "The glowing effect is caused by microscopic organisms called dinoflagellates.",
-                    "It is heavily polluted by commercial cargo ships and heavy traffic.",
-                    "The surrounding jungle canopy remains quiet and dark."
-                ],
-                correct: [0, 1, 2, 4],
-                explanation: "The text explicitly states its location (West Papua limestone islands), the blue-green glow, the cause (dinoflagellates), and the dark jungle canopy. It explicitly notes it is *protected* from commercial traffic, making option 4 false."
-            },
-            {
-                id: 14,
-                text: text3HTML + "What does the author most likely mean by describing the light trails as looking like 'underwater fireworks'?",
-                type: "single",
-                options: [
-                    "The water regularly catches fire and explodes with dangerous sparks.",
-                    "The bright, brilliant, and explosive patterns of light mimic celebratory fireworks underwater.",
-                    "The local villagers set off physical fireworks beneath the ocean surface.",
-                    "The glowing organisms produce loud cracking and booming sounds like fireworks."
-                ],
-                correct: [1],
-                explanation: "The phrase is a descriptive metaphor illustrating the sudden, bright, and sparkling visual trails created when marine life is disturbed."
-            },
-            {
-                id: 15,
-                text: text3HTML + "Which of the following best represents the main idea implied by the text?",
-                type: "single",
-                options: [
-                    "Teluk Glowing is a protected, pristine marine sanctuary offering a rare bioluminescent natural spectacle.",
-                    "West Papua is primarily an industrial zone filled with heavy boat traffic and bright lights.",
-                    "Dinoflagellates only glow during bright daylight hours when boats are moving fast.",
-                    "Typical tropical bays are far more glowing and fascinating than secluded lagoons."
-                ],
-                correct: [0],
-                explanation: "The passage centers on describing Teluk Glowing as a protected, pristine, and uniquely luminous natural destination."
-            },
-            {
-                id: 16,
-                text: text3HTML + "Which detail from the text would best persuade a nature conservationist that Teluk Glowing is managed properly?",
-                type: "single",
-                options: [
-                    "The bay is located near limestone islands.",
-                    "The surrounding jungle canopy is quiet and dark.",
-                    "The area is heavily protected from commercial boat traffic and artificial light pollution.",
-                    "Traditional wooden boats can glide across the surface."
-                ],
-                correct: [2],
-                explanation: "Conservationists care deeply about environmental protection; the fact that it's shielded from commercial traffic and light pollution directly evidences proper management."
-            },
-            {
-                id: 17,
-                text: text3HTML + "Which of the following sentences from the text represent objective facts rather than subjective descriptions?<br><em>(Select all that apply)</em>",
-                type: "multiple",
-                options: [
-                    "\"...Teluk Glowing in Raja Ampat offers one of the most mesmerizing natural spectacles on Earth.\"",
-                    "\"Millions of microscopic marine organisms known as dinoflagellates emit natural light...\"",
-                    "\"...brilliant trails of neon light ripple through the water like underwater fireworks.\"",
-                    "\"Because the area is heavily protected from commercial boat traffic... the ecosystem remains pristine...\"",
-                    "\"Hidden among the limestone islands of West Papua...\""
-                ],
-                correct: [1, 3, 4],
-                explanation: "Scientific definitions (dinoflagellates emitting light), protective status, and geographical locations are factual. Words like 'mesmerizing' or comparisons to 'underwater fireworks' are subjective/descriptive phrasing."
-            },
-            {
-                id: 18,
-                text: text3HTML + "Based on the text, how does Teluk Glowing differ from typical tropical bays after sunset?",
-                type: "single",
-                options: [
-                    "Typical bays turn pitch black, whereas Teluk Glowing comes alive with a blue-green bioluminescent glow.",
-                    "Typical bays become overcrowded with cruise ships, while Teluk Glowing freezes solid.",
-                    "Teluk Glowing completely loses all water after dark due to extreme tides.",
-                    "Typical bays glow much brighter than Teluk Glowing because of city lights."
-                ],
-                correct: [0],
-                explanation: "The text contrasts standard locations: 'Unlike typical tropical bays that turn pitch black after sunset, this secluded marine sanctuary comes alive with an ethereal blue-green glow...'"
-            }
-        );
-        // --- TEXT 4: Embedded Passage Layout ---
-        const text4HTML = `
-        <div style="background: #f8f9fa; padding: 15px; border-left: 4px solid #0056b3; margin-bottom: 20px; font-size: 14px; line-height: 1.6;">
-            <strong style="font-size: 16px;">TEXT 4: The Integration of Autonomous Vehicles in Modern Cities</strong><br><br>
-            The rapid advancement of artificial intelligence has brought fully autonomous, self-driving vehicles from science fiction into reality. While self-driving cars promise to revolutionize urban commuting, their widespread adoption poses significant challenges that city planners must carefully regulate. Unregulated rollout could lead to severe urban congestion and safety hazards.<br><br>
-            On the positive side, autonomous vehicles (AVs) have the potential to drastically reduce human-error traffic accidents, which account for the vast majority of road collisions. Furthermore, shared AV fleets can decrease the overall need for private car ownership, freeing up valuable urban land currently used for parking lots to be converted into parks and green spaces.<br><br>
-            However, the risks cannot be ignored. Without strict municipal caps, cheap and convenient robotaxis could pull commuters away from public rail systems, ultimately increasing total road traffic rather than reducing it. Additionally, ethical dilemmas regarding split-second algorithmic decision-making during unavoidable accidents remain legally unresolved.<br><br>
-            In conclusion, autonomous vehicles should not be banned, but they must be integrated carefully. City governments must prioritize public transit connectivity and enforce strict operational boundaries to ensure self-driving technology serves the collective public good.
-        </div>
-        `;
-
-        quizData.push(
-            {
-                id: 19,
-                text: text4HTML + "According to the text, what is a major urban risk if self-driving robotaxis are deployed without strict municipal caps?",
-                type: "single",
-                options: [
-                    "They will cause all public rail systems to shut down permanently.",
-                    "They could pull commuters away from public transit and increase total road traffic.",
-                    "They will instantly convert all city parking lots into concrete highways.",
-                    "They will completely eliminate the need for artificial intelligence."
-                ],
-                correct: [1],
-                explanation: "The text states: 'Without strict municipal caps, cheap and convenient robotaxis could pull commuters away from public rail systems, ultimately increasing total road traffic rather than reducing it.'"
-            },
-            {
-                id: 20,
-                text: text4HTML + "Based on the text, which of the following are categorized as potential benefits of autonomous vehicles?<br><em>(Select all that apply)</em>",
-                type: "multiple",
-                options: [
-                    "Drastically reducing human-error traffic accidents",
-                    "Permanently doubling the cost of public train tickets",
-                    "Decreasing the need for private car ownership through shared fleets",
-                    "Freeing up parking land to be converted into parks and green spaces",
-                    "Eliminating all ethical dilemmas regarding legal liability"
-                ],
-                correct: [0, 2, 3],
-                explanation: "Reducing human error accidents, decreasing private ownership needs, and converting parking to parks are listed as positive potentials. Ethical dilemmas remain unresolved, making the last option false."
-            },
-            {
-                id: 21,
-                text: text4HTML + "Who is the most likely target audience for this analytical exposition text?<br><em>(Select all that apply)</em>",
-                type: "multiple",
-                options: [
-                    "Urban planners and city government officials",
-                    "Software developers building video game graphics",
-                    "Transportation policy makers and civil engineers",
-                    "Citizens interested in smart city development and public transit",
-                    "Professional race car drivers looking for track strategies"
-                ],
-                correct: [0, 2, 3],
-                explanation: "The text addresses municipal regulation, public transit integration, and urban land use—making it directed at city planners, policy makers, and civically engaged citizens."
-            },
-            {
-                id: 22,
-                text: text4HTML + "According to the text, what positive impact could shared autonomous vehicle fleets have on city infrastructure?",
-                type: "single",
-                options: [
-                    "They can replace all underground subway lines with flying buses.",
-                    "They can decrease the need for private car ownership, allowing parking land to become parks.",
-                    "They can double the speed limit on all downtown roads.",
-                    "They can completely remove the need for traffic lights."
-                ],
-                correct: [1],
-                explanation: "The text notes that shared fleets 'can decrease the overall need for private car ownership, freeing up valuable urban land currently used for parking lots to be converted into parks and green spaces.'"
-            },
-            {
-                id: 23,
-                text: text4HTML + "Which of the following actions align with the author’s final recommendation regarding autonomous vehicles?<br><em>(Select all that apply)</em>",
-                type: "multiple",
-                options: [
-                    "Banning self-driving technology completely across all countries",
-                    "Integrating AVs carefully with strict operational boundaries",
-                    "Prioritizing public transit connectivity alongside autonomous tech",
-                    "Allowing tech companies to operate robotaxis without any government oversight",
-                    "Ensuring that AV deployment serves the collective public good"
-                ],
-                correct: [1, 2, 4],
-                explanation: "The conclusion advises against banning them, but stresses careful integration, prioritizing public transit, strict boundaries, and serving the public good."
-            },
-            {
-                id: 24,
-                text: text4HTML + "Which additional evidence would make the author's argument about traffic congestion more persuasive?",
-                type: "single",
-                options: [
-                    "A detailed biographical profile of the engineers who programmed the vehicle sensors.",
-                    "Data from pilot cities showing how cheap robotaxis affected public bus and train ridership.",
-                    "A colorful catalog displaying the interior leather options of luxury autonomous cars.",
-                    "A historical timeline of horse-drawn carriages in the 19th century."
-                ],
-                correct: [1],
-                explanation: "Empirical data from cities that tested robotaxis and measured public transit shifts would directly support the claim regarding traffic and rail ridership."
-            }
-        );
-        // --- TEXT 5: Embedded Passage & Table Layout ---
-        const text5HTML = `
-        <div style="background: #f8f9fa; padding: 15px; border-left: 4px solid #0056b3; margin-bottom: 20px; font-size: 14px; line-height: 1.6;">
-            <strong style="font-size: 16px;">TEXT 5: The Hidden Environmental Cost of Fast Fashion</strong><br><br>
-            The rise of "fast fashion"—cheap, trendy clothing produced rapidly by mass-market retailers—has transformed how people build their wardrobes. While affordable clothing allows consumers to constantly refresh their styles, it comes with a devastating environmental toll. The textile industry is one of the largest polluters globally, consuming vast quantities of water and generating immense amounts of textile waste.<br><br>
-            A major issue is synthetic fabrics like polyester and nylon, which shed plastic microfibers into oceans during washing. Furthermore, millions of tons of discarded garments end up in landfills annually, where synthetic materials take centuries to decompose. Transitioning toward sustainable consumption, such as thrift shopping or investing in durable, high-quality clothing, is crucial for reducing ecological damage.<br><br>
-            <strong>Table 1. Environmental Impact of Common Clothing Materials (Per Garment Lifecycle)</strong>
-            <table style="width: 100%; border-collapse: collapse; margin-top: 10px; background: white; text-align: left;" border="1">
-                <thead>
-                    <tr style="background: #e9ecef;">
-                        <th style="padding: 8px;">Material Type</th>
-                        <th style="padding: 8px;">Water Consumption</th>
-                        <th style="padding: 8px;">Microplastic Shedding</th>
-                        <th style="padding: 8px;">Landfill Decomposition Time</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr><td style="padding: 8px;">Synthetic (Polyester)</td><td style="padding: 8px;">Moderate</td><td style="padding: 8px;">High</td><td style="padding: 8px;">200+ Years</td></tr>
-                    <tr><td style="padding: 8px;">Conventional Cotton</td><td style="padding: 8px;">Very High</td><td style="padding: 8px;">None</td><td style="padding: 8px;">1 - 5 Months</td></tr>
-                    <tr><td style="padding: 8px;">Recycled / Eco-Blend</td><td style="padding: 8px;">Low</td><td style="padding: 8px;">Low</td><td style="padding: 8px;">1 - 5 Years</td></tr>
-                </tbody>
-            </table>
-            <div style="font-size: 12px; color: #666; margin-top: 5px;">*(Data derived from global textile sustainability assessments)*</div>
-        </div>
-        `;
-
-        quizData.push(
-            {
-                id: 25,
-                text: text5HTML + "What is the best summary of the text's core argument?",
-                type: "single",
-                options: [
-                    "Fast fashion provides affordable clothing, but its severe environmental pollution requires a shift toward sustainable habits.",
-                    "Synthetic materials decompose in landfills within a few months without causing any water pollution.",
-                    "Conventional cotton uses low amounts of water compared to all other clothing types.",
-                    "Consumers should buy more clothes daily to support the global textile industry."
-                ],
-                correct: [0],
-                explanation: "The passage introduces fast fashion's affordability, outlines its deep environmental damage (water, microplastics, waste), and advocates for sustainable alternatives."
-            },
-            {
-                id: 26,
-                text: text5HTML + "According to the text and table, which of the following statements are true regarding clothing materials?<br><em>(Select all that apply)</em>",
-                type: "multiple",
-                options: [
-                    "Synthetic polyester garments shed high levels of plastic microfibers during washing.",
-                    "Conventional cotton requires very high water consumption during its lifecycle.",
-                    "Recycled and eco-blend materials have low water consumption and low microplastic shedding.",
-                    "Synthetic materials take less than six months to completely decompose in landfills.",
-                    "The textile industry is recognized as one of the largest polluters globally."
-                ],
-                correct: [0, 1, 2, 4],
-                explanation: "The table and text confirm synthetic microplastic shedding, cotton's high water use, eco-blend benefits, and global pollution rankings. Synthetics take 200+ years, making option 4 false."
-            },
-            {
-                id: 27,
-                text: text5HTML + "Based on the text, which of the following are identified as environmental impacts or effects of fast fashion?<br><em>(Select all that apply)</em>",
-                type: "multiple",
-                options: [
-                    "Massive generation of textile waste ending up in landfills",
-                    "Plastic microfibers shedding into oceans from synthetic washing",
-                    "Extremely fast decomposition of synthetic clothes within weeks",
-                    "High consumption of water resources globally",
-                    "Immediate cleanup of all global oceans by retail corporations"
-                ],
-                correct: [0, 1, 3],
-                explanation: "Landfill waste, ocean microfibers, and massive water consumption are explicit negative impacts mentioned in the text."
-            },
-            {
-                id: 28,
-                text: text5HTML + "Based on the data in Table 1, what can you infer about choosing synthetic polyester clothing over recycled eco-blends?",
-                type: "single",
-                options: [
-                    "Polyester is much safer for oceans and decomposes faster than any eco-blend.",
-                    "Polyester causes higher microplastic shedding and takes centuries longer to decompose in landfills.",
-                    "Polyester uses zero water during production and requires no washing.",
-                    "Polyester and eco-blends have identical environmental lifecycles."
-                ],
-                correct: [1],
-                explanation: "Table 1 shows polyester has 'High' microplastic shedding and takes '200+ Years' to decompose, whereas recycled eco-blends have 'Low' shedding and take 1-5 years."
-            },
-            {
-                id: 29,
-                text: text5HTML + "Which of the following statements from the text are supported by objective data or facts presented in the passage and table?<br><em>(Select all that apply)</em>",
-                type: "multiple",
-                options: [
-                    "\"Synthetic polyester takes 200+ years to decompose in landfills.\"",
-                    "\"Conventional cotton has a 'Very High' water consumption rating in Table 1.\"",
-                    "\"Fast fashion is the most fun and exciting way to shop for teenagers.\"",
-                    "\"The textile industry is one of the largest polluters globally.\"",
-                    "\"Everyone in the world loves wearing nylon shirts every single day.\""
-                ],
-                correct: [0, 1, 3],
-                explanation: "Landfill decomposition times, table ratings, and industry pollution rankings are explicit facts from the text/table. The other options are subjective opinions."
-            },
-            {
-                id: 30,
-                text: text5HTML + "If a shopper wants to apply the findings from this text to reduce their personal environmental footprint, which actions should they take?<br><em>(Select all that apply)</em>",
-                type: "multiple",
-                options: [
-                    "Purchasing new fast fashion polyester items every week to stay trendy",
-                    "Supporting thrift stores or secondhand clothing markets",
-                    "Investing in durable, high-quality clothing that lasts longer",
-                    "Washing synthetic clothes without considering microplastic pollution",
-                    "Choosing recycled or eco-blend materials when buying new garments"
-                ],
-                correct: [1, 2, 4],
-                explanation: "Sustainable habits recommended in the text include thrifting, buying durable clothes, and choosing eco-blends/recycled materials."
-            }
-        );
-
+        let currentSubject = '';
+        let quizData = [];
         let currentQuestionIndex = 0;
         let userAnswers = {}; 
         let timerInterval;
-        let timeLeft = 90 * 60; // 40 minutes
+        let timeLeft = 90 * 60; // 90 Minutes
 
-        window.onload = () => {
+        function startExam(subjectKey) {
+            currentSubject = subjectKey;
+            quizData = allSubjects[subjectKey];
+            currentQuestionIndex = 0;
+            userAnswers = {};
+            timeLeft = 90 * 60; // 90 minutes
+
+            // Switch UI screens
+            document.getElementById('home-screen').style.display = 'none';
+            document.getElementById('quiz-screen').style.display = 'block';
+            document.getElementById('panel-toggle').style.display = 'block';
+            document.getElementById('timer').style.display = 'block';
+            document.getElementById('panel-subject-title').innerText = subjectKey.toUpperCase() + " Navigator";
+
             buildGrid();
             loadQuestion(0);
             startTimer();
-        };
+        }
 
-        // Timer Logic
+        function goHome() {
+            clearInterval(timerInterval);
+            document.getElementById('home-screen').style.display = 'block';
+            document.getElementById('quiz-screen').style.display = 'none';
+            document.getElementById('results-screen').style.display = 'none';
+            document.getElementById('panel-toggle').style.display = 'none';
+            document.getElementById('timer').style.display = 'none';
+            document.getElementById('side-panel').classList.remove('open');
+        }
+
         function startTimer() {
+            clearInterval(timerInterval);
             timerInterval = setInterval(() => {
                 timeLeft--;
                 let m = Math.floor(timeLeft / 60);
@@ -635,15 +231,12 @@
             }, 1000);
         }
 
-        // Load Question to UI
         function loadQuestion(index) {
             currentQuestionIndex = index;
             const q = quizData[currentQuestionIndex];
             
-            // Set Question Text
             document.getElementById('question-text').innerHTML = `<strong>Pertanyaan ${currentQuestionIndex + 1}</strong><br><br>${q.text}`;
             
-            // Set Options
             const optionsContainer = document.getElementById('options-container');
             optionsContainer.innerHTML = '';
             
@@ -659,7 +252,6 @@
                 `;
             });
 
-            // Update Navigation Buttons
             document.getElementById('btn-prev').style.display = currentQuestionIndex === 0 ? 'none' : 'inline-block';
             
             if (currentQuestionIndex === quizData.length - 1) {
@@ -673,7 +265,6 @@
             updateGridUI();
         }
 
-        // Save User Answer
         function saveAnswer(optIdx) {
             const q = quizData[currentQuestionIndex];
             if (q.type === 'single') {
@@ -683,9 +274,9 @@
                 const ansArray = userAnswers[currentQuestionIndex];
                 const existIdx = ansArray.indexOf(optIdx);
                 if (existIdx > -1) {
-                    ansArray.splice(existIdx, 1); // uncheck
+                    ansArray.splice(existIdx, 1); 
                 } else {
-                    ansArray.push(optIdx); // check
+                    ansArray.push(optIdx); 
                 }
             }
             updateGridUI();
@@ -694,7 +285,6 @@
         function prevQuestion() { if (currentQuestionIndex > 0) loadQuestion(currentQuestionIndex - 1); }
         function nextQuestion() { if (currentQuestionIndex < quizData.length - 1) loadQuestion(currentQuestionIndex + 1); }
 
-        // Slide-out Panel Logic
         function togglePanel() {
             const panel = document.getElementById('side-panel');
             const btn = document.getElementById('panel-toggle');
@@ -703,7 +293,6 @@
             btn.innerHTML = panel.classList.contains('open') ? "▶<br>T<br>U<br>T<br>U<br>P" : "◀<br>N<br>O<br>M<br>O<br>R";
         }
 
-        // Build the 30 Grid Boxes
         function buildGrid() {
             const grid = document.getElementById('grid-container');
             grid.innerHTML = '';
@@ -712,11 +301,10 @@
             });
         }
 
-        // Update Green/Blue Grid Colors
         function updateGridUI() {
             quizData.forEach((_, i) => {
                 const box = document.getElementById(`box-${i}`);
-                box.className = 'grid-box'; // reset
+                box.className = 'grid-box'; 
                 
                 if (userAnswers[i] && userAnswers[i].length > 0) {
                     box.classList.add('answered');
@@ -737,11 +325,12 @@
             }
         }
 
-     function submitExam() {
+        function submitExam() {
             clearInterval(timerInterval);
-            document.getElementById('quiz-container').style.display = 'none';
+            document.getElementById('quiz-screen').style.display = 'none';
             document.getElementById('side-panel').classList.remove('open');
             document.getElementById('panel-toggle').style.display = 'none';
+            document.getElementById('timer').style.display = 'none';
             document.getElementById('results-screen').style.display = 'block';
 
             let score = 0;
@@ -765,15 +354,11 @@
                     <div class="review-card ${cardClass}">
                         ${badge}
                         <h4 style="margin-top:0;">Question ${i + 1}</h4>
-                        
-                        <!-- THIS LINE SHOWS THE TEXT & QUESTION AGAIN IN THE REVIEW -->
                         <div style="background: #f8f9fa; padding: 12px; border-radius: 6px; margin-bottom: 15px; font-size: 14px;">
                             ${q.text}
                         </div>
-                        
                         <p><strong>Your Answer:</strong><br> ${userAnswerText}</p>
                         <p><strong>Correct Answer:</strong><br> ${correctAnswerText}</p>
-                        
                         <div class="explanation-box">
                             <strong>Explanation:</strong><br> ${q.explanation}
                         </div>
@@ -783,7 +368,7 @@
 
             document.getElementById('final-score-text').innerText = `${score} / ${quizData.length}`;
             document.getElementById('review-container').innerHTML = reviewHTML;
-            window.scrollTo(0, 0); // Scroll to top
+            window.scrollTo(0, 0);
         }
     </script>
 </body>
