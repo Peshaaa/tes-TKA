@@ -166,9 +166,469 @@
                 { id: 1, text: "<strong>Math Q1:</strong> Solve for x: 2x + 4 = 10", type: "single", options: ["x = 2", "x = 3", "x = 4", "x = 5"], correct: [1], explanation: "2x = 6, so x = 3." }
             ],
             indonesian: [
-                // BLANK TEMPLATE FOR INDONESIAN: Add 30 questions here
-                { id: 1, text: "<strong>Indonesian Q1:</strong> Apa gagasan utama paragraf...", type: "single", options: ["Opsi A", "Opsi B", "Opsi C", "Opsi D"], correct: [0], explanation: "Penjelasan bahasa Indonesia." }
-            ],
+indonesian: [
+            // --- TEKS 1: Tradisi Buwuhan ---
+            ...(() => {
+                const text1 = `
+                <div style="background: #f8f9fa; padding: 15px; border-left: 4px solid #0056b3; margin-bottom: 20px; font-size: 14px; line-height: 1.6;">
+                    <strong style="font-size: 16px;">Teks 1: Tradisi Buwuhan: Antara Gotong Royong dan Utang Piutang</strong><br><br>
+                    Tradisi buwuhan merupakan bagian dari budaya masyarakat Jawa, khususnya di kota-kota besar seperti Surabaya. Tradisi ini dilakukan ketika ada acara penting seperti pernikahan atau khitanan yang diadakan di daerah tersebut. Buwuhan merujuk pada kegiatan memberi bantuan, baik berupa barang, uang, maupun tenaga kepada seseorang yang sedang mengadakan hajatan, atau bisa juga disebut sebagai kegiatan menyumbang. Tradisi ini mencerminkan nilai gotong royong dan solidaritas sosial karena keluarga dan tetangga saling bahu-membahu dalam membantu sesama.<br><br>
+                    Namun, praktik buwuhan tidak lepas dari unsur pertukaran atau dipandang sebagai utang. Masyarakat meyakini bahwa segala bentuk bantuan yang diberikan akan kembali dalam bentuk yang setara ketika si pemberi mengadakan hajatan serupa. Hal ini menyebabkan buwuhan tidak lagi dipandang murni sebagai hibah atau sedekah, tetapi sebagai bentuk "utang tidak tertulis" yang menimbulkan kewajiban moral untuk membalas.<br><br>
+                    Dalam praktiknya, buwuhan memang meringankan beban tuan rumah, tetapi dapat menimbulkan tekanan psikologis bagi penerima bantuan. Rasa malu dan kekhawatiran kehilangan harga diri mendorong sebagian orang untuk berutang demi mengembalikan buwuhan. Hal ini menyebabkan terbaginya cara pandang terhadap buwuhan. Ada yang melihatnya sebagai bentuk tolong-menolong, tetapi ada juga yang justru menganggapnya menjadi sistem utang piutang berbasis sosial. Sebagian pihak berpendapat bahwa buwuhan adalah hibah karena tujuannya adalah untuk membantu. Namun, apabila ada keharusan pengembalian, maka secara hukum dan etika, buwuhan telah bergeser dari semangat gotong royong menjadi sebuah kewajiban ekonomi yang membebani. Oleh karena itu, pemahaman masyarakat terhadap tradisi buwuhan perlu diluruskan agar nilai luhur tolong-menolong tetap terjaga tanpa menimbulkan beban yang tidak perlu.
+                </div>`;
+                
+                return [
+                    {
+                        id: 1,
+                        text: text1 + "Apa makna kata <em>hajatan</em> pada teks tersebut?",
+                        type: "single",
+                        options: [
+                            "Kegiatan kerja bakti membersihkan lingkungan sekitar.",
+                            "Pertemuan rutin warga untuk membahas masalah lingkungan.",
+                            "Diskusi keluarga besar untuk menentukan pembagian warisan.",
+                            "Permohonan bantuan yang dilakukan tuan rumah kepada tetangga.",
+                            "Acara atau pesta yang diadakan untuk memperingati hal penting."
+                        ],
+                        correct: [4],
+                        explanation: "Berdasarkan konteks kalimat 'acara penting seperti pernikahan atau khitanan', kata hajatan bermakna acara atau pesta yang diadakan untuk memperingati hal penting."
+                    },
+                    {
+                        id: 2,
+                        text: text1 + "Manakah gagasan yang mendukung ide pokok bahwa buwuhan adalah bentuk utang?",
+                        type: "single",
+                        options: [
+                            "Praktik buwuhan disertai dengan perjanjian utang piutang secara tertulis.",
+                            "Buwuhan disertai kesepakatan untuk selalu memberi lebih dari yang diterima.",
+                            "Bentuk buwuhan dapat berupa sedekah atau hibah yang harus dibayar kembali.",
+                            "Buwuhan dilakukan oleh tetangga dan kerabat sebagai bentuk pertukaran solidaritas.",
+                            "Penerima buwuhan merasa harus mengembalikan bantuan yang diterima di kemudian hari."
+                        ],
+                        correct: [4],
+                        explanation: "Gagasan yang mendukung buwuhan sebagai utang terlihat pada kalimat: 'Masyarakat meyakini bahwa segala bentuk bantuan yang diberikan akan kembali... menimbulkan kewajiban moral untuk membalas/mengembalikan di kemudian hari'."
+                    },
+                    {
+                        id: 3,
+                        text: text1 + "Hubungan makna paragraf kedua dan ketiga adalah...",
+                        type: "single",
+                        options: [
+                            "perbedaan jenis buwuhan berdasarkan jenis acara yang dilangsungkan",
+                            "penjelasan sebab dan akibat dari perbedaan pandangan mengenai buwuhan",
+                            "penjelasan dampak buruk dari adanya pandangan buwuhan sebagai sedekah",
+                            "perbedaan tata cara buwuhan pada beberapa kelurahan atau desa di Surabaya",
+                            "penjelasan hubungan hukum agama dengan pengertian masyarakat terhadap buwuhan"
+                        ],
+                        correct: [1],
+                        explanation: "Paragraf 2 memaparkan pandangan (sebab) bahwa buwuhan dipandang sebagai utang. Paragraf 3 memaparkan akibatnya, yakni tekanan psikologis, yang memunculkan terbaginya cara pandang (perbedaan pandangan) di masyarakat."
+                    },
+                    {
+                        id: 4,
+                        text: text1 + "<em>\"Oleh karena itu, pemahaman masyarakat terhadap tradisi buwuhan perlu diluruskan agar nilai luhur tolong-menolong tetap terjaga tanpa menimbulkan beban yang tidak perlu.\"</em><br><br>Kalimat tersebut dapat menjadi kesimpulan yang sesuai teks argumentasi tersebut karena...",
+                        type: "single",
+                        options: [
+                            "merangkum sebab-akibat dari adanya tradisi buwuhan di wilayah Surabaya",
+                            "menyimpulkan ketidaksetujuan masyarakat terhadap penghapusan tradisi buwuhan",
+                            "menyangkal pandangan negatif yang ada di masyarakat untuk pelestarian buwuhan",
+                            "menyimpulkan berbagai pandangan masyarakat terhadap konsep buwuhan",
+                            "menggarisbawahi solusi untuk melestarikan tradisi buwuhan di seluruh wilayah Jawa"
+                        ],
+                        correct: [4],
+                        explanation: "Kalimat tersebut merupakan sebuah tawaran solusi ('perlu diluruskan agar...') untuk mengatasi masalah beban psikologis dan finansial yang dibahas pada teks agar tradisi buwuhan dapat terus dilestarikan dengan makna yang benar."
+                    }
+                ];
+            })(),
+
+            // --- TEKS 2: Layur, Teruslah berlayar ---
+            ...(() => {
+                const text2 = `
+                <div style="background: #f8f9fa; padding: 15px; border-left: 4px solid #0056b3; margin-bottom: 20px; font-size: 14px; line-height: 1.6;">
+                    <strong style="font-size: 16px;">Teks 2: Layur, Teruslah Berlayar</strong><br><br>
+                    "Bapak, pulanglah," lirih Layur berharap. Ini hari keenam. Tiga hari adalah waktu terlama nelayan berada di laut. Dengan susah payah, Layur berpindah duduk ke dalam sebuah perahu tua. Penyangga kedua kaki Layur yang tak utuh ia letakkan di sampingnya.<br>
+                    "Jangan-jangan..."<br>
+                    "Tidak... Aku tidak boleh berpikiran buruk. Bapak pasti pulang dengan selamat. Aku akan tetap menunggunya di sini sambil berdoa."<br>
+                    Layur masih ingat masa-masa dulu, ketika Bapak berlayar pada malam hari dan keesokan harinya sudah merapat kembali di pantai dengan membawa ikan berlimpah.<br>
+                    "Ayo! Siapa mau udang?" panggil Bapak. Layur berlari kencang bersama teman-temannya. Namun, itu adalah kenangan sepuluh tahun silam. Kini, udang dan ikan kecil adalah anugerah besar. Itu pun harus dijaring di tengah laut.<br>
+                    Layur ingat betul, Bapak adalah pembuat bondet paling disegani, juga berpengaruh di dusun. Setiap hari, nelayan silih berganti datang ke rumah memesan bondet. Hasil panen ikan berlimpah. Tinggal melemparkan bondet ke dalam laut dan... bum! Berkuintal-kuintal ikan terapung tinggal diserok menggunakan jaring.<br>
+                    Sampai suatu ketika...<br>
+                    DUAAAR!<br>
+                    Separuh rumah Layur luluh lantak karena simpanan bondet di gudang meledak. Ledakan bondet di gudang tak hanya merusak rumah tetapi juga mencelakai anak semata wayang. Ia berteriak minta tolong, menepuk-nepuk dadanya, dan menangis. Itulah titik balik yang amat disesali Bapak. Sejak itu, Bapak meninggalkan usaha pembuatan bondet. Demikian pula dengan warga Dusun Prau tempat mereka berdiam berangsur-angsur meninggalkan cara menangkap ikan dengan bondet.<br>
+                    Lamat-lamat terlihat kibaran layar bercorak biru. Layur beringsut menuruni perahu tempatnya duduk. Lambaian tangan bapaknya semakin jelas dan semakin dekat.<br>
+                    "Bapak dari mana? Bapak sudah tiga hari telat pulang!" Seru Layur kesal. Matanya berkaca-kaca, menahan rindu, dan cemas.
+                </div>`;
+                return [
+                    {
+                        id: 5,
+                        text: text2 + "Berdasarkan teks tersebut, bagaimana sifat yang dimiliki oleh Layur?",
+                        type: "single",
+                        options: [
+                            "Nekat dan optimis",
+                            "Mudah cemas dan tabah",
+                            "Penuh harap dan kasih sayang",
+                            "Suka menyendiri dan tegas",
+                            "Cepat panik dan menyalahkan keadaan"
+                        ],
+                        correct: [2],
+                        explanation: "Layur menolak pikiran buruk dan terus berdoa ('Aku akan tetap menunggunya di sini sambil berdoa'), serta ia 'menahan rindu dan cemas' saat bapaknya pulang, yang menunjukkan ia sosok yang penuh harap dan sangat menyayangi bapaknya."
+                    },
+                    {
+                        id: 6,
+                        text: text2 + "Apa yang menyebabkan Layur kesal kepada Bapak?",
+                        type: "single",
+                        options: [
+                            "Tidak pamit kepada Layur saat hendak berlayar",
+                            "Tidak membawa banyak ikan dari laut",
+                            "Tidak setuju Layur menunggu terlalu lama di pantai",
+                            "Tidak kunjung pulang setelah enam hari melaut",
+                            "Tidak menepati janjinya untuk pulang tepat waktu ketika melaut"
+                        ],
+                        correct: [3],
+                        explanation: "Teks menyebutkan 'Bapak sudah tiga hari telat pulang!' dan 'Ini hari keenam. Tiga hari adalah waktu terlama nelayan berada di laut.' Artinya bapaknya tidak pulang setelah enam hari melaut (telat tiga hari dari biasanya)."
+                    },
+                    {
+                        id: 7,
+                        text: text2 + "Bagaimana kisah yang sesuai untuk menutup cerita Layur merasa lega pada cerita tersebut?",
+                        type: "single",
+                        options: [
+                            "Bapak meminta maaf pada Layur dan menceritakan penyebabnya pulang terlambat",
+                            "Bapak membimbing Layur pulang dan berjanji untuk tidak pulang terlambat lagi",
+                            "Bapak memeluk Layur dan merasa senang karena akhirnya ia bisa bertemu putrinya kembali",
+                            "Layur membereskan sampan dan memberikan hasil tangkapan yang tidak seberapa kepada Bapak",
+                            "Layur berterima kasih kepada Bapak karena telah menunggunya pulang dari melaut berhari-hari"
+                        ],
+                        correct: [2],
+                        explanation: "Ending emosional yang paling koheren dengan suasana 'mata berkaca-kaca, menahan rindu dan cemas' adalah kelegaan di mana sang bapak akhirnya tiba dan memeluk Layur dengan perasaan senang/lega karena kembali berkumpul."
+                    },
+                    {
+                        id: 8,
+                        text: text2 + "Bagaimana reaksi yang ditunjukkan oleh Bapak ketika rumahnya luluh lantak dan bondet buatannya melukai Layur?",
+                        type: "single",
+                        options: [
+                            "Merasa trauma dan membutuhkan waktu untuk menyendiri",
+                            "Menunjukkan respons yang biasa seperti tidak terjadi apa-apa",
+                            "Sangat terkejut dan sungguh menyesal atas apa yang dilakukan",
+                            "Marah terhadap orang lain dan merasa panik yang luar biasa",
+                            "Bingung dan berusaha mencerna terhadap apa yang telah terjadi"
+                        ],
+                        correct: [2],
+                        explanation: "Teks secara eksplisit menyatakan: 'Ia berteriak minta tolong, menepuk-nepuk dadanya, dan menangis. Itulah titik balik yang amat disesali Bapak.'"
+                    }
+                ];
+            })(),
+
+            // --- TEKS 3: Pantai Bersih Tanpa Sampah ---
+            ...(() => {
+                const text3 = `
+                <div style="background: #f8f9fa; padding: 15px; border-left: 4px solid #0056b3; margin-bottom: 20px; font-size: 14px; line-height: 1.6;">
+                    <strong style="font-size: 16px;">Teks 3: Pantai Bersih Tanpa Sampah</strong><br><br>
+                    Di sebuah daerah wisata yang terkenal dengan pantainya yang indah, pemerintah setempat gencar mengampanyekan "Pantai Bersih Tanpa Sampah." Spanduk dan papan peringatan terpampang di berbagai sudut. Namun, kenyataannya seringkali berbeda.<br>
+                    Suatu sore, Pak Wayan, seorang nelayan tua yang sudah puluhan tahun melaut, sedang membersihkan jaringnya di tepi pantai. Di sampingnya, sekelompok turis muda asyik berpose untuk berfoto. Mereka mengenakan topi pantai yang modis, kacamata hitam, dan membawa botol minum berwarna-warni.<br>
+                    "Wah, pantainya bersih banget ya, guys!" seru salah satu turis sambil memegang ponselnya. "Pas banget buat konten 'liburan ramah lingkungan'!"<br>
+                    Temannya menimpali, "Iya! Nanti caption-nya 'Menikmati keindahan alam tanpa jejak, menjaga bumi kita tercinta!'"<br>
+                    Setelah puas berfoto dari berbagai sudut dengan beragam filter, mereka beranjak pergi. Namun mereka meninggalkan botol minuman plastik kosong, bungkus keripik, dan beberapa puntung rokok yang disembunyikan di balik semak-semak. Mereka bahkan tidak berusaha mencari tempat sampah yang hanya berjarak beberapa meter.<br>
+                    Pak Wayan hanya bisa menggelengkan kepala. Ia berjalan mendekat dan memungut sampah-sampah itu satu per satu. Ia sudah terbiasa dengan pemandangan ini. Para turis datang untuk menikmati keindahan, berfoto, membuat konten, lalu pergi meninggalkan "kenangan" dalam bentuk sampah.<br>
+                    Tak lama kemudian, seorang petugas kebersihan berseragam oranye datang dengan sapu dan karung. "Pak Wayan, sudah banyak lagi ya sampahnya?" tanyanya sambil menghela napas.<br>
+                    "Sudah biasa, Nak," jawab Pak Wayan. "Ini namanya 'sampah estetik'. Cuma bagus di foto, tapi busuk di mata dan bau di hidung."<br>
+                    Petugas itu tersenyum masam. "Iya, Pak. Kata mereka peduli lingkungan, tapi pedulinya cuma di caption media sosial."<br>
+                    Malam harinya, di akun media sosial Pak Wayan—yang diajari cucunya—ia melihat foto-foto pantai yang diunggah para turis tadi. Pantai tampak bersih sempurna, dihiasi filter matahari terbenam yang memukau. Ia membaca caption-nya: "Surgaku, jangan kau kotori!"<br>
+                    Pak Wayan hanya bisa tersenyum getir. Sepertinya, slogan "Pantai Bersih Tanpa Sampah" itu hanya berlaku untuk kamera dan media sosial. Sementara di balik layar, jejak yang ditinggalkan justru lebih nyata dan memprihatinkan daripada gambar yang dipamerkan.
+                </div>`;
+                return [
+                    {
+                        id: 9,
+                        text: text3 + "Manakah urutan peristiwa berikut yang paling sesuai dengan isi teks?",
+                        type: "single",
+                        options: [
+                            "Pak Wayan melihat foto turis di media sosial → petugas kebersihan datang → turis membuat konten",
+                            "Turis berfoto dan membuat konten → Pak Wayan memungut sampah → petugas kebersihan datang",
+                            "Pemerintah mengampanyekan kebersihan → Pak Wayan melihat foto turis → petugas kebersihan datang",
+                            "Petugas kebersihan datang → turis membuat konten di media sosial → Pak Wayan memungut sampah",
+                            "Pemerintah mengampanyekan kebersihan → turis membuat konten → Pak Wayan memungut sampah → petugas kebersihan datang → Pak Wayan melihat foto turis"
+                        ],
+                        correct: [4],
+                        explanation: "Urutan kronologis cerita: Diawali kampanye pemerintah, turis datang membuat konten, turis membuang sampah yang kemudian dipungut Pak Wayan, lalu petugas kebersihan datang mengobrol, dan diakhiri dengan Pak Wayan melihat unggahan turis di malam hari."
+                    },
+                    {
+                        id: 10,
+                        text: text3 + "Apa pesan moral yang disiratkan melalui dialog antara Pak Wayan dan petugas kebersihan?",
+                        type: "single",
+                        options: [
+                            "Menjaga kebersihan pantai adalah tanggung jawab utama pemerintah dan petugas kebersihan",
+                            "Wisatawan seringkali menikmati keindahan alam tanpa memiliki kepedulian yang mendalam",
+                            "Kesadaran lingkungan sejati harus dibuktikan lewat tindakan, bukan hanya kata-kata di media sosial",
+                            "Media sosial bisa menjadi sarana positif untuk mengampanyekan kepedulian terhadap lingkungan",
+                            "Nelayan dan petugas kebersihan sering kali menjadi pihak yang terdampak langsung oleh sampah"
+                        ],
+                        correct: [2],
+                        explanation: "Dialog 'Kata mereka peduli lingkungan, tapi pedulinya cuma di caption media sosial' sangat menohok dan menyiratkan bahwa kepedulian sejati harus diwujudkan dalam tindakan nyata (tidak membuang sampah), bukan sekadar citra di media sosial."
+                    },
+                    {
+                        id: 11,
+                        text: text3 + "Manakah relevansi paling kuat antara sindiran dalam teks dengan realitas kehidupan sehari-hari, terutama terkait kesadaran lingkungan dan pencitraan?",
+                        type: "single",
+                        options: [
+                            "Kritik terhadap kampanye 'Pantai Bersih' yang hanya menjadi slogan, menunjukkan kurangnya efektivitas program pemerintah",
+                            "Sindiran bagi pembuat konten 'liburan ramah lingkungan' hanya untuk pencitraan semata karena tetap membuang sampah sembarangan",
+                            "Penggambaran turis yang kewalahan dan menghela napas mencerminkan beban kerja yang berat karena perilaku abal para pengunjung",
+                            "Keadaan Pak Wayan yang terbiasa dengan pemandangan sampah di pantai menunjukkan adanya budaya pasrah terhadap masalah lingkungan",
+                            "Kontras antara spanduk 'Bersih Tanpa Sampah' dengan sampah kenangan yang ditinggalkan, menunjukkan perlunya pengawasan ketat"
+                        ],
+                        correct: [1],
+                        explanation: "Teks sangat kuat menyoroti ironi orang-orang yang menggaungkan narasi peduli lingkungan dan 'liburan tanpa jejak' di media sosial demi konten (pencitraan), tetapi perilakunya di dunia nyata bertolak belakang dengan membuang sampah sembarangan."
+                    }
+                ];
+            })(),
+
+            // --- TEKS 4: Pulihkan Ekosistem ---
+            ...(() => {
+                const text4 = `
+                <div style="background: #f8f9fa; padding: 15px; border-left: 4px solid #0056b3; margin-bottom: 20px; font-size: 14px; line-height: 1.6;">
+                    <strong style="font-size: 16px;">Teks 4: Pulihkan Ekosistem, Menjaga Planet Kita dari Generasi ke Generasi</strong><br><br>
+                    Berdasarkan hasil riset LIPI terjadi peningkatan sampah plastik selama pandemik. Hal ini disebabkan oleh penggunaan layanan delivery makanan lewat jasa transportasi online, 96% paket dibungkus dengan plastik yang tebal dan ditambah dengan bubble wrap. Selain itu selotip, bungkus plastik, dan bubble wrap merupakan pembungkus berbahan plastik yang paling sering ditemukan. Sampah medis juga melonjak. Kementerian Lingkungan Hidup dan Kehutanan (KLHK) menyatakan bahwa selama pandemi, terjadi peningkatan timbunan sampah medis sebesar 30% hingga 50%. Dari data tersebut, Indonesia merupakan negara ke-2 penyumbang polusi sampah di lautan (3,22 metrik ton per tahun).<br><br>
+                    Salah satu faktor penyebab dari permasalahan tersebut adalah dengan pertambahan jumlah penduduk akan terjadi peningkatan aktivitas manusia dan daya konsumsi yang melonjak. Hal itu menyebabkan meningkatnya jumlah dan jenis limbah sehingga menyebabkan lingkungan menjadi tercemar. Selain sampah, penebangan pohon secara liar sampai pada kebakaran hutan menjadi penyumbang terbesar dalam kerusakan ekosistem. Banyak aktivitas manusia yang mengancam pelestarian lingkungan sehingga menyebabkan ketidakseimbangan ekosistem. Manusia punya peran besar dalam menjaga keseimbangan ekosistem, bukan cuma untuk sekarang, tapi juga untuk generasi mendatang. Tanggung jawab dalam menjaga lingkungan, tentunya bukan hanya dibebankan oleh pemerintah saja, tetapi seluruh elemen masyarakat harus bahu-membahu dalam menjaga dan melestarikan lingkungan.<br><br>
+                    Bertepatan dengan peringatan Hari Lingkungan Hidup Sedunia, yang tidak hanya sebagai seremonial belaka, tentunya menjadi sebuah harapan dalam meningkatkan kesadaran menjaga dan melestarikan lingkungan. Selain itu, memberikan semangat baru bagi kita semua untuk komitmen menjaga lingkungan. Dengan memulai dari diri sendiri dan hal paling kecil, yaitu tidak membuang sampah sembarangan, terutama sampah plastik karena merusak ekosistem laut, tidak menebang pohon dengan liar hingga membuat gundul hutan. Mari bersama merobohkan jurang ekologi, memulihkan ekosistem bumi dengan pendekatan pengelolaan sumber daya alam yang adil dan berkelanjutan.
+                </div>`;
+                return [
+                    {
+                        id: 12,
+                        text: text4 + "Bagaimana hubungan makna antara paragraf 1 dan paragraf 2 dalam teks tersebut?",
+                        type: "single",
+                        options: [
+                            "Paragraf 2 menjelaskan akibat dari fenomena sampah yang diuraikan di paragraf 1",
+                            "Paragraf 2 menyajikan solusi awal untuk permasalahan yang diperkenalkan di paragraf 1",
+                            "Paragraf 2 memberikan contoh spesifik dari jenis sampah yang disebutkan di paragraf 1",
+                            "Paragraf 2 mengkritisi data yang rancu tentang sampah yang disajikan di paragraf 1",
+                            "Paragraf 2 menguraikan penyebab dari permasalahan yang dijabarkan di paragraf 1"
+                        ],
+                        correct: [4],
+                        explanation: "Paragraf 1 menjabarkan data permasalahan polusi sampah. Paragraf 2 langsung dibuka dengan kalimat 'Salah satu faktor penyebab dari permasalahan tersebut adalah...', yang berarti Paragraf 2 berfungsi menguraikan penyebab fenomena dari Paragraf 1."
+                    },
+                    {
+                        id: 13,
+                        text: text4 + "<em>\"Aktivitas manusia memberikan dampak besar terhadap pencemaran lingkungan di Indonesia.\"</em><br>Data mana di bawah ini yang sesuai dengan opini penulis dalam teks tersebut untuk membuktikan peningkatan limbah?",
+                        type: "single",
+                        options: [
+                            "Peningkatan aktivitas manusia didukung oleh data lonjakan timbunan sampah medis sebesar 80-90%",
+                            "Tingginya jumlah dan jenis limbah didukung oleh data bahwa 96% paket dibungkus dengan plastik tebal dan bubble wrap",
+                            "Kebakaran hutan yang merusak ekosistem didukung data bahwa Indonesia merupakan negara ke-1 penyumbang sampah",
+                            "Penggunaan layanan transportasi online telah menurunkan drastis kebutuhan akan bubble wrap dan selotip",
+                            "Masyarakat Indonesia saat ini sudah berhenti menggunakan plastik kemasan untuk mengurangi pencemaran laut"
+                        ],
+                        correct: [1],
+                        explanation: "Dalam paragraf 1, penulis menyajikan fakta riset bahwa '96% paket dibungkus dengan plastik yang tebal dan ditambah dengan bubble wrap', yang secara valid mendukung argumentasi tentang melonjaknya timbunan limbah (plastik)."
+                    },
+                    {
+                        id: 14,
+                        text: text4 + "Mengapa penulis memilih istilah 'bahu-membahu' untuk menggambarkan peran semua pihak dalam upaya pelestarian lingkungan?",
+                        type: "single",
+                        options: [
+                            "Memperkuat makna pentingnya kolaborasi berbagai pihak untuk mencapai tujuan",
+                            "Memberikan sedikit kesan informal yang mungkin kurang pas untuk teks opini",
+                            "Mengindikasikan bahwa idiom lebih cocok digunakan untuk konteks fisik",
+                            "Menyiratkan adanya paksaan atau tekanan dari satu pihak kepada pihak lain",
+                            "Menunjukkan bahwa konteks ini terlalu ambigu dan tidak ada definisi yang jelas"
+                        ],
+                        correct: [0],
+                        explanation: "Idiom 'bahu-membahu' bermakna saling tolong-menolong atau bekerja sama secara kompak. Penulis menggunakannya untuk memperkuat seruan persuasif akan pentingnya sinergi dan kolaborasi antara pemerintah dan masyarakat."
+                    }
+                ];
+            })(),
+
+            // --- TEKS 5: Prospek Ekonomi Global ---
+            ...(() => {
+                const text5 = `
+                <div style="background: #f8f9fa; padding: 15px; border-left: 4px solid #0056b3; margin-bottom: 20px; font-size: 14px; line-height: 1.6;">
+                    <strong style="font-size: 16px;">Teks 5: Prospek Ekonomi Global di Tengah Ketidakpastian</strong><br><br>
+                    Jakarta, Senin, 16 Juni 2025 – Perekonomian global terus menghadapi tantangan signifikan di tengah ketidakpastian geopolitik dan tekanan inflasi yang persisten. Analisis terbaru yang dirilis pada (Senin, 2/6/2025), oleh Dana Moneter Internasional (IMF) menunjukkan adanya divergensi dalam laju pemulihan ekonomi antarwilayah, di mana beberapa negara seperti Amerika Serikat dan India menunjukkan ketahanan yang lebih baik, sementara negara-negara di Eropa dan Tiongkok masih berjuang mengatasi dampak guncangan eksternal.<br><br>
+                    Kenaikan harga energi dan pangan tetap menjadi pendorong utama inflasi di banyak negara, dipicu oleh gangguan rantai pasok global dan konflik di Ukraina, memaksa bank sentral untuk mempertahankan kebijakan moneter yang ketat. Upaya ini, meskipun esensial untuk mengendalikan kenaikan harga, berpotensi mengerem pertumbuhan ekonomi. Para pengambil kebijakan dihadapkan pada dilema sulit: menyeimbangkan kebutuhan untuk meredam inflasi tanpa memicu resesi yang dalam.<br><br>
+                    "Kami melihat adanya perlambatan pertumbuhan global yang signifikan di tahun ini, dan risiko resesi menjadi lebih nyata jika bank sentral terlalu agresif dalam menaikkan suku bunga," ujar seorang ekonom senior dari Bank Dunia, dalam sebuah webinar yang diadakan, (Rabu, 11/6).<br><br>
+                    Di sisi lain, sektor manufaktur global menunjukkan tanda-tanda perlambatan, tercermin dari menurunnya indeks manajer pembelian (PMI) di beberapa ekonomi besar seperti Jerman dan Jepang. Penurunan permintaan ekspor dan gangguan rantai pasok masih menjadi perhatian utama bagi produsen. Namun, sektor jasa justru menunjukkan resiliensi yang lebih kuat, didukung oleh kembali normalnya aktivitas setelah pandemi.<br><br>
+                    Ke depan, koordinasi kebijakan ekonomi antarnegara akan menjadi kunci untuk menstabilkan kondisi global. Reformasi struktural yang bertujuan meningkatkan produktivitas dan daya saing juga dianggap krusial untuk memastikan pertumbuhan yang berkelanjutan. Bagi Indonesia, kondisi ini menuntut kewaspadaan dan diversifikasi ekonomi agar tidak terlalu rentan terhadap gejolak global dalam kurun waktu tiga hingga enam bulan ke depan.
+                </div>`;
+                return [
+                    {
+                        id: 15,
+                        text: text5 + "Fenomena yang menggambarkan 'inflasi' berdasarkan teks di atas adalah...",
+                        type: "single",
+                        options: [
+                            "Pengencangan anggaran negara karena kurangnya barang dan jasa",
+                            "Kenaikan harga barang dan jasa secara terus menerus dalam kurun waktu tertentu",
+                            "Biaya yang mendorong kemandirian ekonomi hingga mampu bersaing secara global",
+                            "Pergeseran tren pasar global terhadap produk-produk dari Indonesia",
+                            "Lambatnya sektor manufaktur global akibat menurunnya pembelian"
+                        ],
+                        correct: [1],
+                        explanation: "Berdasarkan definisi umum dan konteks paragraf kedua (Kenaikan harga energi dan pangan tetap menjadi pendorong utama inflasi), inflasi adalah naiknya harga barang dan jasa secara berkelanjutan."
+                    },
+                    {
+                        id: 16,
+                        text: text5 + "Peristiwa yang menggambarkan tantangan (konflik) perekonomian global adalah ...",
+                        type: "single",
+                        options: [
+                            "Bank sentral di seluruh dunia mengesampingkan kebijakan moneter demi pertumbuhan ekonomi global",
+                            "Geopolitik berperan penting dalam menjaga kestabilan dan kekuatan perekonomian pada skala global",
+                            "Pertumbuhan ekonomi melambat sehingga memicu terjadinya resesi yang dialami masyarakat secara global",
+                            "Harga energi, pangan, dan komoditas lainnya yang tidak menentu terus menekan daya beli masyarakat",
+                            "Geopolitik memperlancar jalur perdagangan dan produksi sehingga menciptakan inflasi besar-besaran"
+                        ],
+                        correct: [3],
+                        explanation: "Teks menyatakan 'Kenaikan harga energi dan pangan tetap menjadi pendorong utama inflasi di banyak negara... dipicu oleh gangguan rantai pasok'. Ini merupakan tantangan utama yang menekan kestabilan ekonomi dan daya beli."
+                    },
+                    {
+                        id: 17,
+                        text: text5 + "Manakah pernyataan yang dapat menjadi kelanjutan (ekor berita) teks tersebut?",
+                        type: "single",
+                        options: [
+                            "Peran aktif IMF dan Bank Dunia dalam menanggulangi krisis ekonomi dan pembentukan SDM di negara berkembang secara global",
+                            "Dampak langsung kebijakan suku bunga bank sentral terhadap tingkat pengangguran di setiap negara dan menjadi masalah global",
+                            "Analisis mendalam mengenai skenario dan kemungkinan-kemungkinan terkait evolusi inflasi, respons kebijakan, serta situasi geopolitik global",
+                            "Pentingnya investasi di sektor manufaktur untuk meningkatkan ekspor dan mengurangi gangguan rantai pasok secara global",
+                            "Perubahan sistem birokrasi pemerintahan Indonesia untuk sepenuhnya mendukung pergerakan pabrik manufaktur asing"
+                        ],
+                        correct: [2],
+                        explanation: "Paragraf terakhir menyatakan: 'Para ekonom memprediksi bahwa prospek ekonomi akan sangat bergantung pada evolusi inflasi, respons kebijakan moneter, dan perkembangan situasi geopolitik'. Ekor berita yang sesuai adalah rincian/analisis lanjutan terkait ketiga hal tersebut secara global."
+                    }
+                ];
+            })(),
+
+            // --- TEKS 6: Tari Hudoq ---
+            ...(() => {
+                const text6 = `
+                <div style="background: #f8f9fa; padding: 15px; border-left: 4px solid #0056b3; margin-bottom: 20px; font-size: 14px; line-height: 1.6;">
+                    <strong style="font-size: 16px;">Teks 6: Tari Hudoq: Warisan Budaya yang Harus Dilestarikan</strong><br><br>
+                    Tari Hudoq dari suku Dayak Modang di Kalimantan Timur bukan sekadar tontonan seni biasa. Lebih dari itu, tarian ini adalah warisan budaya yang sarat akan makna spiritual dan simbolis. Oleh karena itu, melestarikan Tari Hudoq menjadi sebuah keharusan, tidak hanya untuk menjaga keragaman budaya Indonesia, tetapi juga untuk mengingatkan kita akan pentingnya hubungan harmonis antara manusia dan alam.<br><br>
+                    Pertama, Tari Hudoq adalah cerminan dari kearifan lokal yang mengajarkan nilai-nilai fundamental. Tarian ini merupakan bagian integral dari ritual keagamaan untuk menjalin hubungan harmonis dengan roh penjaga pertanian, Halaeng Heboung, dan roh pelindung umat manusia, Selo Sen. Dalam era modern yang sering kali mengabaikan hubungan manusia dengan alam, tarian ini berfungsi sebagai pengingat kuat akan ketergantungan kita pada alam dan pentingnya menghormati kekuatan yang lebih besar dari diri kita.<br><br>
+                    Kedua, setiap elemen dalam Tari Hudoq mengandung simbolisme yang mendalam dan relevan. Penggunaan topeng kayu yang besar dan dedaunan yang menutupi tubuh penari bukan sekadar properti, melainkan representasi kekuatan dan perlindungan dari roh-roh tersebut. Gerakan tari yang menggambarkan keteguhan petani serta nyanyian tradisional yang mengiringinya adalah permohonan tulus kepada alam semesta untuk memberikan keseimbangan dan kesuksesan panen.<br><br>
+                    Ketiga, Tari Hudoq memiliki nilai edukatif yang tinggi bagi masyarakat luas, termasuk wisatawan. Pertunjukan ini tidak hanya memukau secara visual, tetapi juga memberikan pemahaman tentang pentingnya keseimbangan alam dan hubungan spiritual yang mendalam. Dengan melestarikan dan memperkenalkan tarian ini kepada publik yang lebih luas, kita tidak hanya menjaga keberadaan tarian itu sendiri, tetapi juga menyebarkan pesan tentang pentingnya menjaga lingkungan dan menghargai nilai-nilai tradisional.<br><br>
+                    Dengan demikian, jelaslah bahwa Tari Hudoq bukan sekadar pertunjukan, melainkan sebuah jembatan spiritual yang menghubungkan manusia dengan alam dan leluhur. Mengabaikan pelestariannya sama saja dengan mengabaikan kekayaan spiritual dan kearifan lokal yang menjadi fondasi budaya kita. Pelestarian Tari Hudoq adalah investasi untuk masa depan, memastikan bahwa nilai-nilai berharga ini tetap hidup dan relevan bagi generasi mendatang.
+                </div>`;
+                return [
+                    {
+                        id: 18,
+                        text: text6 + "Makna dari istilah <em>Halaeng Heboung</em> dan <em>Selo Sen</em> dalam teks tersebut adalah...",
+                        type: "single",
+                        options: [
+                            "Jenis topeng yang digunakan dalam tari Hudoq untuk menciptakan kesan mistis",
+                            "Nama-nama suku asli Dayak Modang yang menjadi leluhur pencipta tari Hudoq",
+                            "Judul nyanyian tradisional yang mengiringi tiap gerakan dalam tari Hudoq",
+                            "Sebutan khusus untuk roh penjaga pertanian dan roh pelindung umat manusia",
+                            "Simbol kesuburan tanah dan kesejahteraan hidup masyarakat Dayak Modang"
+                        ],
+                        correct: [3],
+                        explanation: "Di paragraf kedua, secara eksplisit disebutkan: '...untuk menjalin hubungan harmonis dengan roh penjaga pertanian, Halaeng Heboung, dan roh pelindung umat manusia, Selo Sen.'"
+                    },
+                    {
+                        id: 19,
+                        text: text6 + "Tari Hudoq tidak hanya warisan budaya, tetapi juga bentuk pengajaran nilai-nilai spiritual dan ekologis yang berasal dari kearifan lokal.<br>Pernyataan mana yang mendukung gagasan ide tersebut?",
+                        type: "single",
+                        options: [
+                            "Tari Hudoq menyajikan tontonan yang memukau pengunjung yang berlibur ke Kalimantan",
+                            "Tari Hudoq menggunakan topeng kayu besar dan daun-daunan sebagai ciri khas penampilan",
+                            "Tari Hudoq menggambarkan semangat petani suku Dayak dalam menjaga hasil panen",
+                            "Tari Hudoq termasuk warisan budaya Indonesia yang belum banyak dikenal turis",
+                            "Tari Hudoq menjadi pengingat kuat akan ketergantungan manusia pada alam"
+                        ],
+                        correct: [4],
+                        explanation: "Gagasan bahwa tarian ini merupakan pengajaran nilai ekologis/spiritual didukung oleh pernyataan di paragraf kedua: 'tarian ini berfungsi sebagai pengingat kuat akan ketergantungan kita pada alam dan pentingnya menghormati kekuatan yang lebih besar'."
+                    },
+                    {
+                        id: 20,
+                        text: text6 + "Bagaimana keterkaitan antara paragraf ketiga dengan paragraf keempat pada teks tersebut?",
+                        type: "single",
+                        options: [
+                            "Paragraf ketiga dan keempat saling melengkapi argumen tentang pentingnya pelestarian Tari Hudoq",
+                            "Paragraf ketiga dan keempat sama-sama menjelaskan tentang ritual pertanian dengan penekanan pada sejarah",
+                            "Paragraf ketiga menguraikan makna filosofis Tari Hudoq yang sudah disinggung pada paragraf keempat",
+                            "Paragraf ketiga adalah opini penulis tentang tari Hudoq yang didukung oleh data penjelas pada paragraf keempat",
+                            "Paragraf ketiga menjabarkan tantangan budaya tentang tari Hudoq dan paragraf keempat berisi penyelesaiannya"
+                        ],
+                        correct: [0],
+                        explanation: "Paragraf ketiga memaparkan simbolisme/elemen tarian (sebagai argumen kedua), sedangkan paragraf keempat memaparkan nilai edukatifnya (argumen ketiga). Keduanya saling berdampingan dan melengkapi argumen mengapa Hudoq harus dilestarikan."
+                    },
+                    {
+                        id: 21,
+                        text: text6 + "Mengapa paragraf terakhir pada teks tersebut sudah dinilai tepat untuk menutup teks eksplanasi tersebut?",
+                        type: "single",
+                        options: [
+                            "Berisi fungsi Tari Hudoq sebagai hiburan masyarakat dan dalam harapan dalam perayaan panen",
+                            "Menekankan peran penting Tari Hudoq dalam menjaga pertanian dan hubungan harmonis antarwarga",
+                            "Merangkum seluruh poin penting dan memberikan penegasan yang kuat tentang urgensi pelestarian tari Hudoq",
+                            "Menegaskan penjelasan bahwa tari Hudoq menggunakan daun-daun dan hubungannya dengan alam",
+                            "Mewakili makna gerakan dan properti khas seperti topeng kayu besar dalam pertunjukkan"
+                        ],
+                        correct: [2],
+                        explanation: "Paragraf kelima diawali dengan konjungsi 'Dengan demikian' yang merupakan indikator kesimpulan. Isinya merangkum nilai spiritual tarian tersebut dan memberikan seruan kuat (penegasan) bahwa pelestarian Hudoq adalah investasi masa depan."
+                    }
+                ];
+            })(),
+
+            // --- TEKS 7: Tradisi Belis ---
+            ...(() => {
+                const text7 = `
+                <div style="background: #f8f9fa; padding: 15px; border-left: 4px solid #0056b3; margin-bottom: 20px; font-size: 14px; line-height: 1.6;">
+                    <strong style="font-size: 16px;">Teks 7: Tradisi Belis: Simbol Budaya yang Menyimpan Beban Finansial di Era Modern</strong><br><br>
+                    Belis adalah tradisi di wilayah Indonesia bagian timur seperti Nusa Tenggara Timur, yang secara umum di Indonesia dikenal dengan mas kawin atau mahar. Tradisi ini melambangkan penghormatan kepada wanita dan penyatuan keluarga. Namun, di balik nilainya, belis sering menjadi beban finansial berat bagi pihak laki-laki, yang kadang memicu tekanan psikologis dan mengganggu hubungan kekeluargaan. Beberapa pihak, terutama para sesepuh desa atau orang-orang tua, kadang terlalu kukuh untuk mempertahankan tradisi dan membuat tekanan dengan nilai yang semakin naik.<br><br>
+                    Belis memiliki makna yang mendalam dan dianggap sebagai bentuk pengakuan atas peran penting seorang perempuan di dalam keluarga. Belis merupakan representasi keseriusan dan komitmen seorang pria untuk membangun keluarga. Proses penyerahan belis tidak hanya dimaknai sebagai pertukaran materi, tetapi juga sebagai simbol penyatuan dua komunitas besar, yakni keluarga kedua belah pihak. Pada masyarakat Lamaholot misalnya, belis diwujudkan dalam bentuk gading gajah atau bala, yang besarnya disesuaikan dengan status sosial seorang perempuan. Selain itu, disertakan juga pelengkap belis seperti sarung tenun sutra dan ternak. Uniknya, meskipun belis dari pihak laki-laki, pihak keluarga perempuan memberikan balasan simbolis kepada pihak laki-laki dalam bentuk barang berharga lainnya. Tradisi ini mengajarkan keseimbangan dan saling menghargai di antara kedua belah pihak.<br><br>
+                    Meskipun belis mengandung nilai-nilai yang positif, tantangannya saat ini adalah menjaga agar tradisi tersebut tidak menjadi beban finansial yang berat. Tuntutan belis yang tinggi sering kali menjadi sumber tekanan, terutama bagi keluarga laki-laki. Dalam beberapa kasus, perkara belis dapat berimbas pada kesehatan mental hingga memicu tindakan tragis, seperti yang pernah terjadi di Kupang. Selain menjadi tantangan finansial, besarnya tuntutan materi untuk belis juga sering kali menimbulkan ketegangan dan konflik di antara pasangan dan keluarganya. Ketika keluarga perempuan menetapkan nominal belis yang tinggi, tidak jarang hal ini membangkitkan sentimen negatif dari pihak laki-laki yang merasa tertekan dan kehilangan martabat jika tidak mampu memenuhinya. Alhasil, penundaan pernikahan diambil guna memenuhi permintaan belis. Konflik semacam ini bisa merusak hubungan dua keluarga yang harusnya harmonis.
+                </div>`;
+                return [
+                    {
+                        id: 22,
+                        text: text7 + "Apa makna kata <em>sesepuh</em> pada teks tersebut?",
+                        type: "single",
+                        options: [
+                            "Keluarga yang dihormati oleh seluruh warga desa",
+                            "Orang yang dituakan atau dijadikan pemimpin",
+                            "Masyarakat yang memiliki peran penting",
+                            "Pengurus atau perangkat desa yang sudah tua",
+                            "Laki-laki yang sudah menikah dan memiliki anak"
+                        ],
+                        correct: [1],
+                        explanation: "Berdasarkan KBBI dan konteks kebudayaan, sesepuh merujuk pada orang yang dituakan, dihormati, atau tokoh yang menjadi panutan dan pemimpin (informal) di suatu desa/komunitas."
+                    },
+                    {
+                        id: 23,
+                        text: text7 + "Tradisi belis memiliki banyak nilai positif.<br>Manakah gagasan penjelas yang mendukung gagasan pokok tersebut?",
+                        type: "single",
+                        options: [
+                            "Jumlah belis ditentukan secara sepihak oleh keluarga perempuan.",
+                            "Belis merupakan simbol keseriusan dan ketulusan dari pihak perempuan.",
+                            "Balasan dari keluarga perempuan biasanya permintaan dari pihak laki-laki.",
+                            "Belis menjadi wahana penghormatan dan juga penyatuan kedua pihak keluarga.",
+                            "Belis harus berupa gading gajah dan tidak bisa digantikan dengan benda lain."
+                        ],
+                        correct: [3],
+                        explanation: "Di paragraf pertama dan kedua dijelaskan bahwa nilai positif belis adalah melambangkan 'penghormatan kepada wanita' dan 'simbol penyatuan dua komunitas besar, yakni keluarga kedua belah pihak'."
+                    },
+                    {
+                        id: 24,
+                        text: text7 + "Bagaimana hubungan makna antara paragraf kedua dan ketiga pada teks tersebut?",
+                        type: "single",
+                        options: [
+                            "Paragraf kedua mempertentangkan mengenai pelestarian tradisi belis beserta contohnya di paragraf ketiga.",
+                            "Paragraf kedua memberikan penjelasan alasan tradisi belis yang digambarkan perlu dipertahankan di paragraf ketiga.",
+                            "Paragraf ketiga memberikan perbandingan penerapan tradisi belis di beberapa daerah yang dijelaskan di paragraf kedua.",
+                            "Paragraf ketiga menjelaskan tata laksana tradisi belis berdasarkan filosofinya seperti yang diurakan di paragraf kedua.",
+                            "Paragraf ketiga memaparkan dampak negatif tradisi belis, meskipun maknanya baik seperti yang dijelaskan di paragraf kedua."
+                        ],
+                        correct: [4],
+                        explanation: "Paragraf kedua mendeskripsikan secara mendalam tentang 'makna yang mendalam dan positif' dari Belis. Namun, paragraf ketiga membalikkan hal tersebut dengan kata 'Meskipun...' untuk memaparkan dampak atau tantangan negatif (beban mental, finansial, konflik)."
+                    },
+                    {
+                        id: 25,
+                        text: text7 + "<em>\"Dengan demikian, perlu untuk memikirkan ulang makna belis dan menetapkan cara ataupun perhitungan besaran belis yang lebih fleksibel.\"</em><br><br>Kalimat tersebut dapat menjadi kesimpulan yang sesuai teks argumentasi tersebut karena ....",
+                        type: "single",
+                        options: [
+                            "menekankan pentingnya menjaga tradisi belis agar tidak hilang ditelan zaman",
+                            "mengusulkan agar tradisi belis dihapuskan sepenuhnya demi kesejahteraan keluarga",
+                            "menegaskan bahwa belis adalah pertukaran materi semata dan tidak memiliki makna lain",
+                            "merangkum masalah utama yang ditimbulkan oleh belis yang kaku, yaitu konflik dan tekanan",
+                            "menyimpulkan solusi konkret untuk masalah yang dibahas, yaitu beban finansial akibat belis"
+                        ],
+                        correct: [4],
+                        explanation: "Kalimat tersebut tidak mengusulkan penghapusan atau sekadar merangkum konflik, melainkan memberikan sebuah 'jalan keluar' atau 'solusi konkrit' (penentuan nilai yang fleksibel) untuk mengatasi permasalahan tekanan finansial yang telah dibahas dalam teks."
+                    }
+                ];
+            })()
+        ],],
             biology: [
                 // BLANK TEMPLATE FOR BIOLOGY: Add 30 questions here
                 { id: 1, text: "<strong>Biology Q1:</strong> What is the powerhouse of the cell?", type: "single", options: ["Nucleus", "Ribosome", "Mitochondria", "Golgi apparatus"], correct: [2], explanation: "Mitochondria generates chemical energy." }
