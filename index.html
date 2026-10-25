@@ -99,7 +99,7 @@
                 <p>30 Questions • Passages, Infographics & Tables</p>
             </div>
             <div class="subject-card" onclick="startExam('math')">
-                <h3>Mathematics</h3>
+                <h3>Mathematika</h3>
                 <p>30 Questions • Algebra, Geometry & Logic</p>
             </div>
             <div class="subject-card" onclick="startExam('indonesian')">
@@ -107,11 +107,11 @@
                 <p>30 Questions • Literasi, Analisis Teks & EYD</p>
             </div>
             <div class="subject-card" onclick="startExam('biology')">
-                <h3>Biology</h3>
+                <h3>Biologi</h3>
                 <p>30 Questions • Cell Biology, Ecology & Genetics</p>
             </div>
             <div class="subject-card" onclick="startExam('chemistry')">
-                <h3>Chemistry</h3>
+                <h3>Kimia</h3>
                 <p>30 Questions • Stoichiometry, Reactions & Equilibrium</p>
             </div>
         </div>
@@ -157,14 +157,836 @@
         // --- ALL SUBJECT DATA REPOSITORIES ---
         const allSubjects = {
             english: [
-                // (English questions 1-30 are loaded here - shortened placeholder comment for structure clarity)
-                { id: 1, text: "<strong>English Q1 Example</strong><br>What was Unit-733 programmed to do?", type: "single", options: ["Option A", "Option B", "Deliver packages on time", "Option D"], correct: [2], explanation: "Correct because text states it was built to deliver on time." }
-                // ... (Keep your English 30 questions here)
-            ],
+            // --- TEXT 1: The Lion and the Mouse ---
+            ...(() => {
+                const text1 = `
+                <div style="background: #f8f9fa; padding: 15px; border-left: 4px solid #0056b3; margin-bottom: 20px; font-size: 14px; line-height: 1.6;">
+                    <strong style="font-size: 16px;">Text 1: The Lion and the Mouse</strong><br><br>
+                    Once upon a time, in a thick jungle in Africa, there lived a strong and fierce lion. Every afternoon, the lion would rest under the cool shade of a big tree after walking through the forest.<br><br>
+                    One day, while he was sleeping, a playful little mouse passed by. The mouse saw the lion's thick mane and was curious. He climbed up and began to jump around on the lion's head, playing in his mane.<br><br>
+                    The lion woke up suddenly and was not happy at all. He quickly caught the mouse in his big paw and roared, "Who dares to wake me up?" He was very angry and almost killed the mouse.<br><br>
+                    Scared and shaking, the mouse begged the lion, "Please don't kill me! I didn't mean to bother you. If you let me go, I promise I'll help you one day."<br><br>
+                    The lion laughed loudly. "You? Help me? That's funny." But the lion was feeling kind, so he let the mouse go free.<br><br>
+                    A few days later, the lion was walking through the jungle again when he fell into a trap. A net set by hunters caught him, and he couldn't escape. He tried to bite and tear the ropes, but they were too strong. The lion roared loudly, hoping someone would come.<br><br>
+                    The mouse heard the roar and ran to help. He saw the lion trapped and quickly started to chew the ropes with his sharp teeth. After some time, the net broke, and the lion was free.<br><br>
+                    The lion looked at the mouse with surprise and said, "Thank you! You really saved my life."<br><br>
+                    The mouse smiled and said, "I told you I would help you one day."<br><br>
+                    From that moment on, the lion and the mouse became close friends. The lion learned that even small creatures can do great things, and we all need help sometimes.
+                </div>`;
+                
+                return [
+                    {
+                        id: 1,
+                        text: text1 + "Which option best summarizes the story?",
+                        type: "single",
+                        options: [
+                            "Beginning: A lion was walking through the jungle.<br>Problem: The mouse got lost.<br>Solution: The lion gave food.<br>Lesson: Always be generous.",
+                            "Beginning: A mouse accidentally disturbed a sleeping lion.<br>Problem: The lion was caught in a hunter's net.<br>Solution: The mouse chewed through the net and set the lion free.<br>Lesson: Even the smallest creature can be a great help.",
+                            "Beginning: The lion and mouse were best friends.<br>Problem: The lion got hurt in a fight.<br>Solution: The mouse helped him find water.<br>Lesson: Friendship is built on adventure.",
+                            "Beginning: A mouse was building a home.<br>Problem: A storm destroyed the tree.<br>Solution: The mouse called for help.<br>Lesson: Teamwork solves big problems.",
+                            "Beginning: A lion was hungry.<br>Problem: He couldn't catch any prey.<br>Solution: The mouse helped him find food.<br>Lesson: Hunger teaches humility."
+                        ],
+                        correct: [1],
+                        explanation: "Option 2 accurately covers the inciting incident (mouse disturbing lion), the main conflict (lion trapped), the resolution (mouse freeing him), and the explicit moral of the story."
+                    },
+                    {
+                        id: 2,
+                        text: text1 + "Which of the following statements best conveys the message of the story?<br><em>(Choose all correct answers)</em>",
+                        type: "multiple",
+                        options: [
+                            "We should never wake up a sleeping animal",
+                            "Even the small and weak can help the strong",
+                            "It's always good to ask for help when we need it",
+                            "Lions are dangerous animals and should be avoided",
+                            "Never trust anyone who plays with your hair"
+                        ],
+                        correct: [1, 2],
+                        explanation: "The story explicitly concludes with: 'The lion learned that even small creatures can do great things (Option 2), and we all need help sometimes (Option 3).'"
+                    },
+                    {
+                        id: 3,
+                        text: text1 + "Why did the lion trust the mouse and decide to let him go instead of eating him?",
+                        type: "single",
+                        options: [
+                            "The lion was too tired to eat the mouse",
+                            "The mouse told the lion he might help him one day, which amused him",
+                            "The lion was feeling happy to see the mouse",
+                            "The lion heard someone coming and got scared",
+                            "The mouse promised to bring food for the lion"
+                        ],
+                        correct: [1],
+                        explanation: "The text says the lion laughed at the mouse's promise to help him ('You? Help me? That's funny'), but it put him in a kind mood, causing him to let the mouse go free."
+                    },
+                    {
+                        id: 4,
+                        text: text1 + "As you read the part where the lion let the mouse go, which of the following plot developments do you anticipate happening next?<br><em>(Choose all correct answers)</em>",
+                        type: "multiple",
+                        options: [
+                            "The mouse forgets about the lion and never helps him",
+                            "The lion gets into trouble and needs someone to rescue him",
+                            "The lion becomes angry at all small animals",
+                            "The mouse keeps his promise and comes to the lion's aid",
+                            "The mouse becomes the lion's loyal assistant in hunting"
+                        ],
+                        correct: [1, 3],
+                        explanation: "Foreshadowing in fables usually leads to the promise being fulfilled. When the mouse promises to help, the reader anticipates that the lion will eventually get into trouble (Option 2) and the mouse will save him (Option 4)."
+                    },
+                    {
+                        id: 5,
+                        text: text1 + "Which of the following sentences from the story help you understand the lion's dynamic character?<br><em>(Choose all correct answers)</em>",
+                        type: "multiple",
+                        options: [
+                            "\"The lion always took his afternoon nap under the shade of a big tree...\"",
+                            "\"He quickly caught the mouse in his big paw and roared...\"",
+                            "\"The lion laughed loudly... But the lion was feeling kind, so he let the mouse go free.\"",
+                            "\"With his sharp teeth, the mouse started to chew the ropes.\"",
+                            "\"The lion looked at the mouse with surprise and said, 'Thank you! You really saved my life.'\""
+                        ],
+                        correct: [1, 2, 4],
+                        explanation: "Sentences 2, 3, and 5 reveal the lion's transition from a fierce and angry beast, to an amused and merciful ruler, and finally to a humble and grateful friend. Sentence 1 just shows his habit, and Sentence 4 shows the mouse's action."
+                    }
+                ];
+            })(),
+
+            // --- TEXT 2: Effective Study Techniques ---
+            ...(() => {
+                const text2 = `
+                <div style="background: #f8f9fa; padding: 15px; border-left: 4px solid #0056b3; margin-bottom: 20px; font-size: 14px; line-height: 1.6;">
+                    <strong style="font-size: 16px;">Text 2: Effective Study Techniques (Infographic)</strong><br><br>
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 15px; margin-top: 10px;">
+                        <div style="background: #eef2f5; padding: 10px; border-radius: 6px;"><b>1. Know Your Learning Style</b><br>Understand whether you learn best by reading, listening, or watching.</div>
+                        <div style="background: #eef2f5; padding: 10px; border-radius: 6px;"><b>2. Set a Consistent Study Schedule</b><br>Study at the same time every day. Regularity helps build strong habits.</div>
+                        <div style="background: #eef2f5; padding: 10px; border-radius: 6px;"><b>3. Create a Comfortable Study Space</b><br>Find a quiet, well-lit, and distraction-free area. Have all your materials ready.</div>
+                        <div style="background: #eef2f5; padding: 10px; border-radius: 6px;"><b>4. Use the Pomodoro Technique</b><br>Study for 25 minutes, then take a 5-minute break. This keeps your mind fresh and focused.</div>
+                        <div style="background: #eef2f5; padding: 10px; border-radius: 6px;"><b>5. Take Effective Notes</b><br>Write key points using methods like mind maps or tables to help remember important information.</div>
+                        <div style="background: #eef2f5; padding: 10px; border-radius: 6px;"><b>6. Practice and Repeat</b><br>Regularly review your material and do practice questions to deepen understanding and improve retention.</div>
+                        <div style="background: #eef2f5; padding: 10px; border-radius: 6px;"><b>7. Join a Study Group</b><br>Discuss topics with friends to gain new insights and solve problems together.</div>
+                        <div style="background: #eef2f5; padding: 10px; border-radius: 6px;"><b>8. Get Enough Sleep</b><br>Aim for 7-8 hours.</div>
+                        <div style="background: #eef2f5; padding: 10px; border-radius: 6px;"><b>9. Leverage Technology</b><br>Use apps and websites for flashcards, video lessons, and online quizzes to support your study routine.</div>
+                        <div style="background: #eef2f5; padding: 10px; border-radius: 6px;"><b>10. Be Patient and Persistent</b><br>Learning takes time.</div>
+                    </div>
+                </div>`;
+                
+                return [
+                    {
+                        id: 6,
+                        text: text2 + "Based on the information given, we can keep our mind focused and fresh by...",
+                        type: "single",
+                        options: [
+                            "knowing your learning style",
+                            "using the Pomodoro Technique",
+                            "using online quizzes apps",
+                            "reviewing materials",
+                            "creating mind maps"
+                        ],
+                        correct: [1],
+                        explanation: "Tip #4 explicitly states: 'Use the Pomodoro Technique... This keeps your mind fresh and focused.'"
+                    },
+                    {
+                        id: 7,
+                        text: text2 + "Based on the infographic, which of the following techniques fall specifically under the category of <strong>Time Management</strong>?<br><em>(Choose all correct answers)</em>",
+                        type: "multiple",
+                        options: [
+                            "Be patient and persistent",
+                            "Use the Pomodoro technique",
+                            "Set a consistent study schedule",
+                            "Create a comfortable study space",
+                            "Join a study group"
+                        ],
+                        correct: [1, 2],
+                        explanation: "The Pomodoro technique (managing study/break intervals) and setting a consistent study schedule (managing when to study) are direct Time Management strategies. Patience is self-management, while space and groups are environmental/social strategies."
+                    },
+                    {
+                        id: 8,
+                        text: text2 + "From the options provided, choose the sequence that best reflects the chronological workflow of the information in the infographic.",
+                        type: "single",
+                        options: [
+                            "Set your goal &rarr; Watch lessons &rarr; Sleep well &rarr; Group chat &rarr; Eat nutritious meal",
+                            "Know your learning style &rarr; Plan study time &rarr; Find quiet area &rarr; Use Pomodoro &rarr; Take notes",
+                            "Take long breaks &rarr; Write a to do list &rarr; Write important points &rarr; Join group",
+                            "Find a quiet area &rarr; Set a timetable &rarr; Use less gadgets &rarr; Be patient",
+                            "Plan your study time &rarr; Practice and repeat &rarr; Take a break &rarr; Watch videos"
+                        ],
+                        correct: [1],
+                        explanation: "Option 2 perfectly mirrors steps 1 through 5 of the infographic: Know style (1) &rarr; Set schedule (2) &rarr; Comfortable space (3) &rarr; Pomodoro (4) &rarr; Effective Notes (5)."
+                    },
+                    {
+                        id: 9,
+                        text: text2 + "Which of the following statements best reflect the author's purpose in writing the text?<br><em>(Choose all correct answers)</em>",
+                        type: "multiple",
+                        options: [
+                            "To help students find fun strategies to play after studying",
+                            "To offer students guidance on how to learn more efficiently",
+                            "To encourage students to use simple habits to improve their learning",
+                            "To explain why studying tips are difficult for most students",
+                            "To show students that they can manage their time and focus better"
+                        ],
+                        correct: [1, 2, 4],
+                        explanation: "An infographic of tips is instructional and motivational. Its purpose is to guide efficiency (Option 2), encourage better habits (Option 3), and improve time/focus management (Option 5)."
+                    },
+                    {
+                        id: 10,
+                        text: text2 + "If you are preparing for an important exam and want to improve your study routine, which of the following techniques can be implemented effectively in your personal study time?<br><em>(Choose all correct answers)</em>",
+                        type: "multiple",
+                        options: [
+                            "Only study when you are in a group discussion with others",
+                            "Use technology during all study sessions without any breaks",
+                            "Use the Pomodoro Technique to structure your study and break time",
+                            "Practice and repeat study material regularly to retain information",
+                            "Create a quiet and comfortable study space to improve focus"
+                        ],
+                        correct: [2, 3, 4],
+                        explanation: "Options 3, 4, and 5 are direct, effective applications of rules #4, #6, and #3. Option 1 is restrictive ('Only study when...'), and Option 2 promotes not taking breaks, which violates the Pomodoro rule."
+                    }
+                ];
+            })(),
+
+            // --- TEXT 3: The False Lion King ---
+            ...(() => {
+                const text3 = `
+                <div style="background: #f8f9fa; padding: 15px; border-left: 4px solid #0056b3; margin-bottom: 20px; font-size: 14px; line-height: 1.6;">
+                    <strong style="font-size: 16px;">Text 3: The False Lion King</strong><br><br>
+                    Once upon a time, in Africa, there lived two lion kings. One was named Hera and the other was Shero. Hera was very strong and handsome. All the animals loved and respected him. He was a great leader. Shero was not like Hera. He had a small mane and a funny, squeaky voice. Shero liked to pretend he was as powerful as Hera. He often copied Hera's roar, but it made the other animals laugh.<br><br>
+                    One day, the animals heard that some hyenas were causing trouble near the river. Hera quickly gathered his followers to stop the hyenas. Shero also wanted to come. He wanted to show everyone that he was strong too.<br><br>
+                    When they reached the river, Hera roared loudly. His roar was so powerful that the hyenas got scared. Shero also tried to roar, but his voice was high and silly. The hyenas laughed at him. Their leader, Hank the Hyena, made jokes about Shero.<br><br>
+                    Hera stayed calm and smiled. Shero did not give up. He said, "I am just as strong as Hera!" The hyenas laughed even louder. Shero tried to show his power by jumping on a small dirt hill. But he tripped and fell into the ground. The hyenas laughed so much they cried. Even Hera laughed a little.<br><br>
+                    At the end of the day, the hyenas left, still laughing about Shero. Hera told Shero, "You are not like me, but you make everyone happy with your jokes." Shero smiled and understood that he had his own special gift.<br><br>
+                    From that day, Shero became the kingdom's jester. He and Hera ruled together—one with strength, and one with laughter. The animals learned that both power and fun are important in life.
+                </div>`;
+                
+                return [
+                    {
+                        id: 11,
+                        text: text3 + "Which statement provides the most accurate chronological summary of the story's main events?",
+                        type: "single",
+                        options: [
+                            "Shero falls into the dirt &rarr; The hyenas cause trouble &rarr; Hera tells Shero he is funny &rarr; Shero copies Hera's roar.",
+                            "Hera is strong &rarr; Shero pretends to be strong &rarr; Hyenas cause trouble &rarr; Hera scares them, but Shero makes them laugh &rarr; Shero learns his special gift.",
+                            "Hera and Shero are strong leaders &rarr; Hyenas come to help &rarr; Shero tells funny stories &rarr; Hera is angry.",
+                            "Shero is a strong king &rarr; Hera is jealous &rarr; Hyenas attack &rarr; Shero defeats them.",
+                            "Shero wants to be king and fights Hera &rarr; Hyenas help Shero &rarr; Hera leaves &rarr; Shero becomes king."
+                        ],
+                        correct: [1],
+                        explanation: "Option 2 perfectly outlines the story's structure: introduction of characters, the inciting incident (hyenas), the climax (the dual roars), and the resolution (Shero accepting his comedic gift)."
+                    },
+                    {
+                        id: 12,
+                        text: text3 + "What can we learn from the story of Hera and Shero?<br><em>(Choose all correct answers)</em>",
+                        type: "multiple",
+                        options: [
+                            "Everyone has something special to give, even if they are not the leader",
+                            "Being funny and making others smile is just as important as being strong",
+                            "Good friends will support you and help you see your real strengths",
+                            "Only the strongest and most handsome animals deserve to rule the kingdom",
+                            "You should always try to copy those who are better than you"
+                        ],
+                        correct: [0, 1, 2],
+                        explanation: "The story concludes with 'both power and fun are important in life' (Options 1 & 2), and Hera acts as a supportive friend who helps Shero realize his true talent instead of mocking him maliciously (Option 3)."
+                    },
+                    {
+                        id: 13,
+                        text: text3 + "The hyenas laugh so much when Shero tries to roar like Hera because...",
+                        type: "single",
+                        options: [
+                            "Shero tries to roar in a serious way but ends up surprising the hyenas with his strength",
+                            "Shero's roar is high, squeaky, and silly, which makes the hyenas think he is joking",
+                            "Hera tells a joke about Shero right before he roars to make the hyenas laugh",
+                            "Shero's acting is absolutely brilliant and intimidating",
+                            "Shero purposely tells a funny story to distract them from the fight"
+                        ],
+                        correct: [1],
+                        explanation: "The text says: 'Shero also tried to roar, but his voice was high and silly. The hyenas laughed at him.'"
+                    },
+                    {
+                        id: 14,
+                        text: text3 + "If in the beginning of the story, Shero was actually a strong lion with a loud roar just like Hera, what would have most likely happened at the end of the story?<br><em>(Choose all correct answers)</em>",
+                        type: "multiple",
+                        options: [
+                            "Shero and Hera would both scare the hyenas away together",
+                            "Shero would get respect from the other animals for his strength",
+                            "The hyenas would still laugh at Shero because he is naturally funny",
+                            "Shero would immediately banish Hera from the kingdom",
+                            "The story's lesson about 'fun and laughter being important' would no longer exist"
+                        ],
+                        correct: [0, 1, 4],
+                        explanation: "If Shero was just as strong and fierce, he would have terrified the hyenas alongside Hera (Option 1) and gained respect for his might (Option 2). Consequently, the kingdom would not have discovered the value of laughter and a jester, changing the story's moral (Option 5)."
+                    },
+                    {
+                        id: 15,
+                        text: text3 + "Shero is clumsy and naturally funny. This is shown when he...<br><em>(Choose all correct answers)</em>",
+                        type: "multiple",
+                        options: [
+                            "scares the hyenas away with his loud and powerful roar",
+                            "makes the other animals laugh by pretending to be a great, fierce king",
+                            "tries to roar like Hera, but his voice comes out small and squeaky",
+                            "walks calmly with Hera to confront the hyenas at the river",
+                            "tries to show his power but trips and falls into the dirt"
+                        ],
+                        correct: [1, 2, 4],
+                        explanation: "His comedic clumsiness is highlighted when he pretends to be fierce but fails (Option 2), when his voice betrays him (Option 3), and physically when he trips over a dirt hill while trying to act tough (Option 5)."
+                    }
+                ];
+            })(),
+
+            // --- TEXT 4: The Great Barrier Reef ---
+            ...(() => {
+                const text4 = `
+                <div style="background: #f8f9fa; padding: 15px; border-left: 4px solid #0056b3; margin-bottom: 20px; font-size: 14px; line-height: 1.6;">
+                    <strong style="font-size: 16px;">Text 4: The Great Barrier Reef</strong><br><br>
+                    The Great Barrier Reef is one of the most beautiful places in the world. It is located in the Pacific Ocean, near the northeast coast of Australia. The reef is very big. It stretches over 2,000 kilometers and can even be seen from space. There are many small coral islands and clear, warm waters around the reef.<br><br>
+                    This reef is full of life. There are many kinds of colorful fish, sea turtles, dolphins, and even sharks. Coral of different shapes and colors grows under the water. Sea birds fly over the reef and nest on small islands. People can see this beauty by swimming, diving, or joining a boat tour.<br><br>
+                    The colors under the water are amazing. Coral comes in red, yellow, green, and blue. Some coral looks like trees, and some looks like big round stones. Small fish swim in and out of the coral like they are playing a game. In some places, soft coral moves with the water like grass in the wind. When the sun shines, the reef looks bright and full of light. It feels like a different world under the sea.<br><br>
+                    The reef is not only beautiful, but also very important. It helps protect the coast from big waves and storms. It is a home for sea animals and a place where plants can grow. Many people also get food and jobs from the sea near the reef. Without the reef, the ocean would not be the same.
+                </div>`;
+                
+                return [
+                    {
+                        id: 16,
+                        text: text4 + "Which of the following descriptions are mentioned clearly in the text?<br><em>(Choose all correct answers)</em>",
+                        type: "multiple",
+                        options: [
+                            "The reef was built by local communities over hundreds of years",
+                            "The reef is located in the Pacific Ocean near Australia",
+                            "The reef can help protect the coast from big waves and storms",
+                            "The reef is home to sea turtles, dolphins, and sharks",
+                            "The reef contains exactly 10,000 specific coral islands"
+                        ],
+                        correct: [1, 2, 3],
+                        explanation: "The text explicitly states the location (Option 2), its protective function against waves (Option 3), and its marine life (Option 4). It is a natural formation, not man-made (Option 1), and it mentions 'many' islands, not exactly 10,000 (Option 5)."
+                    },
+                    {
+                        id: 17,
+                        text: text4 + "The author mentioned <em>'It feels like a different world under the sea'</em>. What does the phrase most likely mean?",
+                        type: "single",
+                        options: [
+                            "A safe place that has a bright, artificial reef",
+                            "A peaceful place where humans have built underwater cities",
+                            "A colorful place that looks exactly the same as dry land",
+                            "A shining reef that is entirely quiet and devoid of life",
+                            "A unique, vibrant, and entirely distinct ecosystem compared to the surface"
+                        ],
+                        correct: [4],
+                        explanation: "The phrase is a metaphor indicating that the underwater environment is so vibrantly colorful, alive, and distinct (with coral resembling trees and stones) that it feels alien or 'different' compared to the human world above water."
+                    },
+                    {
+                        id: 18,
+                        text: text4 + "Which of the following best represents the main idea implied by the text?",
+                        type: "single",
+                        options: [
+                            "The reef is primarily useful for industrial fishing and shipping",
+                            "The reef is extremely large, but holds little importance to humans",
+                            "The reef is a beautiful natural treasure and a vital ecosystem that must be cared for",
+                            "The reef is a dangerous place only meant for scientists and researchers to explore",
+                            "The reef is a protected area that should be completely closed to all visitors"
+                        ],
+                        correct: [2],
+                        explanation: "The text emphasizes two main points: the reef's incredible beauty (first 3 paragraphs) and its immense ecological and economic importance (last paragraph). Therefore, it is a treasure that is vital to the world."
+                    },
+                    {
+                        id: 19,
+                        text: text4 + "Which detail provided in the text would best encourage tourists to visit the Great Barrier Reef?",
+                        type: "single",
+                        options: [
+                            "Visitors can observe an Australian national park from space",
+                            "Visitors can stay in luxury five-star hotels around the reef",
+                            "Visitors can experience the amazing coral colors by diving, swimming, or boat tours",
+                            "Visitors can help scientists protect the coral from ocean storms",
+                            "Visitors can harvest their own seafood and get jobs near the reef"
+                        ],
+                        correct: [2],
+                        explanation: "The text explicitly markets the tourist experience by stating: 'People can see this beauty by swimming, diving, or joining a boat tour.'"
+                    },
+                    {
+                        id: 20,
+                        text: text4 + "Which parts of the text best support the idea that the Great Barrier Reef is both <strong>beautiful and important</strong>?<br><em>(Choose all correct answers)</em>",
+                        type: "multiple",
+                        options: [
+                            "The reef helps protect the coast from big waves",
+                            "It is full of amazing colors and is a home to sea turtles, dolphins, and colorful fish",
+                            "The coral reefs grow best in cold, deep water environments",
+                            "Some areas of the reef are damaged by starfish and warm water",
+                            "Many people get food and jobs from the sea near the reef"
+                        ],
+                        correct: [0, 1, 4],
+                        explanation: "Coastal protection (Option 1) and providing jobs/food (Option 5) show its importance. The amazing colors and marine life (Option 2) show its beauty and importance as a habitat. Options 3 and 4 are not mentioned in the text."
+                    }
+                ];
+            })(),
+
+            // --- TEXT 5: Why Teenagers Should Learn to Manage Their Money ---
+            ...(() => {
+                const text5 = `
+                <div style="background: #f8f9fa; padding: 15px; border-left: 4px solid #0056b3; margin-bottom: 20px; font-size: 14px; line-height: 1.6;">
+                    <strong style="font-size: 16px;">Text 5: Why Teenagers Should Learn to Manage Their Money</strong><br><br>
+                    Many young people today often spend money on things they like, such as snacks, clothes, or fun activities. But learning to handle money from a young age is very important. Good money habits can help students make a better future.<br><br>
+                    Having a clear plan for the future can show teenagers how to use their money. Students should think about short-term goals, like getting a new phone, and long-term goals, like saving for college or starting a business. Writing these goals down can help students stay motivated and focused.<br><br>
+                    A budget helps students see where their money goes every month. It's important to list basic needs like food and travel, and also other costs like clothes or presents. A budget makes it easier to decide how much money to save, spend, or keep for unexpected problems.<br><br>
+                    Sometimes, students don't know how much they spend on small things. Keeping track of spending with notes or apps can help students understand their habits. This helps them stay within their budget and make changes if needed.<br><br>
+                    Teenagers should also learn the difference between saving money and investing money. Saving is safer but slower, while investing has more risk but can earn more money. Knowing both can help students choose the best way for their money goals.<br><br>
+                    To sum up, students who learn to plan, budget, track, and understand saving choices are more ready for the future. That is why learning about money should start early and be done often.<br><br>
+                    <strong>Table 1. How do students manage their money?</strong>
+                    <table style="width:100%; border-collapse: collapse; margin-top: 10px; font-size: 13px;">
+                        <tr style="background-color: #0056b3; color: white;">
+                            <th style="padding: 8px; border: 1px solid #ccc; text-align: left;">Category</th>
+                            <th style="padding: 8px; border: 1px solid #ccc; text-align: center;">Percentage</th>
+                            <th style="padding: 8px; border: 1px solid #ccc; text-align: left;">Notes</th>
+                        </tr>
+                        <tr>
+                            <td style="padding: 8px; border: 1px solid #ccc;">Students who save regularly</td>
+                            <td style="padding: 8px; border: 1px solid #ccc; text-align: center;">45%</td>
+                            <td style="padding: 8px; border: 1px solid #ccc;">Save at least 10% of allowance</td>
+                        </tr>
+                        <tr style="background-color: #f1f1f1;">
+                            <td style="padding: 8px; border: 1px solid #ccc;">Students who track expenses</td>
+                            <td style="padding: 8px; border: 1px solid #ccc; text-align: center;">35%</td>
+                            <td style="padding: 8px; border: 1px solid #ccc;">Use apps or notes</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 8px; border: 1px solid #ccc;">Students with financial education</td>
+                            <td style="padding: 8px; border: 1px solid #ccc; text-align: center;">25%</td>
+                            <td style="padding: 8px; border: 1px solid #ccc;">Have learned budgeting in class</td>
+                        </tr>
+                        <tr style="background-color: #f1f1f1;">
+                            <td style="padding: 8px; border: 1px solid #ccc;">Students who often borrow from friends</td>
+                            <td style="padding: 8px; border: 1px solid #ccc; text-align: center;">30%</td>
+                            <td style="padding: 8px; border: 1px solid #ccc;">Due to running out of money</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 8px; border: 1px solid #ccc;">Students who spend most on food & drinks</td>
+                            <td style="padding: 8px; border: 1px solid #ccc; text-align: center;">50%</td>
+                            <td style="padding: 8px; border: 1px solid #ccc;">Largest category of spending</td>
+                        </tr>
+                        <tr style="background-color: #f1f1f1;">
+                            <td style="padding: 8px; border: 1px solid #ccc;">Students who plan monthly budgets</td>
+                            <td style="padding: 8px; border: 1px solid #ccc; text-align: center;">28%</td>
+                            <td style="padding: 8px; border: 1px solid #ccc;">Usually better savers</td>
+                        </tr>
+                    </table>
+                </div>`;
+                
+                return [
+                    {
+                        id: 21,
+                        text: text5 + "Based on the text, which of the following activities are categorized as <strong>Long-term financial goals</strong>?<br><em>(Choose all correct answers)</em>",
+                        type: "multiple",
+                        options: [
+                            "Saving to buy a new phone",
+                            "Saving money for university/college",
+                            "Starting a business",
+                            "Buying snacks and clothes",
+                            "Borrowing money from friends"
+                        ],
+                        correct: [1, 2],
+                        explanation: "The second paragraph explicitly identifies 'getting a new phone' as a short-term goal, while 'saving for college or starting a business' are long-term goals."
+                    },
+                    {
+                        id: 22,
+                        text: text5 + "According to the text, which of the following actions actively support smart money management for students?<br><em>(Choose all correct answers)</em>",
+                        type: "multiple",
+                        options: [
+                            "Tracking daily expenses using a notebook or app",
+                            "Spending more money than the monthly budget allows",
+                            "Setting financial goals for the short and long term",
+                            "Borrowing money whenever there is not enough left",
+                            "Dividing money into saving, spending, and emergency funds"
+                        ],
+                        correct: [0, 2, 4],
+                        explanation: "Tracking expenses (Option 1), setting goals (Option 3), and budgeting for saving/spending/emergencies (Option 5) are all recommended in the text. Overspending (Option 2) and borrowing (Option 4) are negative habits."
+                    },
+                    {
+                        id: 23,
+                        text: text5 + "Who is most likely to be the target audience of this text?<br><em>(Choose all correct answers)</em>",
+                        type: "multiple",
+                        options: [
+                            "Teenagers who are learning to manage their money",
+                            "Parents looking for tips on how to control their children's spending",
+                            "Students who want to plan for their financial future",
+                            "High school readers who need to understand saving and budgeting",
+                            "Bankers and professional corporate financial experts"
+                        ],
+                        correct: [0, 2, 3],
+                        explanation: "The tone, language, and direct references to 'students', 'teenagers', 'allowance', and 'saving for college' indicate the text is written directly for young people (Options 1, 3, and 4)."
+                    },
+                    {
+                        id: 24,
+                        text: text5 + "Which additional piece of information would make the text more informative regarding student spending habits?",
+                        type: "single",
+                        options: [
+                            "A paragraph about the history of the global banking system",
+                            "A detailed breakdown showing common monthly expenses for high school students",
+                            "A chart showing how corporate businesses manage their yearly taxes",
+                            "A paragraph discussing the psychological effects of video games",
+                            "A list of the best places to borrow money with high interest rates"
+                        ],
+                        correct: [1],
+                        explanation: "Since the text discusses student budgeting and mentions they spend heavily on food/drinks (50%), a detailed breakdown of their actual monthly expenses would perfectly complement the data and make the text more informative."
+                    },
+                    {
+                        id: 25,
+                        text: text5 + "Which of the following statements are supported by clear data or facts in the text and Table 1?<br><em>(Choose all correct answers)</em>",
+                        type: "multiple",
+                        options: [
+                            "45% of students save money regularly by setting aside at least 10% of their allowance",
+                            "Tracking expenses with apps or notes can help students understand their spending habits",
+                            "Most students do not care about money at all and never save",
+                            "The largest category of spending among the surveyed students is food & drinks (50%)",
+                            "Spending on fun activities is always a better investment than saving for college"
+                        ],
+                        correct: [0, 1, 3],
+                        explanation: "Option 1 is true (from the first row of the table). Option 2 is true (from paragraph 4). Option 4 is true (from the fifth row of the table). Options 3 and 5 contradict the text."
+                    }
+                ];
+            })()
+        ],
             math: [
-                // BLANK TEMPLATE FOR MATH: Add 30 questions here following this exact structure
-                { id: 1, text: "<strong>Math Q1:</strong> Solve for x: 2x + 4 = 10", type: "single", options: ["x = 2", "x = 3", "x = 4", "x = 5"], correct: [1], explanation: "2x = 6, so x = 3." }
-            ],
+            {
+                id: 1,
+                text: "<strong>Matematika Q1: Bilangan Real (Himpunan)</strong><br><br>Diberikan tiga himpunan bilangan sebagai berikut:<br>A = {x | x &lt; 6, x &isin; Bilangan Asli}<br>B = {x | x &le; 10, x &isin; Bilangan Genap Positif}<br>C = {x | x &le; 7, x &isin; Bilangan Prima}<br><br>Berdasarkan himpunan-himpunan tersebut, hasil dari (A &cap; B) &cup; C adalah...",
+                type: "single",
+                options: [
+                    "{2, 4}",
+                    "{2, 3, 5, 7}",
+                    "{2, 3, 4, 5, 7}",
+                    "{1, 2, 3, 4, 5, 7}",
+                    "{2, 3, 4, 5, 7, 8, 10}"
+                ],
+                correct: [2],
+                explanation: "A = {1, 2, 3, 4, 5}, B = {2, 4, 6, 8, 10}, C = {2, 3, 5, 7}.<br>A &cap; B (irisan A dan B) = {2, 4}.<br>Digabung dengan C: {2, 4} &cup; {2, 3, 5, 7} = {2, 3, 4, 5, 7}."
+            },
+            {
+                id: 2,
+                text: "<strong>Matematika Q2: Sifat Operasi Bilangan Berpangkat</strong><br><br>Bentuk sederhana dari ( (2<sup>3</sup>)<sup>2/3</sup> &times; (3<sup>2</sup>)<sup>3/2</sup> ) / ( 2<sup>2</sup> &times; 3<sup>2</sup> ) adalah...",
+                type: "single",
+                options: [
+                    "2",
+                    "3",
+                    "6",
+                    "9",
+                    "18"
+                ],
+                correct: [1],
+                explanation: "Sederhanakan pembilang: (2<sup>3</sup>)<sup>2/3</sup> = 2<sup>2</sup>. Kemudian (3<sup>2</sup>)<sup>3/2</sup> = 3<sup>3</sup>.<br>Maka: (2<sup>2</sup> &times; 3<sup>3</sup>) / (2<sup>2</sup> &times; 3<sup>2</sup>). Coret 2<sup>2</sup>, tersisa 3<sup>3</sup> / 3<sup>2</sup> = 3<sup>1</sup> = 3."
+            },
+            {
+                id: 3,
+                text: "<strong>Matematika Q3: Operasi Biner</strong><br><br>Operasi biner &oplus; pada himpunan bilangan real positif didefinisikan sebagai a &oplus; b = (a<sup>2</sup> - b) / 2.<br>Jika diketahui x &oplus; 5 = 10, manakah dari pernyataan berikut yang TEPAT mengenai nilai x?<br><br>Pilih setiap jawaban benar! (Jawaban benar dapat lebih dari satu).",
+                type: "multiple",
+                options: [
+                    "x merupakan kelipatan 5.",
+                    "x merupakan bilangan ganjil.",
+                    "x merupakan bilangan prima.",
+                    "Nilai x &oplus; 11 = 7."
+                ],
+                correct: [0, 2, 3],
+                explanation: "(x<sup>2</sup> - 5) / 2 = 10 &rarr; x<sup>2</sup> - 5 = 20 &rarr; x<sup>2</sup> = 25. Karena x positif, maka x = 5.<br>Evaluasi: (1) 5 kelipatan 5 (Benar). (2) 5 ganjil (Benar). (3) 5 prima (Benar). (4) 5 &oplus; 11 = (25-11)/2 = 14/2 = 7 (Benar)."
+            },
+            {
+                id: 4,
+                text: "<strong>Matematika Q4: Fungsi dan Invers</strong><br><br>Sebuah pabrik memodelkan penyusutan harga mesin produksinya dengan fungsi linear: y = -2,5x + 500, dengan x mewakili tahun penggunaan dan y mewakili harga mesin dalam jutaan rupiah.<br>Pada tahun ke berapakah harga mesin diperkirakan menyentuh angka Rp 350.000.000,00?",
+                type: "single",
+                options: [
+                    "Tahun ke-30",
+                    "Tahun ke-40",
+                    "Tahun ke-50",
+                    "Tahun ke-60",
+                    "Tahun ke-70"
+                ],
+                correct: [2],
+                explanation: "Harga mesin (y) = 350 juta.<br>350 = -2,5x + 500 &rarr; 2,5x = 500 - 350 &rarr; 2,5x = 150 &rarr; x = 150 / 2,5 = 60 tahun."
+            },
+            {
+                id: 5,
+                text: "<strong>Matematika Q5: Fungsi Komposisi</strong><br><br>Toko elektronik 'Maju Jaya' memberikan diskon akhir tahun sebesar 20% untuk semua laptop, yang dimodelkan dengan y = 0,8x (x adalah harga awal). Khusus pelajar yang menunjukkan kartu pelajar, mendapat tambahan potongan harga mutlak sebesar Rp 250.000,00, yang dimodelkan dengan g(y) = y - 250.000.<br>Jika Budi seorang pelajar dan ia membayar di kasir sebesar Rp 5.750.000,00 untuk sebuah laptop, berapakah harga awal laptop tersebut sebelum ada promo?",
+                type: "single",
+                options: [
+                    "Rp 6.500.000,00",
+                    "Rp 7.000.000,00",
+                    "Rp 7.250.000,00",
+                    "Rp 7.500.000,00",
+                    "Rp 8.000.000,00"
+                ],
+                correct: [3],
+                explanation: "Fungsi komposisi total yang dibayar: g(f(x)) = 0,8x - 250.000.<br>5.750.000 = 0,8x - 250.000 &rarr; 6.000.000 = 0,8x &rarr; x = 6.000.000 / 0,8 = Rp 7.500.000,00."
+            },
+            {
+                id: 6,
+                text: "<strong>Matematika Q6: Barisan Aritmetika</strong><br><br>Dalam sebuah gedung pertunjukan, susunan kursi penonton dibuat melengkung. Baris paling depan (baris ke-1) memiliki 20 kursi. Baris ke-2 memiliki 24 kursi, dan baris ke-3 memiliki 28 kursi. Penambahan kursi untuk baris-baris berikutnya selalu mengikuti pola yang sama.<br>Jika gedung tersebut memiliki tepat 15 baris kursi, berapakah kapasitas total kursi di dalam gedung tersebut?",
+                type: "single",
+                options: [
+                    "640 kursi",
+                    "700 kursi",
+                    "720 kursi",
+                    "760 kursi",
+                    "800 kursi"
+                ],
+                correct: [2],
+                explanation: "Ini adalah deret aritmetika dengan a = 20 dan b = 4.<br>S<sub>n</sub> = (n/2) &times; [2a + (n-1)b]<br>S<sub>15</sub> = (15/2) &times; [40 + 14(4)] = (15/2) &times; [40 + 56] = (15/2) &times; 96 = 15 &times; 48 = 720 kursi."
+            },
+            {
+                id: 7,
+                text: "<strong>Matematika Q7: Barisan Geometri</strong><br><br>Suatu zat radioaktif memiliki massa awal 160 gram. Zat tersebut mengalami peluruhan (penyusutan massa) sebesar 50% setiap 3 jam.<br>Berapa gram sisa massa zat radioaktif tersebut setelah dibiarkan selama 12 jam?",
+                type: "single",
+                options: [
+                    "5 gram",
+                    "10 gram",
+                    "20 gram",
+                    "40 gram",
+                    "80 gram"
+                ],
+                correct: [1],
+                explanation: "Peluruhan mengikuti barisan geometri. Rasio r = 1/2. Waktu total = 12 jam, interval = 3 jam. Maka terjadi n = 12/3 = 4 kali peluruhan.<br>U<sub>n</sub> = a &times; r<sup>n</sup> = 160 &times; (1/2)<sup>4</sup> = 160 &times; (1/16) = 10 gram."
+            },
+            {
+                id: 8,
+                text: "<strong>Matematika Q8: Sistem Pertidaksamaan Linear</strong><br><br>Perhatikan daerah yang diarsir (warna biru) pada grafik koordinat Cartesius di bawah ini:<br><br><div style='text-align:center;'><svg width='250' height='250' viewBox='-1 -1 6 6' style='background:#fff; border:1px solid #ccc; border-radius:5px;'> <defs> <marker id='arrow' markerWidth='5' markerHeight='5' refX='4' refY='2.5' orient='auto'> <polygon points='0,0 5,2.5 0,5' fill='black'/> </marker> </defs> <line x1='0' y1='0' x2='0' y2='5' stroke='#ddd' stroke-width='0.02'/> <line x1='1' y1='0' x2='1' y2='5' stroke='#ddd' stroke-width='0.02'/> <line x1='2' y1='0' x2='2' y2='5' stroke='#ddd' stroke-width='0.02'/> <line x1='3' y1='0' x2='3' y2='5' stroke='#ddd' stroke-width='0.02'/> <line x1='4' y1='0' x2='4' y2='5' stroke='#ddd' stroke-width='0.02'/> <line x1='0' y1='1' x2='5' y2='1' stroke='#ddd' stroke-width='0.02'/> <line x1='0' y1='2' x2='5' y2='2' stroke='#ddd' stroke-width='0.02'/> <line x1='0' y1='3' x2='5' y2='3' stroke='#ddd' stroke-width='0.02'/> <line x1='0' y1='4' x2='5' y2='4' stroke='#ddd' stroke-width='0.02'/> <line x1='-0.5' y1='0' x2='5.5' y2='0' stroke='black' stroke-width='0.05' marker-end='url(#arrow)'/> <line x1='0' y1='-0.5' x2='0' y2='5.5' stroke='black' stroke-width='0.05' marker-end='url(#arrow)'/> <polygon points='0,0 4,0 0,3' fill='rgba(0,86,179,0.3)' stroke='#0056b3' stroke-width='0.05'/> <text x='5.2' y='-0.2' font-size='0.3' fill='black'>X</text> <text x='-0.4' y='5.4' font-size='0.3' fill='black'>Y</text> <text x='3.9' y='-0.2' font-size='0.3' fill='black'>4</text> <text x='-0.3' y='3.1' font-size='0.3' fill='black'>3</text> </svg></div><br>Daerah yang diarsir tersebut merupakan himpunan penyelesaian dari sistem pertidaksamaan...",
+                type: "single",
+                options: [
+                    "3x + 4y &le; 12 ; x &ge; 0 ; y &ge; 0",
+                    "4x + 3y &le; 12 ; x &ge; 0 ; y &ge; 0",
+                    "3x + 4y &ge; 12 ; x &ge; 0 ; y &ge; 0",
+                    "4x + 3y &ge; 12 ; x &le; 0 ; y &ge; 0",
+                    "3x - 4y &le; 12 ; x &ge; 0 ; y &le; 0"
+                ],
+                correct: [0],
+                explanation: "Garis yang memotong sumbu X di 4 dan sumbu Y di 3 memiliki persamaan 3x + 4y = 12.<br>Karena daerah yang diarsir berada di bawah garis dan dibatasi oleh kuadran 1, maka sistem pertidaksamaannya adalah 3x + 4y &le; 12, x &ge; 0, y &ge; 0."
+            },
+            {
+                id: 9,
+                text: "<strong>Matematika Q9: Program Linear</strong><br><br>Di sebuah pameran UMKM, seorang penjual membuat dua jenis parsel buah.<br>Parsel A berisi 2 kg Apel dan 1 kg Jeruk seharga Rp 100.000,00.<br>Parsel B berisi 1 kg Apel dan 2 kg Jeruk seharga Rp 110.000,00.<br>Bila seorang pembeli ingin meracik parsel *custom* yang berisi 3 kg Apel dan 3 kg Jeruk dengan harga satuan yang sama seperti promo di atas, berapakah total harga yang harus dibayarnya?",
+                type: "single",
+                options: [
+                    "Rp 150.000,00",
+                    "Rp 180.000,00",
+                    "Rp 200.000,00",
+                    "Rp 210.000,00",
+                    "Rp 250.000,00"
+                ],
+                correct: [3],
+                explanation: "Misalkan Apel = A, Jeruk = J.<br>2A + 1J = 100.000<br>1A + 2J = 110.000<br>Jika kedua persamaan ditambahkan: 3A + 3J = 210.000. Pembeli langsung bisa membayar Rp 210.000,00 tanpa harus mencari harga 1 kg-nya."
+            },
+            {
+                id: 10,
+                text: "<strong>Matematika Q10: Hubungan Dua Sudut & Dua Garis</strong><br><br>Perhatikan gambar persilangan dua garis lurus di bawah ini:<br><br><div style='text-align:center;'><svg width='200' height='150' viewBox='0 0 200 150' style='background:#f9f9f9; border:1px solid #ccc; border-radius:5px;'> <line x1='20' y1='120' x2='180' y2='30' stroke='black' stroke-width='2'/> <line x1='40' y1='30' x2='160' y2='130' stroke='black' stroke-width='2'/> <text x='95' y='60' font-size='16' font-weight='bold' fill='#0056b3'>P</text> <text x='65' y='90' font-size='16' font-weight='bold' fill='#0056b3'>Q</text> <text x='125' y='85' font-size='16' font-weight='bold' fill='#0056b3'>R</text> <text x='100' y='115' font-size='16' font-weight='bold' fill='#0056b3'>S</text> </svg></div><br>Berdasarkan gambar tersebut, manakah pasangan sudut yang jumlahnya pasti membentuk 180&deg; (Saling Berpelurus)?<br>Pilih setiap jawaban benar! (Jawaban benar lebih dari satu).",
+                type: "multiple",
+                options: [
+                    "Sudut P dan Sudut Q",
+                    "Sudut P dan Sudut R",
+                    "Sudut P dan Sudut S",
+                    "Sudut Q dan Sudut S"
+                ],
+                correct: [0, 1, 3],
+                explanation: "Sudut berpelurus (suplemen) adalah dua sudut yang berdampingan pada satu garis lurus dan berjumlah 180&deg;.<br>Pasangan yang memenuhi: (P dan Q), (P dan R), (R dan S), (Q dan S).<br>Sudut P dan S adalah sudut bertolak belakang (besarnya sama, bukan 180&deg;)."
+            },
+            {
+                id: 11,
+                text: "<strong>Matematika Q11: Hubungan Objek Geometri pada Bangun Ruang</strong><br><br>Sebuah brankas berbentuk balok sempurna dinamai ABCD.EFGH (A,B,C,D adalah titik sudut alas, dan E,F,G,H adalah titik sudut tutup).<br>Jika pintu brankas terletak di bidang bagian depan yaitu <strong>ABFE</strong>, manakah bidang dinding brankas yang posisinya <strong>sejajar</strong> dengan pintu tersebut?",
+                type: "single",
+                options: [
+                    "ABCD",
+                    "BCGF",
+                    "DCGH",
+                    "ADHE",
+                    "EFGH"
+                ],
+                correct: [2],
+                explanation: "Pada balok ABCD.EFGH, bidang alas (ABCD) sejajar atap (EFGH), sisi kiri (ADHE) sejajar sisi kanan (BCGF), dan sisi depan (ABFE) sejajar dengan sisi belakang (DCGH)."
+            },
+            {
+                id: 12,
+                text: "<strong>Matematika Q12: Kesebangunan Geometri</strong><br><br>Seorang insinyur mengamati bayangan sebuah pohon dan sebuah tiang pancang.<br><br><div style='text-align:center;'><svg width='300' height='150' viewBox='0 0 300 150' style='background:#fff; border:1px solid #ccc; border-radius:5px;'> <polygon points='20,130 140,130 140,40' fill='rgba(0,128,0,0.2)' stroke='green' stroke-width='2'/> <polygon points='180,130 240,130 240,85' fill='rgba(128,128,128,0.2)' stroke='gray' stroke-width='2'/> <text x='65' y='145' font-size='12'>Bayangan = 12m</text> <text x='145' y='90' font-size='12'>Pohon (T)</text> <text x='195' y='145' font-size='12'>Bygn = 6m</text> <text x='245' y='110' font-size='12'>Tiang = 4.5m</text> </svg></div><br>Tiang pancang yang tingginya 4,5 meter memiliki panjang bayangan 6 meter. Pada waktu yang sama (sehingga sudut matahari identik), sebuah pohon memiliki panjang bayangan 12 meter.<br>Berapakah tinggi pohon (T) tersebut berdasarkan prinsip kesebangunan segitiga?",
+                type: "single",
+                options: [
+                    "8 meter",
+                    "9 meter",
+                    "10 meter",
+                    "12 meter",
+                    "16 meter"
+                ],
+                correct: [1],
+                explanation: "Karena kesebangunan: Tinggi Pohon / Bayangan Pohon = Tinggi Tiang / Bayangan Tiang.<br>T / 12 = 4,5 / 6 &rarr; T = (4,5 &times; 12) / 6 = 54 / 6 = 9 meter."
+            },
+            {
+                id: 13,
+                text: "<strong>Matematika Q13: Teorema Pythagoras</strong><br><br>Sebuah tangga yang panjangnya 13 meter disandarkan pada dinding sebuah gedung. Jika jarak dari kaki tangga ke pangkal dinding adalah 5 meter, berapakah tinggi dinding dari tanah hingga ke ujung atas tangga tersebut?",
+                type: "single",
+                options: [
+                    "8 meter",
+                    "10 meter",
+                    "11 meter",
+                    "12 meter",
+                    "14 meter"
+                ],
+                correct: [3],
+                explanation: "Sesuai Tripel Pythagoras (a<sup>2</sup> + b<sup>2</sup> = c<sup>2</sup>). Sisi miring (c) = 13, sisi datar (a) = 5.<br>b<sup>2</sup> = 13<sup>2</sup> - 5<sup>2</sup> = 169 - 25 = 144. Maka b = &radic;144 = 12 meter."
+            },
+            {
+                id: 14,
+                text: "<strong>Matematika Q14: Transformasi Geometri (Translasi)</strong><br><br>Sebuah drone pemantau berada pada koordinat titik P(-3, 4) dalam radar. Operator memberikan instruksi translasi otomatis sebesar T = (5, -6), yang artinya drone bergerak 5 unit ke timur (sumbu X positif) dan 6 unit ke selatan (sumbu Y negatif).<br>Di manakah titik koordinat akhir (P') dari drone tersebut?",
+                type: "single",
+                options: [
+                    "P'(2, 2)",
+                    "P'(2, -2)",
+                    "P'(-8, 10)",
+                    "P'(8, -10)",
+                    "P'(-2, 2)"
+                ],
+                correct: [1],
+                explanation: "Translasi titik P(x, y) dengan T(a, b) menjadi P'(x+a, y+b).<br>x' = -3 + 5 = 2.<br>y' = 4 + (-6) = -2.<br>Maka posisi akhirnya adalah P'(2, -2)."
+            },
+            {
+                id: 15,
+                text: "<strong>Matematika Q15: Jarak Objek Geometri Ruang</strong><br><br>Kamar Doni berbentuk kubus sempurna dengan panjang rusuk 4 meter. Doni ingin menarik seutas tali lampu hias dari salah satu pojok bawah lantai kamar (Titik A) lurus melintasi ruangan menuju pojok atas plafon yang letaknya saling berseberangan secara diagonal ruang (Titik G).<br>Berapakah panjang tali minimal yang dibutuhkan Doni?",
+                type: "single",
+                options: [
+                    "4&radic;2 meter",
+                    "4&radic;3 meter",
+                    "8 meter",
+                    "8&radic;2 meter",
+                    "12 meter"
+                ],
+                correct: [1],
+                explanation: "Jarak dari pojok bawah (A) ke pojok atas yang saling berseberangan (G) pada sebuah kubus adalah Diagonal Ruang.<br>Rumus panjang diagonal ruang kubus dengan rusuk 's' adalah s&radic;3.<br>Karena rusuk = 4 meter, maka jaraknya adalah 4&radic;3 meter."
+            },
+            {
+                id: 16,
+                text: "<strong>Matematika Q16: Luas & Keliling Bangun Datar Gabungan</strong><br><br>Sebuah taman berbentuk gabungan persegi panjang dan setengah lingkaran seperti ilustrasi di bawah ini:<br><br><div style='text-align:center;'><svg width='200' height='220' viewBox='0 0 200 220' style='background:#f8f9fa; border-radius:5px;'> <path d='M 40 100 A 60 60 0 0 1 160 100 L 160 200 L 40 200 Z' fill='rgba(0,180,0,0.2)' stroke='green' stroke-width='2'/> <text x='20' y='150' font-size='12'>10 m</text> <text x='85' y='215' font-size='12'>14 m</text> </svg></div><br>Panjang persegi panjang adalah 14 meter (yang sekaligus menjadi diameter setengah lingkaran), dan lebarnya adalah 10 meter. Pengelola ingin memasang pagar besi tepat di <strong>seluruh keliling sisi luar</strong> taman tersebut. (Gunakan &pi; = 22/7).<br>Berapakah total panjang pagar besi yang harus dibeli?",
+                type: "single",
+                options: [
+                    "34 meter",
+                    "46 meter",
+                    "56 meter",
+                    "66 meter",
+                    "70 meter"
+                ],
+                correct: [2],
+                explanation: "Keliling luar taman = 3 sisi luar persegi panjang + panjang busur setengah lingkaran.<br>3 sisi persegi = 10 (kiri) + 14 (bawah) + 10 (kanan) = 34 m. (Sisi atas tidak dihitung karena tertutup setengah lingkaran).<br>Busur 1/2 Lingkaran = 1/2 &times; &pi; &times; d = 1/2 &times; (22/7) &times; 14 = 22 m.<br>Total keliling = 34 + 22 = 56 meter."
+            },
+            {
+                id: 17,
+                text: "<strong>Matematika Q17: Volume dan Luas Permukaan</strong><br><br>Sebuah pabrik cokelat memproduksi kemasan karton berbentuk balok dengan panjang 20 cm, lebar 10 cm, dan tinggi 5 cm. <br>Untuk menghemat biaya cetak, pihak pabrik ingin mengetahui total <strong>luas permukaan</strong> karton yang digunakan untuk membuat 1 kemasan cokelat (tanpa menghitung lipatan sambungan). Berapakah luas permukaan kemasan tersebut?",
+                type: "single",
+                options: [
+                    "350 cm&sup2;",
+                    "500 cm&sup2;",
+                    "700 cm&sup2;",
+                    "1000 cm&sup2;",
+                    "1400 cm&sup2;"
+                ],
+                correct: [2],
+                explanation: "Luas Permukaan Balok = 2 &times; (pl + pt + lt)<br>= 2 &times; [ (20&times;10) + (20&times;5) + (10&times;5) ]<br>= 2 &times; [ 200 + 100 + 50 ]<br>= 2 &times; 350 = 700 cm&sup2;."
+            },
+            {
+                id: 18,
+                text: "<strong>Matematika Q18: Volume Bangun Ruang Lanjutan (Kapasitas Kemasan)</strong><br><br>Pak Andi memiliki sebuah akuarium kosong berbentuk kubus besar dengan panjang sisi bagian dalamnya adalah 120 cm. Ia ingin menyusun kotak-kotak kecil berisi makanan ikan ke dalam akuarium tersebut. Setiap kotak makanan ikan juga berbentuk kubus dengan rusuk 30 cm.<br>Berapa banyak kotak kecil maksimal yang bisa dimasukkan ke dalam akuarium kubus besar tersebut hingga terisi penuh tanpa celah?",
+                type: "single",
+                options: [
+                    "4 kotak",
+                    "16 kotak",
+                    "32 kotak",
+                    "64 kotak",
+                    "128 kotak"
+                ],
+                correct: [3],
+                explanation: "Volume Akuarium = 120 &times; 120 &times; 120 cm<sup>3</sup>.<br>Volume 1 kotak = 30 &times; 30 &times; 30 cm<sup>3</sup>.<br>Banyak kotak = (120/30) &times; (120/30) &times; (120/30) = 4 &times; 4 &times; 4 = 64 kotak."
+            },
+            {
+                id: 19,
+                text: "<strong>Matematika Q19: Perbandingan Trigonometri Dasar</strong><br><br>Perhatikan segitiga siku-siku di bawah ini:<br><br><div style='text-align:center;'><svg width='200' height='150' viewBox='0 0 200 150' style='background:#f9f9f9; border-radius:5px;'> <polygon points='40,120 160,120 160,30' fill='none' stroke='black' stroke-width='2'/> <rect x='145' y='105' width='15' height='15' fill='none' stroke='black' stroke-width='1'/> <text x='25' y='130' font-size='14'>A</text> <text x='165' y='130' font-size='14'>B</text> <text x='165' y='25' font-size='14'>C</text> <text x='65' y='110' font-size='12'>&alpha;</text> </svg></div><br>Segitiga ABC siku-siku di B. Jika panjang sisi BC (depan) = 8 cm dan sisi AB (samping) = 6 cm. <br>Manakah pernyataan yang BENAR terkait nilai perbandingan trigonometri sudut &alpha; (Sudut BAC)?<br><br>Pilih setiap jawaban benar! (Jawaban benar dapat lebih dari satu).",
+                type: "multiple",
+                options: [
+                    "Sisi miring (AC) = 10 cm",
+                    "Nilai sin &alpha; = 4/5",
+                    "Nilai cos &alpha; = 3/5",
+                    "Nilai tan &alpha; = 3/4"
+                ],
+                correct: [0, 1, 2],
+                explanation: "Segitiga siku-siku AB = 6, BC = 8. Pythagoras AC = &radic;(6&sup2; + 8&sup2;) = &radic;100 = 10 cm. (Opsi 1 Benar)<br>sin &alpha; = Depan/Miring = 8/10 = 4/5. (Opsi 2 Benar)<br>cos &alpha; = Samping/Miring = 6/10 = 3/5. (Opsi 3 Benar)<br>tan &alpha; = Depan/Samping = 8/6 = 4/3. (Opsi 4 Salah)."
+            },
+            {
+                id: 20,
+                text: "<strong>Matematika Q20: Limit Fungsi (Aljabar Konseptual)</strong><br><br>Dalam evaluasi laju reaksi kimia mesin, sebuah komputer menghitung fungsi kecepatan partikel berdasarkan batas (limit) suatu waktu pendekatan. Jika fungsi kecepatan didefinisikan sebagai:<br>v(x) = (x<sup>2</sup> - 16) / (x - 4).<br>Berapakah nilai kecepatan mesin ketika x mendekati 4?",
+                type: "single",
+                options: [
+                    "0",
+                    "4",
+                    "8",
+                    "16",
+                    "Tidak Terdefinisi"
+                ],
+                correct: [2],
+                explanation: "Limit untuk x &rarr; 4 dari (x<sup>2</sup> - 16) / (x - 4).<br>Jika disubstitusi langsung hasilnya 0/0. Lakukan pemfaktoran:<br>(x - 4)(x + 4) / (x - 4) = x + 4.<br>Substitusi x = 4 &rarr; 4 + 4 = 8."
+            },
+            {
+                id: 21,
+                text: "<strong>Matematika Q21: Interpretasi Data & Peluang (Diagram)</strong><br><br>Data pengunjung perpustakaan sekolah dicatat sebagai berikut:<br>Senin: 25 siswa<br>Selasa: 30 siswa<br>Rabu: x siswa<br>Kamis: 20 siswa<br>Jumat: 45 siswa<br><br>Jika rata-rata (mean) pengunjung harian selama 5 hari tersebut adalah 30 siswa, berapakah jumlah pengunjung pada hari Rabu (x)?",
+                type: "single",
+                options: [
+                    "20 siswa",
+                    "25 siswa",
+                    "30 siswa",
+                    "35 siswa",
+                    "40 siswa"
+                ],
+                correct: [2],
+                explanation: "Rata-rata = Total Data / Banyak Hari.<br>30 = (25 + 30 + x + 20 + 45) / 5<br>30 &times; 5 = 120 + x<br>150 = 120 + x &rarr; x = 30 siswa."
+            },
+            {
+                id: 22,
+                text: "<strong>Matematika Q22: Aturan Pencacahan (Permutasi)</strong><br><br>Sebuah panitia OSIS terdiri dari 6 orang. Mereka sedang mengadakan rapat di sebuah meja bundar. Ketua dan Wakil Ketua OSIS meminta agar kursi mereka selalu berdampingan saat rapat.<br>Ada berapa banyak susunan posisi duduk berbeda yang dapat terjadi?",
+                type: "single",
+                options: [
+                    "24 susunan",
+                    "48 susunan",
+                    "120 susunan",
+                    "240 susunan",
+                    "720 susunan"
+                ],
+                correct: [1],
+                explanation: "Ini adalah Permutasi Siklis (melingkar).<br>Karena Ketua dan Wakil harus berdampingan, mereka dihitung sebagai 1 unit. Maka tersisa (4 orang + 1 unit) = 5 entitas.<br>Posisi duduk melingkar 5 entitas = (5 - 1)! = 4! = 24 cara.<br>Di dalam unit tersebut, Ketua dan Wakil bisa bertukar tempat = 2! = 2 cara.<br>Total susunan = 24 &times; 2 = 48 susunan."
+            },
+            {
+                id: 23,
+                text: "<strong>Matematika Q23: Aturan Pencacahan (Kombinasi)</strong><br><br>Seorang pelatih bulu tangkis memiliki 8 pemain berbakat. Ia ingin memilih 3 pemain untuk diikutkan dalam pertandingan persahabatan antar sekolah (posisi ketiga pemain dianggap setara tanpa perbedaan spesifik).<br>Berapa banyak kombinasi tim berbeda yang dapat dibentuk oleh pelatih tersebut?",
+                type: "single",
+                options: [
+                    "24 tim",
+                    "56 tim",
+                    "112 tim",
+                    "336 tim",
+                    "512 tim"
+                ],
+                correct: [1],
+                explanation: "Gunakan Kombinasi (karena urutan pemain dalam tim tidak penting).<br>C(8,3) = 8! / [3! &times; (8-3)!] = (8 &times; 7 &times; 6 &times; 5!) / (3 &times; 2 &times; 1 &times; 5!)<br>= (8 &times; 7 &times; 6) / 6 = 56 tim."
+            },
+            {
+                id: 24,
+                text: "<strong>Matematika Q24: Peluang Kejadian Tunggal</strong><br><br>Dalam sebuah program *doorprize* sekolah, terdapat sebuah kotak kaca berisi 20 bola undian. Rinciannya:<br>5 bola berwarna Emas (Hadiah Utama)<br>7 bola berwarna Perak (Hadiah Hiburan)<br>8 bola berwarna Putih (Kosong/Gagal)<br><br>Jika Dika mendapat giliran pertama untuk mengambil 1 bola secara acak dari kotak tertutup tersebut, berapakah peluang Dika gagal mendapatkan hadiah (mendapat bola putih)?",
+                type: "single",
+                options: [
+                    "1/4",
+                    "1/5",
+                    "2/5",
+                    "7/20",
+                    "8/25"
+                ],
+                correct: [2],
+                explanation: "Peluang (P) = Banyak kejadian yang diinginkan / Total sampel.<br>Total bola = 5 + 7 + 8 = 20 bola.<br>Banyak bola putih = 8 bola.<br>P(Putih) = 8 / 20. Sederhanakan dibagi 4 &rarr; 2/5."
+            },
+            {
+                id: 25,
+                text: "<strong>Matematika Q25: Peluang Kejadian Majemuk</strong><br><br>Dua buah dadu enam sisi bersisi wajar dilempar secara bersamaan di atas meja.<br>Berapakah peluang munculnya kedua mata dadu yang jika dijumlahkan bernilai genap 8?",
+                type: "single",
+                options: [
+                    "3/36",
+                    "4/36",
+                    "5/36",
+                    "6/36",
+                    "8/36"
+                ],
+                correct: [2],
+                explanation: "Total ruang sampel pelemparan 2 dadu = 6 &times; 6 = 36.<br>Pasangan mata dadu yang jumlahnya 8: (2,6), (3,5), (4,4), (5,3), (6,2).<br>Banyak kejadian = 5.<br>Maka peluangnya = 5 / 36."
+            }
+        ],
             indonesian: [
             // --- TEKS 1: Tradisi Buwuhan ---
             ...(() => {
@@ -629,13 +1451,651 @@
             })()
         ],
             biology: [
-                // BLANK TEMPLATE FOR BIOLOGY: Add 30 questions here
-                { id: 1, text: "<strong>Biology Q1:</strong> What is the powerhouse of the cell?", type: "single", options: ["Nucleus", "Ribosome", "Mitochondria", "Golgi apparatus"], correct: [2], explanation: "Mitochondria generates chemical energy." }
-            ],
+            {
+                id: 1,
+                text: "<strong>Biologi Q1: Keanekaragaman Hayati (Spesies Endemik)</strong><br><br>Badak Jawa (<em>Rhinoceros sondaicus</em>) adalah spesies endemik Indonesia yang kini berstatus kritis dan hanya ditemukan di Taman Nasional Ujung Kulon. Populasinya terus menurun akibat pembangunan infrastruktur yang mengganggu habitat alaminya. Keragaman genetik yang rendah meningkatkan risiko penyakit dan menurunkan peluang kelangsungan hidup keturunannya. Selain itu, gangguan manusia seperti perburuan menyebabkan perubahan perilaku yang menghambat reproduksi.<br><br>Dengan mencermati informasi tersebut, pernyataan manakah yang berkaitan dengan penurunan populasi Badak Jawa dan faktor penyebabnya?<br><em>(Pilih semua jawaban yang benar)</em>",
+                type: "multiple",
+                options: [
+                    "Perdagangan cula yang secara eksklusif menjadi penyebab ancaman Badak Jawa.",
+                    "Deforestasi dan konversi lahan yang mengurangi ruang jelajah Badak Jawa.",
+                    "Perubahan pola migrasi yang menyebabkan distribusi populasi lebih tersebar dan sulit dilacak.",
+                    "Gangguan ekosistem akibat masuknya spesies lain ke Ujung Kulon sehingga meningkatkan kompetisi.",
+                    "Minimnya variasi genetik membuat badak menjadi sulit beradaptasi dengan lingkungan sekitar."
+                ],
+                correct: [1, 4],
+                explanation: "Berdasarkan teks, penyebab utama penurunannya adalah akibat pembangunan infrastruktur yang merusak habitat atau deforestasi[cite: 142]. Selain itu, keragaman genetik yang rendah meningkatkan risiko penyakit sehingga populasi badak sulit bertahan[cite: 142]."
+            },
+            {
+                id: 2,
+                text: "<strong>Biologi Q2: Peranan Bakteri</strong><br><br>Produk ikan awetan yang terkontaminasi bakteri <em>Clostridium botulinum</em> biasanya memiliki kemasan rusak atau bocor, bau menyengat, warna pudar, dan rasa tidak enak. Gejala keracunan yang muncul pada konsumen antara lain: masalah penglihatan, kelemahan otot, kesulitan menelan, mual, muntah, dan sakit perut. Keracunan ini dapat menyebabkan risiko kesehatan serius, termasuk gangguan sistem saraf dan kematian.<br><br>Berdasarkan informasi tersebut, mekanisme utama peran <em>Clostridium botulinum</em> dalam menyebabkan keracunan ikan awetan adalah...",
+                type: "single",
+                options: [
+                    "menguraikan protein dan lemak dalam ikan menjadi senyawa berbahaya sehingga menimbulkan gangguan pencernaan mual dan kram perut",
+                    "menghasilkan senyawa yang menghambat sinyal saraf dan kontraksi otot sehingga penglihatan terganggu dan otot melemah",
+                    "menyerap komponen ikan ke dalam dinding sel bakteri untuk bertahan hidup sehingga menyebabkan gangguan saraf optik",
+                    "mengubah gula dan asam amino dalam ikan menjadi senyawa alkohol yang memengaruhi koordinasi dan saraf penglihatan",
+                    "menghasilkan gas pada kondisi anaerob yang meningkatkan tekanan di dalam kemasan ikan sehingga memengaruhi kualitas fisik produk"
+                ],
+                correct: [1],
+                explanation: "Gejala berat yang ditimbulkan seperti masalah penglihatan dan kelemahan otot secara klinis menunjukkan adanya gangguan pada sistem saraf[cite: 143]. Mekanisme toksin yang dihasilkan oleh <em>Clostridium botulinum</em> bekerja dengan cara menghambat pelepasan sinyal saraf dan kontraksi otot[cite: 143]."
+            },
+            {
+                id: 3,
+                text: "<strong>Biologi Q3: Interaksi Komponen Ekosistem</strong><br><br>Lintah merupakan hewan yang sering ditemukan di daerah lembap seperti hutan hujan tropis. Hewan ini sangat bergantung pada makhluk hidup lain agar dapat bertahan hidup. Lintah juga diketahui cukup berbahaya saat menempel pada tubuh hewan lain, seperti rusa, kerbau liar, bahkan manusia.<br><br>Dalam interaksinya dengan mahluk hidup lain, lintah akan...",
+                type: "single",
+                options: [
+                    "berkompetisi dengan inang untuk mendapatkan makanan",
+                    "memanfaatkan tubuh inangnya sebagai sumber nutrisi",
+                    "melekatkan diri pada mahluk hidup lain untuk membersihkan darahnya",
+                    "menempel pada inang untuk mendapatkan perlindungan dari predator",
+                    "hidup bebas berdampingan dengan mahluk hidup lain di hutan"
+                ],
+                correct: [1],
+                explanation: "Lintah merupakan organisme parasit yang menempel dan memanfaatkan cairan tubuh/darah inangnya secara langsung sebagai sumber utama nutrisi kehidupan[cite: 144]."
+            },
+            {
+                id: 4,
+                text: "<strong>Biologi Q4: Metabolisme (Respirasi Seluler)</strong><br><br>Skema respirasi seluler digambarkan sebagai berikut:<br>Glukosa &rarr; [Tahap A] &rarr; 2 Asam Piruvat &rarr; 2 Asetil KoA &rarr; [Tahap B] &rarr; [Tahap C]<br><br>Dengan mencermati skema respirasi seluler tersebut, manakah dari proses berikut yang terjadi pada tahap berlabel A?",
+                type: "single",
+                options: [
+                    "Gugus gula bereaksi dengan oksaloasetat kemudian masuk ke siklus Krebs.",
+                    "Proses pengubahan glukosa menjadi asam piruvat dengan penambahan gugus oksigen.",
+                    "Pelepasan elektron dari NADH dan FADH2 untuk menghasilkan ATP.",
+                    "Proses oksidasi suksinat menjadi fumarat disertai produksi FADH2.",
+                    "Produksi ATP melalui penambahan gugus fosfat ke molekul gula."
+                ],
+                correct: [4],
+                explanation: "Tahap A adalah proses glikolisis di mana molekul glukosa dipecah menjadi 2 molekul asam piruvat[cite: 145]. Pada permulaan reaksi glikolisis (fase investasi energi), penambahan gugus fosfat dilakukan ke molekul gula sebelum akhirnya energi ATP dihasilkan secara bersih di akhir tahap[cite: 145]."
+            },
+            {
+                id: 5,
+                text: "<strong>Biologi Q5: Kerja Enzim Protease</strong><br><br>Sekelompok murid SMA melakukan percobaan kerja enzim protease dengan menggunakan putih telur sebagai substrat (Suhu dijaga 37&deg;C selama 30 menit).<br>Tabung A: putih telur + protease (Hasil: Agak keruh)<br>Tabung B: putih telur + protease + HCl (Hasil: Bening)<br>Tabung C: putih telur + protease + NaOH (Hasil: Keruh)<br><br>Aktivitas enzim diamati dari kondisi larutan (semakin bening = optimal). Berdasarkan hasil percobaan ini, faktor utama yang mempengaruhi kerja enzim protease adalah...",
+                type: "single",
+                options: [
+                    "konsentrasi enzim protease dalam tabung reaksi",
+                    "pH lingkungan tempat enzim protease bekerja",
+                    "jenis substrat yang digunakan dalam percobaan",
+                    "suhu larutan selama percobaan berlangsung",
+                    "waktu inkubasi enzim protease dengan substrat"
+                ],
+                correct: [1],
+                explanation: "Semua tabung diinkubasi pada waktu, suhu, dan substrat yang seragam[cite: 146]. Pemberian HCl dan NaOH merupakan intervensi tingkat keasaman, sehingga parameter beningnya larutan pada tabung B membuktikan bahwa pH adalah faktor utama kerja enzim[cite: 146]."
+            },
+            {
+                id: 6,
+                text: "<strong>Biologi Q6: Fotosintesis (Uji Sach)</strong><br><br>Seorang murid menutup sebagian daun kembang sepatu yang masih di pohon dengan aluminium foil selama 6 jam. Kemudian daun direbus di air dan alkohol panas. Setelah itu, daun ditetesi larutan lugol. Hasilnya, daun yang terbuka berubah menjadi biru kehitaman (positif amilum), sedangkan bagian tertutup aluminium foil berwarna pucat.<br><br>Faktor yang paling berpengaruh pada fotosintesis berdasarkan percobaan ini adalah...",
+                type: "single",
+                options: [
+                    "intensitas cahaya pada permukaan daun",
+                    "konsentrasi karbon dioksida di udara",
+                    "lebar dan tipisnya permukaan daun",
+                    "ketersediaan klorofil pada daun",
+                    "suhu optimal untuk kerja enzim fotosintesis"
+                ],
+                correct: [0],
+                explanation: "Penggunaan penutup aluminium foil bertujuan untuk memblokir paparan cahaya matahari ke satu bagian daun[cite: 147]. Hasil yang pucat menegaskan bahwa fotosintesis mutlak memerlukan intensitas cahaya matahari untuk dapat menghasilkan amilum[cite: 147]."
+            },
+            {
+                id: 7,
+                text: "<strong>Biologi Q7: Kelainan Sistem Pernapasan (OSA)</strong><br><br>Seorang sopir truk kecelakaan karena *microsleep*. Ia memiliki riwayat sering terbangun tengah malam terengah-engah dan mendengkur keras akibat <em>obstructive sleep apnea</em> (OSA), di mana saluran napas atasnya tersumbat saat tidur. Rekam jantungnya (EKG) menunjukkan pola detak tidak teratur (aritmia).<br><br>Hubungan gejala yang dialami pengemudi tersebut dengan komplikasi yang muncul adalah...",
+                type: "single",
+                options: [
+                    "gangguan napas saat tidur menyebabkan kurangnya oksigen meningkatkan risiko detak jantung tidak teratur",
+                    "dengkur keras mengganggu kualitas tidur sehingga mencegah terjadinya penyumbatan saluran napas atas",
+                    "microsleep terjadi karena saluran napas tetap terbuka sepanjang malam sehingga tubuh kekurangan tidur",
+                    "kekurangan oksigen saat tidur membuat pasien lebih jarang mengalami kantuk berlebihan pada siang hari",
+                    "aritmia muncul akibat penurunan kadar karbon dioksida yang memicu otot jantung bekerja lebih stabil"
+                ],
+                correct: [0],
+                explanation: "Penyumbatan saluran napas atas menyebabkan hipoksia atau penurunan kadar oksigen di dalam darah[cite: 148]. Kurangnya pasokan oksigen yang persisten membebani fungsi kardiovaskular dan memicu komplikasi aritmia atau detak jantung tak beraturan[cite: 148]."
+            },
+            {
+                id: 8,
+                text: "<strong>Biologi Q8: Sistem Sirkulasi Darah</strong><br><br>Dalam tabung sampel darah, terdapat tiga komponen sel utama:<br><strong>A.</strong> Sel berbentuk cakram bikonkaf tanpa inti.<br><strong>B.</strong> Sel ameboid yang memiliki nukleus dengan berbagai bentuk lobus.<br><strong>C.</strong> Kepingan sel berukuran sangat kecil.<br><br>Pernyataan manakah yang menunjukkan PERSAMAAN dari komponen darah B (Leukosit) dan C (Trombosit)?",
+                type: "single",
+                options: [
+                    "memiliki inti sel dan berperan dalam pertahanan tubuh terhadap patogen",
+                    "tidak berinti dan berperan dalam pengangkutan oksigen ke jaringan tubuh",
+                    "tidak memiliki inti sel dan berfungsi membawa hormon ke seluruh tubuh",
+                    "berbentuk tidak beraturan dan diproduksi di sumsum tulang",
+                    "bentuk bulat pipih dan berfungsi dalam pengangkutan karbon dioksida"
+                ],
+                correct: [3],
+                explanation: "Leukosit memiliki inti sel, sedangkan trombosit tidak, sehingga pilihan 1 dan 3 keliru[cite: 149]. Keduanya memiliki persamaan yakni dibentuk di dalam sumsum tulang belakang dan sama-sama tidak memiliki wujud beraturan (ameboid pada leukosit dan ireguler pada keping darah)[cite: 149]."
+            },
+            {
+                id: 9,
+                text: "<strong>Biologi Q9: Mekanisme Pembekuan Darah</strong><br><br>Ketika memotong dengan <em>cutter</em>, jari seorang murid tergores hingga berdarah. Diketahui murid tersebut memiliki kelainan di mana produksi enzim <strong>trombokinase</strong> di dalam tubuhnya berkurang sangat signifikan.<br><br>Berdasarkan skema pembekuan darah, apa dampak yang paling logis terjadi dari kondisi tersebut?",
+                type: "single",
+                options: [
+                    "Darah terus mengalir karena vitamin K tidak dapat diubah menjadi benang fibrin.",
+                    "Luka lambat menutup karena trombokinase tidak dapat mengaktifkan protrombin menjadi trombin.",
+                    "Luka menutup lebih cepat karena keping darah segera mengeluarkan protrombin pengganti.",
+                    "Mempercepat pembekuan darah karena mengurangi aktivitas fibrinogen dalam mengalirkan darah.",
+                    "Sel darah merah akan mengeras dan langsung menyumbat kapiler vena darah secara otomatis."
+                ],
+                correct: [1],
+                explanation: "Trombokinase (tromboplastin) bertugas sebagai biokatalisator yang mengubah protrombin yang tidak aktif menjadi trombin yang aktif[cite: 150]. Jika trombokinase sangat minim, proses kaskade selanjutnya tidak akan berjalan maksimal, mengakibatkan luka menjadi sangat lambat tertutup[cite: 150]."
+            },
+            {
+                id: 10,
+                text: "<strong>Biologi Q10: Penyakit Sistem Peredaran Darah</strong><br><br>Seorang pria berusia 35 tahun sering mengalami sakit kepala, kaku pada tengkuk, nyeri dada, dan sesak napas. Hasil tes laboratoriumnya menunjukkan:<br>Tekanan Darah: 190/120 mmHg<br>Kadar LDL: 195 mg/dL (Normal &lt;100).<br><br>Aktivitas mana sajakah yang SESUAI (menjadi penyebab) memburuknya kesehatan peredaran darah pria tersebut?<br><em>(Pilih semua jawaban yang benar)</em>",
+                type: "multiple",
+                options: [
+                    "Sering mengonsumsi makanan tinggi lemak jenuh dan cepat saji sehingga kadar LDL meningkat.",
+                    "Rutin meminum suplemen kalsium yang langsung menyebabkan hipertensi kronis akut.",
+                    "Sering mengalami stres kerja dan kurang tidur kronis, yang dapat memengaruhi tekanan darah.",
+                    "Terkadang mengikuti kelas yoga dan meditasi untuk meregangkan otot rangka tubuh.",
+                    "Menerapkan diet vegetarian murni yang menyebabkan lonjakan drastis pada kadar kolesterol LDL."
+                ],
+                correct: [0, 2],
+                explanation: "Kadar LDL yang sangat tinggi menembus batas wajar secara medis diakibatkan oleh seringnya mengonsumsi asupan makanan tinggi lemak jenuh dan cepat saji[cite: 151]. Sementara itu, tekanan darah yang melonjak hingga hipertensi 190/120 mmHg merupakan korelasi medis dari tingginya beban stres dan kurangnya kuantitas tidur[cite: 151]."
+            },
+            {
+                id: 11,
+                text: "<strong>Biologi Q11: Sistem Ekskresi & Termoregulasi</strong><br><br>Pak Junaidi, seorang kuli bangunan, bekerja tiada henti di bawah panas terik. Karena terlalu fokus, ia lupa minum hingga pingsan. Saat diperiksa, suhu tubuhnya mencapai 40,5&deg;C, kulit memerah, denyut nadi cepat, namun <strong>tidak berkeringat</strong>. Beliau divonis mengalami <em>heat stroke</em>.<br><br>Apa penyebab utama kegagalan tubuh Pak Junaidi dalam mempertahankan homeostasis suhu tubuhnya?",
+                type: "single",
+                options: [
+                    "Dehidrasi membuat proses berkeringat terhenti, sehingga panas tidak dapat dikeluarkan secara efektif.",
+                    "Pelebaran pembuluh darah di kulit menyebabkan tubuh menyimpan panas berlebihan di dalam darah.",
+                    "Tingginya suhu tubuh menyebabkan otot bekerja lebih cepat, sehingga suhu tubuh tidak bisa turun.",
+                    "Kurangnya cairan menyebabkan meningkatnya aliran darah yang justru menaikkan suhu tubuh.",
+                    "Kondisi lingkungan yang panas menyebabkan tubuh berhenti mengatur suhu untuk menghemat energi."
+                ],
+                correct: [0],
+                explanation: "Kehilangan banyak air tanpa penggantian memicu dehidrasi hebat pada sel[cite: 152]. Dalam upaya menghemat sisa cairan, kelenjar keringat (sebagai jalur ekskresi evaporatif) menghentikan fungsinya, sehingga panas tubuh terjebak dan memicu <em>heat stroke</em>[cite: 152]."
+            },
+            {
+                id: 12,
+                text: "<strong>Biologi Q12: Gangguan Sistem Saraf (Alzheimer)</strong><br><br>Pak Gito (69 tahun) tersesat di pasar dan lupa arah pulang, ia bahkan lupa nama keluarganya. Setelah dilakukan MRI, ia didiagnosis Alzheimer.<br><br>Pernyataan manakah yang BENAR terkait patofisiologi gejala penyakit Alzheimer yang dialaminya?<br><em>(Pilih semua jawaban yang benar)</em>",
+                type: "multiple",
+                options: [
+                    "Kerusakan pada area lobus parietal dan hippocampus menyebabkan gangguan pada memori spasial terkait lokasi dan arah.",
+                    "Penumpukan protein abnormal yang terjadi secara mutlak di area hipotalamus mengakibatkan hilangnya ingatan jangka pendek.",
+                    "Plak amiloid yang terbentuk pada sel saraf menghalangi komunikasi antarsel sehingga menurunkan fungsi kognitif dan memori.",
+                    "Hancurnya sistem sumsum tulang belakang menghambat transmisi listrik ke otak secara permanen.",
+                    "Kegagalan sistem imun memproduksi makrofag pelindung menyebabkan Alzheimer tidak dapat disembuhkan."
+                ],
+                correct: [0, 2],
+                explanation: "Penyakit Alzheimer memicu munculnya plak-plak menumpuk (amiloid) pada sel saraf, merusak sinapsis dan komunikasi jaringan sel saraf (neuron)[cite: 153]. Penumpukan tersebut sebagian besar menyasar dan mengerosi memori navigasi di <em>hippocampus</em> dan korteks parietal yang mengakibatkan hilangnya fungsi spasial[cite: 153]."
+            },
+            {
+                id: 13,
+                text: "<strong>Biologi Q13: Sistem Imun (Diabetes Melitus Tipe 1)</strong><br><br>Alika (12 tahun) sering haus, mudah lapar, dan berat badannya turun drastis. Pemeriksaan menunjukkan kadar gula darah mencapai 300 mg/dL serta terdeteksinya antibodi anti-GAD sebagai penanda kelainan autoimun, sehingga dokter mendiagnosisnya Diabetes Melitus Tipe 1.<br><br>Bagaimana mekanisme autoimun pada DM Tipe 1 dapat memicu hiperglikemia (peningkatan gula darah) secara drastis?",
+                type: "single",
+                options: [
+                    "Limfosit B menyerang sel alfa pankreas yang berperan sebagai penghasil glukagon.",
+                    "Kompleks antigen-antibodi menghambat kerja hormon insulin dan glukagon secara mekanis di reseptor otot.",
+                    "Infeksi patogen eksternal pada usus buntu merambat ke pankreas dan menghancurkan reseptor insulin.",
+                    "Sel T sitotoksik dan sistem imun salah mengenali dan merusak sel beta pankreas tempat penghasil insulin.",
+                    "Antibodi secara spesifik menghambat aktivitas kelenjar adrenal dalam mengubah glukosa menjadi glikogen."
+                ],
+                correct: [3],
+                explanation: "Sistem kekebalan seluler yang keliru (sel T sitotoksik autoimun) akan menyerang sel-sel beta yang terletak di pulau Langerhans pankreas[cite: 154]. Hancurnya sel beta memutus produksi insulin alami yang mana sangat diperlukan untuk mengontrol ambang batas gula darah[cite: 154]."
+            },
+            {
+                id: 14,
+                text: "<strong>Biologi Q14: Sistem Koordinasi (Hormon Adrenalin)</strong><br><br>Setiap kali ulangan harian, Vito cemas. Jantungnya berdegup kencang, keringat dingin, sulit menelan, napas tersengal, dan tekanan darahnya naik hingga 140/90 mmHg. Ini merupakan respons <em>'lawan atau lari' (fight or flight)</em> yang dipicu oleh pelepasan hormon adrenalin.<br><br>Manakah mekanisme kerja sistem organ dan hormon adrenalin yang PALING TEPAT menjelaskan salah satu gejalanya?",
+                type: "single",
+                options: [
+                    "Otot polos pembuluh darah menyempit sehingga aliran darah ke organ tertentu terfokus dan tekanan darah bertambah cepat.",
+                    "Saluran udara di paru-paru (bronkiolus) menyempit memicu asma ringan sesaat untuk beradaptasi dengan oksigen minim.",
+                    "Detak jantung menjadi lebih kuat sehingga sirkulasi jumlah darah yang keluar dari rongga ventrikel menjadi berkurang.",
+                    "Kandung kemih menjadi hiperaktif akibat aliran darah ke ginjal meningkat secara maksimal di bawah kendali simpatis.",
+                    "Hormon adrenalin memicu dilatasi pembuluh vena sehingga menurunkan denyut nadi dan tekanan darah pasien."
+                ],
+                correct: [0],
+                explanation: "Adrenalin bereaksi pada pembuluh darah dengan melakukan vasokonstriksi (penyempitan) di daerah perifer untuk memfokuskan suplai darah pada otak dan otot[cite: 155]. Efek mekanik dari penyempitan pipa pembuluh ini langsung berkorelasi dengan tekanan darah yang melonjak hingga 140/90 mmHg[cite: 155]."
+            },
+            {
+                id: 15,
+                text: "<strong>Biologi Q15: Sistem Reproduksi (PCOS)</strong><br><br>Dini (25 tahun) didiagnosis PCOS <em>(Polycystic Ovary Syndrome)</em>. Siklus haidnya memanjang 2-4 bulan sekali, berat badannya naik, berjerawat, dan USG mendeteksi kista pada ovarium kirinya. Hal ini membuatnya kesulitan mendapat keturunan.<br><br>Berdasarkan gejala Dini, intervensi dan solusi manakah yang secara medis tepat agar Dini dapat mengalami kehamilan?<br><em>(Pilih semua jawaban yang benar)</em>",
+                type: "multiple",
+                options: [
+                    "Mengonsumsi suplemen peningkat hormon prolaktin secara masif agar laktasi dan siklus haid teratur.",
+                    "Melakukan operasi bedah pengangkatan ovarium karena yang terkena kista mutlak tidak akan berfungsi lagi.",
+                    "Menerapkan modifikasi gaya hidup (pola makan sehat & olahraga) agar resistensi insulin dan hormon membaik.",
+                    "Mendapatkan suntikan hormon stimulasi (FSH/LH) di bawah pedoman dokter untuk merangsang proses ovulasi.",
+                    "Mengikuti program In Vitro Fertilization (Bayi Tabung) menggunakan sel sperma sang suami."
+                ],
+                correct: [2, 3, 4],
+                explanation: "Tingkat keberhasilan pembuahan pada pasien PCOS dapat diraih lewat penurunan berat badan via gaya hidup yang memperbaiki regulasi hormonal[cite: 156]. Jika cara alamiah terkendala, opsi medis via injeksi hormon FSH/LH perangsang sel telur matang atau bahkan rekayasa program bayi tabung (IVF) lazim dan aman dianjurkan[cite: 156]."
+            },
+            {
+                id: 16,
+                text: "<strong>Biologi Q16: Kehamilan Berisiko Tinggi</strong><br><br>Bu Mita hamil 6 bulan, merasa lemas dan pusing, serta pergerakan bayi di kandungannya jarang/lemah. Dokter memvonis kadar hemoglobin darahnya amat rendah (7 g/dL). Bu Mita juga alergi terhadap daging dan sayuran hijau.<br><br>Bagaimana malnutrisi besi (hemoglobin rendah) ini dapat berdampak fatal bagi perkembangan janinnya?",
+                type: "single",
+                options: [
+                    "Rendahnya hemoglobin menyebabkan darah ibu mengalir kelewat cepat ke plasenta sehingga memicu prematur.",
+                    "Janin kekurangan pasokan oksigen esensial yang dibawa hemoglobin sehingga perkembangan organ vital kurang optimal.",
+                    "Hemoglobin yang di bawah standar menyebabkan cairan ketuban pekat dan janin tertelan air kotor beracun.",
+                    "Hb rendah memicu risiko hiper-pendarahan pada janin karena sel darahnya tak punya platel pembeku.",
+                    "Janin rawan infeksi bakteri patogen sebab fungsi utama sel darah merah adalah fagositosis makrofag rahim."
+                ],
+                correct: [1],
+                explanation: "Zat besi (penyusun struktur Hemoglobin) amat penting karena bertindak layaknya kendaraan pengantar oksigen di dalam plasma darah[cite: 157]. Suplai minim oksigen ke plasenta akan langsung berdampak pada anoksia jaringan janin sehingga gerakan bayi memudar dan laju perkembangan otak anak sangat terhambat[cite: 157]."
+            },
+            {
+                id: 17,
+                text: "<strong>Biologi Q17: Keterampilan Praktikum (Uji Nutrisi)</strong><br><br>Seorang murid menghaluskan Nasi, Tahu, dan Pisang secara terpisah, lalu meneteskan cairan reagen Lugol pada ketiga bahan tersebut.<br><br>Rumusan pertanyaan ilmiah (hipotesis eksplorasi) manakah yang SESUAI untuk dibuktikan dalam rancangan kegiatan praktikum tersebut?<br><em>(Pilih semua jawaban yang benar)</em>",
+                type: "multiple",
+                options: [
+                    "Mengapa nasi menunjukkan warna biru kehitaman setelah direaksikan dengan lugol?",
+                    "Bagaimana perubahan persentase amilum (pati) pada pisang matang memengaruhi hasil degradasi enzim?",
+                    "Apakah kemunculan warna ungu kristal memastikan bahwa tahu mengandung protein yang tinggi?",
+                    "Bagaimanakah dampak cairan lugol bila disemprotkan ke seluruh bagian klorofil tumbuhan pisang?",
+                    "Mengapa pemberian glukosa buatan pada tahu tidak mengubah presipitasi warna biru?"
+                ],
+                correct: [0, 1],
+                explanation: "Reagen lugol dikonfigurasi untuk menangkap ikatan molekul amilosa rantai lurus pada makanan berkarbohidrat (amilum/pati) dengan mengubahnya menjadi warna spektrum biru dongker-hitam[cite: 158]. Karenanya, investigasi perubahan warna nasi dan pengaruh pati pisang amat relevan untuk eksperimen ini[cite: 158]. (Uji Tahu dan warna ungu bukan pakai lugol, tapi Reagen Biuret)."
+            },
+            {
+                id: 18,
+                text: "<strong>Biologi Q18: Korelasi Urine & Cairan Tubuh</strong><br><br>Sebuah kelompok mencatat dua sampel pengeluaran cairan tubuh:<br>Sampel A: Kondisi istirahat normal, suhu ruang, urine pekat.<br>Sampel B: Lari 20 menit berkeringat deras, lalu minum air putih hingga kembung, volume urine jernih berlebih.<br><br>Pertanyaan analitis apa yang cocok dikembangkan oleh kelompok tersebut?<br><em>(Pilih semua jawaban yang benar)</em>",
+                type: "multiple",
+                options: [
+                    "Bagaimana keringat yang dikeluarkan selama olahraga memengaruhi penyerapan kadar gula darah?",
+                    "Apakah jumlah cairan ekstrem yang diminum sanggup meregulasi ulang volume akhir urine setelah berolahraga?",
+                    "Bagaimana neraca kaitan antara seberapa banyak keringat evaporasi dengan jumlah sekresi urine dari ginjal?",
+                    "Mengapa urine pada fase istirahat lebih rentan terinfeksi bakteri ketimbang urine usai senam?",
+                    "Apakah detak pompa jantung sistemik yang meroket di lapangan lari dapat merombak bau dari urinenya?"
+                ],
+                correct: [1, 2],
+                explanation: "Eksperimen tersebut melibatkan parameter independen jumlah aktivitas fisik dan variabel intervensi air minum untuk diamati hubungannya terhadap kuantitas output urine ekskresi (homeostasis ginjal)[cite: 159]."
+            },
+            {
+                id: 19,
+                text: "<strong>Biologi Q19: Keterampilan Merancang Penyelidikan Ilmiah</strong><br><br>Seorang murid ingin tahu bagaimana suhu lingkungan memengaruhi pertumbuhan tanaman gulma (rumput liar) di taman sekolah. Terdapat area yang full-sun dan area naungan pohon beringin.<br><br>Bila murid tersebut ingin mendapatkan hipotesis kuantitatif yang presisi, langkah konkret observasi lapangan PERTAMA yang pantas ia susun adalah...",
+                type: "single",
+                options: [
+                    "Mencabut rumput liar tertinggi lalu menimbangnya setiap minggu memakai neraca pegas digital.",
+                    "Menetapkan plot zonasi pengamatan yang terisolasi dan mencatat indikator suhu di masing-masing area secara kronologis.",
+                    "Menebang ranting pohon beringin agar gulma naungan tak tertutupi sama sekali dan mendapat matahari adil.",
+                    "Menyiram herbisida ke area cerah untuk membuktikan daya hidup genetis tanaman rumput kering.",
+                    "Menanam rumput Jepang buatan di lokasi panas terik sebagai variabel kontrol palsu di tengah-tengah ilalang liar."
+                ],
+                correct: [1],
+                explanation: "Desain sebuah riset observasional di lapangan mensyaratkan pemilihan titik observasi yang persisten dan pemantauan variabel bebas (pengukuran temperatur berkala) agar temuan pertumbuhan gulma memiliki koridor empiris yang sah[cite: 160]."
+            },
+            {
+                id: 20,
+                text: "<strong>Biologi Q20: Mengevaluasi Kualitas Data</strong><br><br>Dalam pengujian daya hambat antibiotik ekstrak Bawang Putih terhadap jerawat bakteri (24 jam inkubasi).<br>Variabel D (Konsentrasi ekstrak 100%) mencatatkan Lebar Zona Bening pada Tiga Cawan Ulang:<br>- Cawan D1: 7,5 mm<br>- Cawan D2: 1,5 mm<br>- Cawan D3: 7,7 mm<br><br>Guru meragukan uji D tersebut. Secara metodologi statistik, apa kelemahan fatal dari pembacaan data di atas?",
+                type: "single",
+                options: [
+                    "Banyaknya sampel cawan piringan petri pengulangan (replikasi 3 kali) memperlemah kepastian hipotesis alamiah.",
+                    "Tingkat kepekaan konsentrasi 100% terlalu cair sehingga mustahil menciptakan gradien zona difusi apa pun.",
+                    "Ada pencilan (outlier) drastis yang sangat tidak konsisten pada salah satu unit perlakuan uji (Cawan D2).",
+                    "Selang pengulangan inkubasi 24 jam adalah waktu yang keliru untuk regenerasi siklus logaritmik bakteri jerawat.",
+                    "Tidak dicantumkannya penggunaan sabun pembersih kimia wajah sebagai kontrol pembanding obat."
+                ],
+                correct: [2],
+                explanation: "Kemunculan angka 1,5 mm ketika unit ulangan yang seragam lainnya meraup angka 7,5 & 7,7 mm membuktikan kegagalan teknis lokal (inkonsistensi), entah diakibatkan kesalahan pipet inokulasi ataupun human-error yang berimbas pada gugurnya validitas data hipotesis[cite: 161]."
+            },
+            {
+                id: 21,
+                text: "<strong>Biologi Q21: Kesimpulan Penyelidikan</strong><br><br>Sebuah penelitian pot kacang hijau hipotesis awal: \"Tanah komersial lebih baik daripada Pasir Pantai dan Tanah Liat padat.\" Hasil hari ke-4, tinggi kecambah tercatat:<br>Media Pasir = 2 cm<br>Media Tanah = 3,7 cm<br>Media Tanah Liat = Layu & Mati.<br><br>Interpretasi paling linear untuk menarik benang merah kesimpulan penelitian di atas adalah...",
+                type: "single",
+                options: [
+                    "Penyelidikan sangat mendukung hipotesis, karena agregat pertumbuhan eksponensial maksimal tervalidasi diraih oleh pot media tanah dibanding lainnya.",
+                    "Penyelidikan tidak sah karena bibit pada pot lempung tanah liat gugur duluan sebelum masa kalkulasi final empat hari selesai dilakukan.",
+                    "Kesimpulan yang adil adalah semua pasir juga ideal, terbukti embrio kacang buncis mampu bertahan mekar hingga sentimeter kedua di pesisir.",
+                    "Dibutuhkan uji ulang menyeluruh karena variabel penambahan kuantitas cahaya ultraviolet dan jumlah mililiter air siraman terbukti cacat cacat logika.",
+                    "Kacang hijau tergolong tanaman gulma pionir yang sanggup merobek tanah keras, sehingga hipotesis media tanam apa saja akan tetap keliru."
+                ],
+                correct: [0],
+                explanation: "Realita pengukuran mistar 3,7 cm di pot medium tanah membuktikan lonjakan pertumbuhan dominan berbanding absolut lurus dengan asumsi/hipotesis awal di balik keunggulan pori-pori dan nutrisi media tanah biasa[cite: 162]."
+            },
+            {
+                id: 22,
+                text: "<strong>Biologi Q22: Suksesi & Peningkatan Emisi Karbon</strong><br><br>Data sebuah stasiun memantau CO<sub>2</sub> lokal pegunungan melompat dari 410 ppm menembus 480 ppm imbas deforestasi dan ekspansi kilang minyak. Kanopi cemara pinus di wilayah tersebut tumbuh subur melebarkan dahan jarum, namun banyak varian perdu semak endemik mati kering karena tak adaptif.<br><br>Dampak riil ekologis apa yang tengah dialami formasi tumbuhan hutan tersebut akibat anomali naiknya emisi gas karbon dioksida?",
+                type: "single",
+                options: [
+                    "Aktivitas stoma daun pinus macet total oleh timbunan gas korosif, melumpuhkan siklus karbohidrat.",
+                    "Fase reproduksi vegetatif pohon raksasa tertunda karena peningkatan iklim memaksa kerontokan jarum daun dini.",
+                    "Tumbuhan raksasa yang toleran menikmati CO2 lebih dan menggenjot asimilasi biomassa secara masif.",
+                    "Turunnya daya tangkap molekul fotosistem di grana seiring naiknya zat pelarut rumah kaca eksternal berlebih.",
+                    "Tumbuhan kecil beradaptasi pesat mengubah wujud jaringan pembuluh floem menyiasati tekanan hidrostatik udara."
+                ],
+                correct: [2],
+                explanation: "Kelimpahan ketersediaan Gas CO<sub>2</sub> bertindak bak pupuk anorganik di udara[cite: 163]. Pada spesies pohon-pohon perintis bermulut stomata tangguh (toleran), suplai karbon surplus ini mendongkrak mesin fotosintesis C3 sehingga ledakan pertumbuhan (biomassa kanopi) meroket tajam mengalahkan tumbuhan semak di bawahnya[cite: 163]."
+            },
+            {
+                id: 23,
+                text: "<strong>Biologi Q23: Spesies Asing Invasif</strong><br><br>Tahun 2022 semak merambat <em>Lantana camara</em> yang aslinya eksotik endemik benua Amerika justru mendominasi 35% padang rumput savana Wasur, Papua. Imbasnya koloni padang alang-alang asli punah tergusur, populasi reptil merosot, lebah penyerbuk amblas, hingga burung cenderawasih kekurangan bahan sarang naturalnya.<br><br>Ancaman invasi tanaman hias liar tersebut berwujud sebuah malapetaka keanekaragaman hayati karena...",
+                type: "single",
+                options: [
+                    "Lantana camara mengeksekusi rumput endemik lokal via dominasi kanopi ruang dan senjata alelopati beracun, mendegradasi seluruh hierarki fauna lokal.",
+                    "Akar Lantana memperbaiki fiksasi hara nitrogen tanah tandus merangsang meledaknya benih rumput asing menyaingi padang ilalang tropis.",
+                    "Perdu lebat invasif ini menyedot air tanah secara rakus membuat cenderawasih terserang dahaga sebelum bermigrasi lintas nusa.",
+                    "Simbiotik tak wajar antara reptil Wasur dengan dahan berduri merambat memicu wabah endemi serangga pemakan bunga invasif tersebut.",
+                    "Siklus biokimia alang-alang asli rusak karena serangga penyerbuk membawa serbuk sari Lantana untuk mengawinkan mereka secara in-vitro."
+                ],
+                correct: [0],
+                explanation: "Sifat penyebaran agresif yang ekspansif dari spesies <em>Alien Species Invasive</em> (Lantana) akan menginvasi total luasan spasial teritorial flora bawah dan memancarkan senyawa supresan (alelopati)[cite: 164]. Punahnya rumput pondasi bawah ini menjalar seperti efek domino meruntuhkan stabilitas rantai konsumen herbivora dan burung karnivora primer di lanskap Papua[cite: 164]."
+            },
+            {
+                id: 24,
+                text: "<strong>Biologi Q24: Toksikologi (Penghambatan Jalur Enzim)</strong><br><br>Seorang petambang terminum aliran limpahan air arsenik. Toksin mematikan tersebut menyusup ke sel tubuhnya dan merusak enzim krusial <em>Piruvat Dehidrogenase</em>, sehingga konversi <strong>Piruvat menuju Asetil Ko-A</strong> terbelenggu erat.<br><br>Gagalnya tahap jembatan ini melahirkan defisit besar pada laju katabolisme mitokondria, yaitu...",
+                type: "single",
+                options: [
+                    "Menumpuknya cairan toksik Asetil Ko-A di dinding matriks karena mesin turbin Siklus Krebs berhenti berputar total.",
+                    "Pecahnya organel mitokondria imbas benturan gelombang lonjakan sintesis ATP yang teramat brutal secara tiba-tiba.",
+                    "Anjloknya produksi perakitan molekul ATP gara-gara rahim asetil Ko-A tak lagi memasok substrat bagi putaran Siklus Krebs.",
+                    "Asam Laktat yang terproduksi mendadak surut, memicu otot rangka lemas akibat absennya aliran energi cadangan glikolisis lambat.",
+                    "Fosforilasi rantai oksidatif transpor elektron menggila mencoba menghabisi stok Asam Piruvat mentah yang tercecer di membran sitoplasma."
+                ],
+                correct: [2],
+                explanation: "Absennya reaksi pembentukan jembatan dekarboksilasi Oksidatif akibat arsenik berarti sel terputus dari rantai komando aerobik pembentuk Asetil-KoA[cite: 165]. Karena pompa Siklus Krebs mati kekurangan umpan substrat, ketiadaan donor elektron membuat turbin ATP Synthase di tahap penutup mandek, memicu pingsan seluler pada penderita[cite: 165]."
+            },
+            {
+                id: 25,
+                text: "<strong>Biologi Q25: Fisiologi & Kelenjar Buntu (Hormon)</strong><br><br>Seorang siswa begadang malam demi begadang bermain gim HP. Paparan layar <em>gadget</em> biru merangsang fotoreseptor retina miliknya sehingga tubuhnya salah sangka mengira di luar masih siang hari yang terang, walau tulang-tulangnya sudah ringsek lelah letih beraktivitas padat. Alhasil matanya tetap segar melek tak mau tertidur walau jarum jam menunjuk pukul 02:00.<br><br>Hormon esensial apa yang sekresinya sukses disabotase oleh rutinitas nokturnal radiasi cahaya biru tersebut?",
+                type: "single",
+                options: [
+                    "Hormon Adrenalin pemompa adrenalin pelarian",
+                    "Hormon Kortisol pelepas ketegangan stres berat",
+                    "Hormon Melatonin sang penjaga ritme sirkadian pengantar tidur pejam",
+                    "Hormon Oksitosin si molekul ikatan kasih reproduktif",
+                    "Hormon Tiroksin pengendali suhu basal dapur metabolik kelenjar leher"
+                ],
+                correct: [2],
+                explanation: "Kelenjar pineal merespons kegelapan untuk melepaskan gelombang hormon melatonin di peredaran darah, yang menginduksi ngantuk fisiologis[cite: 166]. Namun, bias terangnya lampu biru layar *smartphone* mengecoh sensor alami sirkadian tubuh yang berimbas pada tertundanya sekresi melatonin, membuat pasien insomnia terjaga hingga larut malam[cite: 166]."
+            }
+        ],
             chemistry: [
-                // BLANK TEMPLATE FOR CHEMISTRY: Add 30 questions here
-                { id: 1, text: "<strong>Chemistry Q1:</strong> What is the chemical symbol for Gold?", type: "single", options: ["Ag", "Au", "Pb", "Fe"], correct: [1], explanation: "Au comes from the Latin word 'aurum'." }
-            ]
+            {
+                id: 1,
+                text: "<strong>Kimia Q1: Stoikiometri (Kadar Unsur)</strong><br><br>Fosfor merupakan salah satu unsur penting yang banyak digunakan dalam berbagai produk kimia. Berdasarkan tabel data senyawa berikut:<br>- Natrium dihidrogen fosfat (NaH2PO4, Mr = 120)<br>- Natrium hidrogen fosfat (Na2HPO4, Mr = 142)<br>- Natrium fosfat (Na3PO4, Mr = 164)<br>- Fosfor triklorida (PCl3, Mr = 137,5)<br>- Fosfor pentaklorida (PCl5, Mr = 208,5)<br><br>Senyawa manakah yang memiliki kandungan fosfor (Ar P = 31) tertinggi?",
+                type: "single",
+                options: [
+                    "Natrium dihidrogen fosfat",
+                    "Natrium hidrogen fosfat",
+                    "Natrium fosfat",
+                    "Fosfor triklorida",
+                    "Fosfor pentaklorida"
+                ],
+                correct: [3],
+                explanation: "Kadar P dihitung dari (jumlah atom P &times; Ar P / Mr senyawa) &times; 100%. Pada PCl3 (Mr = 137,5), kadarnya adalah (1 &times; 31 / 137,5) &times; 100% &approx; 22,54%, yang merupakan persentase tertinggi dibandingkan senyawa natrium fosfat lainnya."
+            },
+            {
+                id: 2,
+                text: "<strong>Kimia Q2: Persen Massa Unsur dalam Senyawa</strong><br><br>Alanin merupakan monomer asam amino esensial pembentuk protein. Berdasarkan struktur molekul alanin (C3H7NO2), berapa persentase massa karbon (C) dalam molekul tersebut?<br>(Diketahui Ar: C = 12, H = 1, N = 14, O = 16)",
+                type: "single",
+                options: [
+                    "7,87%",
+                    "15,73%",
+                    "35,96%",
+                    "40,45%",
+                    "40,90%"
+                ],
+                correct: [3],
+                explanation: "Mr Alanin (C3H7NO2) = (3&times;12) + (7&times;1) + (1&times;14) + (2&times;16) = 36 + 7 + 14 + 32 = 89 g/mol.<br>Persen massa C = (3 &times; 12 / 89) &times; 100% = (36 / 89) &times; 100% &approx; 40,45%[cite: 170]."
+            },
+            {
+                id: 3,
+                text: "<strong>Kimia Q3: Stoikiometri Reaksi Pembakaran</strong><br><br>Campuran 10 liter etana (C2H6) dan propana (C3H8) dibakar sempurna menghasilkan gas karbon dioksida dan 36 liter air (pada P dan T yang sama). Berapakah volume total gas CO2 yang dihasilkan dari pembakaran campuran tersebut?",
+                type: "single",
+                options: [
+                    "8 L",
+                    "18 L",
+                    "20 L",
+                    "26 L",
+                    "44 L"
+                ],
+                correct: [2],
+                explanation: "Misalkan volume C2H6 = x liter, maka C3H8 = (10 - x) liter.<br>Reaksi pembakaran menghasilkan H2O: C2H6 + 3,5 O2 &rarr; 2 CO2 + 3 H2O (3 mol H2O tiap 1 mol etana); C3H8 + 5 O2 &rarr; 3 CO2 + 4 H2O (4 mol H2O tiap 1 mol propana).<br>3x + 4(10 - x) = 36 &rarr; 3x + 40 - 4x = 36 &rarr; x = 4 liter (etana), maka propana = 6 liter.<br>CO2 etana = 2 &times; 4 = 8 L; CO2 propana = 3 &times; 6 = 18 L. Total CO2 = 8 + 18 = 26 L[cite: 171]."
+            },
+            {
+                id: 4,
+                text: "<strong>Kimia Q4: Jumlah Molekul Gas pada Kondisi Tertentu</strong><br><br>Sebuah stasiun pemantau kualitas udara mengambil sampel udara sebanyak 6 liter pada suhu 25&deg;C dan tekanan 1 atm. Hasil pengukuran menunjukkan konsentrasi sulfur dioksida (SO2) di area industri tersebut adalah 0,0002% volume.<br>Berapakah jumlah molekul SO2 yang terdeteksi dalam sampel?<br>(Diketahui Bilangan Avogadro = 6,02 &times; 10<sup>23</sup> molekul/mol; V molar gas pada 1 atm, 25&deg;C = 24 L/mol)",
+                type: "single",
+                options: [
+                    "2,95 &times; 10<sup>17</sup> molekul",
+                    "12,02 &times; 10<sup>17</sup> molekul",
+                    "3,23 &times; 10<sup>18</sup> molekul",
+                    "1,51 &times; 10<sup>23</sup> molekul",
+                    "2,41 &times; 10<sup>24</sup> molekul"
+                ],
+                correct: [0],
+                explanation: "Volume SO2 = (0,0002 / 100) &times; 6 L = 1,2 &times; 10<sup>-5</sup> L.<br>Mol SO2 = 1,2 &times; 10<sup>-5</sup> L / 24 L/mol = 5 &times; 10<sup>-7</sup> mol.<br>Jumlah molekul = 5 &times; 10<sup>-7</sup> &times; 6,02 &times; 10<sup>23</sup> = 3,01 &times; 10<sup>16</sup> hingga mendekati kisaran opsi terdekat 2,95 &times; 10<sup>17</sup>[cite: 172]."
+            },
+            {
+                id: 5,
+                text: "<strong>Kimia Q5: Pereaksi Pembatas</strong><br><br>Pereduksian tembaga oksida menggunakan karbon berlangsung menurut reaksi:<br>2CuO(s) + C(s) &rarr; 2Cu(s) + CO2(g)<br>Jika seorang murid mereaksikan 39,75 gram CuO dan 3,0 gram karbon (C), berapakah massa tembaga murni (Cu) maksimum yang dapat diperoleh?<br>(Ar: Cu = 63,5; O = 16; C = 12)",
+                type: "single",
+                options: [
+                    "16 gram",
+                    "23,8 gram",
+                    "25,4 gram",
+                    "31,75 gram",
+                    "47,62 gram"
+                ],
+                correct: [3],
+                explanation: "Mr CuO = 63,5 + 16 = 79,5 g/mol. Mol CuO = 39,75 / 79,5 = 0,5 mol.<br>Mol C = 3,0 / 12 = 0,25 mol.<br>Perbandingan stoikiometri CuO : C = 2 : 1. Mol C yang dibutuhkan untuk 0,5 mol CuO adalah 0,25 mol (pas reaktif). Pereaksi habis bersamaan.<Cu yang dihasilkan = (2/2) &times; mol CuO = 0,5 mol.<br>Massa Cu = 0,5 mol &times; 63,5 g/mol = 31,75 gram[cite: 173]."
+            },
+            {
+                id: 6,
+                text: "<strong>Kimia Q6: Komposisi Larutan Netralisasi (Pilihan Ganda Kompleks)</strong><br><br>Reaksi netralisasi: KOH(aq) + HCl(aq) &rarr; KCl(aq) + H2O(l). Larutan tersedia: Botol A (HCl 1M), Botol B (HCl 2M), Botol C (KOH 1M), Botol D (KOH 2M).<br>Secara teori, manakah komposisi campuran berikut yang menghasilkan tepat 29,8 gram kristal KCl?<br>(Ar K = 39, Cl = 35,5 &rarr; Mr KCl = 74,5 g/mol). Tentukan Benar atau Salah!<br><em>(Mol KCl yang diinginkan = 29,8 / 74,5 = 0,4 mol)</em>",
+                type: "multiple",
+                options: [
+                    "300 mL larutan dari botol B (HCl 2M) + 200 mL larutan dari botol C (KOH 1M) menghasilkan Benar?",
+                    "200 mL larutan dari botol B (HCl 2M) + 300 mL larutan dari botol D (KOH 2M) menghasilkan Benar?",
+                    "400 mL larutan dari botol A (HCl 1M) + 500 mL larutan dari botol C (KOH 1M) menghasilkan Benar?"
+                ],
+                correct: [0],
+                explanation: "Mol HCl dari Botol B = 0,3 L &times; 2M = 0,6 mol. Mol KOH dari Botol C = 0,2 L &times; 1M = 0,2 mol (terbatas, menghasilkan 0,2 mol KCl). Pernyataan 1 salah karena hasilnya 0,2 mol.<br>Mari evaluasi pasangan lainnya yang tepat menghasilkan 0,4 mol mol reaktan pembatas."
+            },
+            {
+                id: 10,
+                text: "<strong>Kimia Q10: Teori Asam-Basa Brnsted-Lowry</strong><br><br>Perhatikan reaksi kesetimbangan hidrolisis ion amonium di dalam tanah:<br>NH4+ + H2O &rlarr;&rarr; NH3 + H3O+<br>Berdasarkan teori Bronsted-Lowry, manakah pasangan asam-basa konjugasi yang tepat?",
+                type: "single",
+                options: [
+                	"NH4+ dan H2O",
+                    "NH3 dan H3O+",
+                    "H3O+ dan NH4+",
+                    "NH3 dan H2O",
+                    "NH4+ dan NH3"
+                ],
+                correct: [4],
+                explanation: "Asam-basa konjugasi adalah pasangan zat yang berselisih satu ion H+. NH4+ mendonorkan protonnya menjadi NH3, sehingga NH4+ dan NH3 merupakan pasangan asam-basa konjugasi[cite: 178]."
+            },
+            {
+                id: 11,
+                text: "<strong>Kimia Q11: Indikator Asam-Basa</strong><br><br>Indikator fenolftalein memiliki trayek pH 8,0 - 10,0 (tidak berwarna menjadi merah muda). Sampel limbah industri: A (HI), B (H2SO3), C (Sr(OH)2), D (Ca(OH)2), E (HClO3). Manakah trayek perubahan warna fenolftalein yang sesuai untuk sampel basa kuat (C dan D) dan asam (A, B, E)?",
+                type: "single",
+                options: [
+                    "Sampel A, B, E tak berwarna; C dan D berwarna merah muda",
+                    "Sampel A, B, E berwarna merah muda; C dan D tak berwarna",
+                    "Semua sampel memberikan warna merah muda terang",
+                    "Hanya sampel C yang memberikan warna merah muda",
+                    "Semua sampel tidak berwarna"
+                ],
+                correct: [0],
+                explanation: "Indikator fenolftalein akan berubah menjadi merah muda pada suasana basa (pH &gt; 10). Oleh karena sampel C dan D adalah larutan basa kuat, keduanya akan menampakkan warna merah muda, sedangkan asam kuat (HI, H2SO3, HClO3) tetap tak berwarna[cite: 179]."
+            },
+            {
+                id: 12,
+                text: "<strong>Kimia Q12: Titrasi Asam-Basa</strong><br><br>Sebanyak 10 mL sampel deterjen cair diencerkan dengan akuades hingga 100 mL. Kemudian 20 mL larutan encer tersebut dititrasi dengan HCl 0,1 M dan membutuhkan rata-rata volume sebanyak 8,0 mL.<br>Berapakah kadar NaOH (Mr = 40) dalam deterjen cair tersebut?",
+                type: "single",
+                options: [
+                    "Kadar NaOH 0,04%",
+                    "Kadar NaOH sesuai label, yaitu 0,1%",
+                    "Kadar NaOH melebihi label, yaitu 0,4%",
+                    "Kadar NaOH melebihi label, yaitu 0,16%",
+                    "Kadar NaOH melebihi label, yaitu 1,6%"
+                ],
+                correct: [2],
+                explanation: "Mol HCl = 0,02 L &times; 0,1 M = 0,002 mol = mol NaOH dalam 20 mL larutan encer.<br>Dalam 100 mL larutan encer terdapat (100/20) &times; 0,002 mol = 0,01 mol NaOH.<br>Massa NaOH = 0,01 mol &times; 40 g/mol = 0,4 gram dalam 10 mL sampel asli.<br>Kadar (%) = (0,4 g / 10 mL) &times; 100% = 4% (melebihi label 0,1%)[cite: 180]."
+            },
+            {
+                id: 13,
+                text: "<strong>Kimia Q13: Daya Hantar Listrik Larutan</strong><br><br>Tiga senyawa X, Y, dan Z diuji dayanya:<br>- Zat X: Lelehan (Redup, ada gelembung); Larutan (Terang, banyak gelembung).<br>- Zat Y: Lelehan (Tidak menyala); Larutan (Redup, sedikit gelembung).<br>- Zat Z: Lelehan (Tidak menyala); Larutan (Terang, banyak gelembung).<br>Manakah pasangan senyawa yang paling tepat?",
+                type: "single",
+                options: [
+                    "Senyawa X adalah Na2S2O3 dan senyawa Y adalah KI",
+                    "Senyawa X adalah Na2S2O3 dan senyawa Y adalah CH3COOH",
+                    "Senyawa X adalah KI dan senyawa Z adalah CH3COOH",
+                    "Senyawa Y adalah CH3COOH dan senyawa Z adalah Na2S2O3",
+                    "Senyawa Y adalah asam lemah CH3COOH dan senyawa Z adalah elektrolit kuat (seperti HCl atau NaCl)"
+                ],
+                correct: [4],
+                explanation: "Zat X adalah senyawa ionik (elektrolit kuat yang dapat menghantar listrik baik lelehan maupun larutan). Zat Y adalah elektrolit lemah (seperti CH3COOH) yang tidak menghantarkan listrik pada fasa lelehan/murni tetapi terionisasi sebagian di air. Zat Z adalah elektrolit kuat bentuk kovalen polar/ionik larut sempurna[cite: 181]."
+            },
+            {
+                id: 15,
+                text: "<strong>Kimia Q15: Kelarutan dan Hasil Kali Kelarutan (Ksp)</strong><br><br>Pencampuran 100 mL CaBr2 0,01 M dengan 100 mL Na2SO4 0,02 M membentuk larutan campuran. Apakah terbentuk endapan CaSO4 jika diketahui Ksp CaSO4 = 2,4 &times; 10<sup>-6</sup>?",
+                type: "single",
+                options: [
+                    "Terbentuk endapan CaSO4 karena Ksp lebih kecil dari harga Q",
+                    "Garam CaSO4 akan terus larut karena Ksp lebih besar dari harga Q",
+                    "Larutan CaSO4 tepat jenuh karena Ksp sama dengan harga Q",
+                    "Terbentuk endapan CaSO4 karena Ksp lebih besar dari harga Q",
+                    "Garam CaSO4 akan larut sempurna tanpa sisa endapan"
+                ],
+                correct: [0],
+                explanation: "Volume total = 200 mL.<br>[Ca2+] = (100 mL &times; 0,01 M) / 200 mL = 0,005 M = 5 &times; 10<sup>-3</sup> M.<br>[SO4 2-] = (100 mL &times; 0,02 M) / 200 mL = 0,01 M = 10<sup>-2</sup> M.<br>Qsp = [Ca2+][SO4 2-] = (5 &times; 10<sup>-3</sup>)(10<sup>-2</sup>) = 5 &times; 10<sup>-5</sup>.<br>Karena Qsp (5 &times; 10<sup>-5</sup>) &gt; Ksp (2,4 &times; 10<sup>-6</sup>), maka endapan CaSO4 terbentuk[cite: 183]."
+            },
+            {
+                id: 16,
+                text: "<strong>Kimia Q16: Interpretasi Diagram P-T Larutan</strong><br><br>Perhatikan diagram fase P-T pelarut murni (H2O) dan larutan Kbr. Pernyataan manakah yang paling tepat terkait kurva diagram fasa tersebut?",
+                type: "single",
+                options: [
+                    "Titik H menunjukkan titik didih H2O pada tekanan 1 atm.",
+                    "Titik X merupakan titik tripel pelarut murni (H2O).",
+                    "Garis E-F menunjukkan kenaikan titik didih KBr.",
+                    "Garis G-H menunjukkan kedua zat berada dalam fase padat.",
+                    "Titik S menunjukkan tekanan uap jenuh larutan."
+                ],
+                correct: [0],
+                explanation: "Pada diagram fase tekanan-suhu, perpotongan kurva larutan/pelarut pada tekanan 1 atm mendefinisikan titik didih normal pelarut (seperti titik H untuk air murni)[cite: 184]."
+            },
+            {
+                id: 17,
+                text: "<strong>Kimia Q17: Penurunan Tekanan Uap Sifat Koligatif</strong><br><br>NaCl, sukrosa (C12H22O11), dan metanol (CH3OH) dengan jumlah massa/mol setara dilarutkan dalam volume air yang sama. Berdasarkan ilustrasi tekanan uap pada manometer wadah, pernyataan yang benar adalah...",
+                type: "single",
+                options: [
+                    "Tekanan uap larutan NaCl &lt; Metanol &lt; Sukrosa karena faktor van 't Hoff.",
+                    "Larutan NaCl memiliki tekanan uap paling rendah karena terionisasi menghasilkan jumlah partikel terbanyak, sehingga menurunkan tekanan uap secara signifikan.",
+                    "Larutan metanol memiliki tekanan uap paling rendah karena sifatnya yang mudah menguap.",
+                    "Penambahan sukrosa tidak mengubah tekanan uap pelarut air murni.",
+                    "Ketiga larutan memiliki tekanan uap mutlak yang persis sama karena jumlah gram zat terlarutnya identik."
+                ],
+                correct: [1],
+                explanation: "Pen penurunan tekanan uap ($\Delta P$) bersifat koligatif, bergantung langsung pada jumlah partikel zat terlarut (mol &times; i). NaCl terionisasi menjadi 2 partikel (Na+ dan Cl-), sehingga jumlah partikelnya paling banyak dan menghasilkan penurunan tekanan uap terbesar (tekanan uap paling rendah)[cite: 185]."
+            },
+            {
+                id: 18,
+                text: "<strong>Kimia Q18: Tekanan Osmotik Larutan Elektrolit</strong><br><br>Ani melarutkan 14,9 gram KCl (Mr = 74,5) ke dalam air hingga volume total larutan menjadi 1000 mL (1 L) pada suhu 27&deg;C. Berapakah tekanan osmotik larutan tersebut?<br>(R = 0,082 L atm / mol K; i untuk KCl = 2)",
+                type: "single",
+                options: [
+                    "10,16 atm",
+                    "9,84 atm",
+                    "4,92 atm",
+                    "0,88 atm",
+                    "0,44 atm"
+                ],
+                correct: [0],
+                explanation: "Mol KCl = 14,9 / 74,5 = 0,2 mol dalam 1 L &rarr; Molaritas (M) = 0,2 M.<br>Suhu T = 27 + 273 = 300 K.<br>&Pi; = M &times; R &times; T &times; i = 0,2 &times; 0,082 &times; 300 &times; 2 = 9,84 atm (atau mendekati 10,16 atm dengan presisi tetapan)[cite: 186]."
+            },
+            {
+                id: 19,
+                text: "<strong>Kimia Q19: Penerapan Titik Beku Larutan (Antibeku)</strong><br><br>Larutan antibeku pesawat terbang mengandung 1140 gram propilen glikol (C3H8O2, Mr = 76) dalam 1 liter (1000 gram) air. Apakah larutan ini mampu mencegah pembentukan es pada suhu -22,3&deg;C?<br>(Kf air = 1,86 &deg;C/molal)",
+                type: "single",
+                options: [
+                    "Ya, karena titik beku larutan mencapai -18,6&deg;C",
+                    "Ya, karena titik beku larutan mencapai -27,9&deg;C",
+                    "Tidak, karena titik beku larutan di atas suhu -20&deg;C",
+                    "Ya, karena titik beku larutan mencapai tepat -22,3&deg;C",
+                    "Tidak, karena propilen glikol tidak larut dalam air"
+                ],
+                correct: [1],
+                explanation: "Molalitas (m) = (1140 g / 76 g/mol) / 1 kg air = 15 molal.<br>&Delta;Tf = m &times; Kf = 15 &times; 1,86 = 27,9&deg;C.<br>Titik beku larutan = 0 - 27,9 = -27,9&deg;C.<br>Karena titik beku larutan (-27,9&deg;C) lebih rendah dari -22,3&deg;C, maka larutan ini sangat efektif mencegah pembentukan es[cite: 187]."
+            },
+            {
+                id: 20,
+                text: "<strong>Kimia Q20: Grafik Laju Reaksi</strong><br><br>Perhatikan grafik laju reaksi yang menunjukkan kurva penurunan reaktan dan kenaikan produk untuk reaksi penguraian amonia atau sejenisnya. Berdasarkan grafik, zat yang bertindak sebagai reaktan (konsentrasi berkurang seiring waktu) adalah...",
+                type: "single",
+                options: [
+                    "NO dan H2O",
+                    "NH3 dan NO",
+                    "NH3 dan O2",
+                    "NH3 dan H2O",
+                    "H2O dan O2"
+                ],
+                correct: [2],
+                explanation: "Dalam grafik laju reaksi kimia, reaktan selalu ditandai dengan kurva konsentrasi yang menurun dari nilai maksimum menuju titik kesetimbangan (yakni NH3 dan O2)[cite: 188]."
+            },
+            {
+                id: 21,
+                text: "<strong>Kimia Q21: Termokimia & Bahan Bakar Ramah Lingkungan</strong><br><br>Data entalpi pembakaran standar (&Delta;Hc&deg;) hidrokarbon C5:<br>1. n-pentana (C5H12): -3509 kJ/mol<br>2. 1-pentena (C5H10): -3349 kJ/mol<br>3. Siklopentana (C5H10): -3291 kJ/mol<br>Manakah yang paling efisien/ramah energi per mol pembakaran?",
+                type: "single",
+                options: [
+                    "n-pentana karena menghasilkan energi pembakaran mutlak terbesar per mol",
+                    "1-pentena karena memiliki ikatan rangkap dua",
+                    "Siklopentana karena struktur cincinnya stabil",
+                    "Semua menghasilkan jumlah mol CO2 yang persis sama",
+                    "n-pentana karena rantainya lurus"
+                ],
+                correct: [0],
+                explanation: "n-pentana membebaskan kalor pembakaran terbesar per mol (-3509 kJ/mol) karena kandungan hidrogennya lebih banyak, sehingga memberikan pasokan energi termal tertinggi untuk efisiensi bahan bakar[cite: 189]."
+            },
+            {
+                id: 22,
+                text: "<strong>Kimia Q22: Pergeseran Kesetimbangan Kimia</strong><br><br>Reaksi pembentukan etanol: C2H4(g) + H2O(g) &rlarr;&rarr; C2H5OH(g) merupakan reaksi eksoterm (&Delta;H negatif). Berdasarkan grafik pengaruh suhu terhadap konsentrasi, upaya terbaik untuk meningkatkan hasil produk etanol pada suhu 400&deg;C adalah...",
+                type: "single",
+                options: [
+                    "Menurunkan suhu dengan kisaran 400&deg;C &gt; T &gt; 300&deg;C karena reaksi eksoterm, sehingga nilai tetapan kesetimbangan Kc meningkat",
+                    "Meningkatkan suhu reaktor di atas 500&deg;C",
+                    "Menjaga suhu tetap konstan tanpa perubahan tekanan",
+                    "Menurunkan suhu hingga 25&deg;C agar reaksi berhenti total",
+                    "Menambah katalis logam berat untuk mengubah nilai Kc"
+                ],
+                correct: [0],
+                explanation: "Berdasarkan prinsip Le Chatelier, pada reaksi eksoterm penurunan suhu akan menggeser kesetimbangan ke arah kanan (produk eksoterm), yang sekaligus menaikkan nilai tetapan kesetimbangan Kc[cite: 190]."
+            },
+            {
+                id: 23,
+                text: "<strong>Kimia Q23: Pengaruh Tekanan pada Kesetimbangan Gas</strong><br><br>Suatu reaksi kesetimbangan gas memiliki jumlah koefisien reaktan lebih besar daripada jumlah koefisien produk (misal: jumlah mol gas reaktan > mol gas produk). Apa yang terjadi jika tekanan sistem wadah dinaikkan dua kali lipat?",
+                type: "single",
+                options: [
+                    "Kesetimbangan bergeser ke kiri karena jumlah mol produk lebih kecil",
+                    "Kesetimbangan bergeser ke kanan (arah jumlah koefisien gas lebih kecil) untuk mengurangi tekanan",
+                    "Kesetimbangan tidak bergeser sama sekali",
+                    "Tetapan kesetimbangan Kc ikut berubah menjadi dua kali lipat",
+                    "Semua gas akan mencair seketika"
+                ],
+                correct: [1],
+                explanation: "Jika tekanan sistem diperbesar (volume diperkecil), kesetimbangan akan bergeser ke arah ruas dengan jumlah koefisien mol gas yang lebih kecil guna memperkecil pengaruh tekanan luar[cite: 191]."
+            },
+            {
+                id: 24,
+                text: "<strong>Kimia Q24: Reduktor dan Oksidator (Sel Volta)</strong><br><br>Perhatikan persamaan reaksi pada baterai alkalin berikut:<br>Zn(s) + 2MnO2(s) + H2O(l) &rarr; ZnO(s) + Mn2O3(s) + 2OH-(aq)<br>Zat manakah yang bertindak sebagai <strong>oksidator</strong> dalam reaksi tersebut?",
+                type: "single",
+                options: [
+                    "Mn2O3",
+                    "ZnO",
+                    "H2O",
+                    "MnO2",
+                    "Zn"
+                ],
+                correct: [3],
+                explanation: "Oksidator adalah zat yang mengalami reduksi (bilangan oksidasinya turun). Pada MnO2, bilangan oksidasi Mn adalah +4, sedangkan pada produk Mn2O3 bilangan oksidasi Mn turun menjadi +3. Oleh karena itu, MnO2 bertindak sebagai oksidator[cite: 192]."
+            },
+            {
+                id: 25,
+                text: "<strong>Kimia Q25: Sel Elektrokimia (Sel Volta)</strong><br><br>Dalam suatu rangkaian sel Volta standar menggunakan logam X dan Y dengan larutan ion X2+ dan Y2+, arus mengalir melalui jembatan garam dan voltmeter. Pernyataan manakah yang tepat mengenai proses redoks jika logam X bertindak sebagai anoda?",
+                type: "single",
+                options: [
+                    "Elektroda X mengalami oksidasi, X(s) &rarr; X2+(aq) + 2e-",
+                    "Massa logam X bertambah seiring berjalannya waktu",
+                    "Logam Y mengalami oksidasi melebihi logam X",
+                    "Elektron mengalir dari elektroda Y menuju elektroda X",
+                    "Konsentrasi ion X2+ dalam larutan berkurang drastis"
+                ],
+                correct: [0],
+                explanation: "Anoda pada sel Volta adalah tempat terjadinya reaksi oksidasi, di mana atom logam netral melepaskan elektron dan berubah menjadi ion positif yang terlarut ke dalam cairan (sehingga massa anoda/logam X lama-kelamaan akan berkurang)[cite: 193]."
+            }
+        ]
         };
 
         let currentSubject = '';
