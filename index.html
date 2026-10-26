@@ -156,22 +156,19 @@
     <script>
         // --- ALL SUBJECT DATA REPOSITORIES ---
         const allSubjects = {
-            english: [
-            // --- TEXT 1: The Lion and the Mouse ---
+           english: [
+            // --- TEXT 1: The Brave Little Parrot ---
             ...(() => {
                 const text1 = `
                 <div style="background: #f8f9fa; padding: 15px; border-left: 4px solid #0056b3; margin-bottom: 20px; font-size: 14px; line-height: 1.6;">
-                    <strong style="font-size: 16px;">Text 1: The Lion and the Mouse</strong><br><br>
-                    Once upon a time, in a thick jungle in Africa, there lived a strong and fierce lion. Every afternoon, the lion would rest under the cool shade of a big tree after walking through the forest.<br><br>
-                    One day, while he was sleeping, a playful little mouse passed by. The mouse saw the lion's thick mane and was curious. He climbed up and began to jump around on the lion's head, playing in his mane.<br><br>
-                    The lion woke up suddenly and was not happy at all. He quickly caught the mouse in his big paw and roared, "Who dares to wake me up?" He was very angry and almost killed the mouse.<br><br>
-                    Scared and shaking, the mouse begged the lion, "Please don't kill me! I didn't mean to bother you. If you let me go, I promise I'll help you one day."<br><br>
-                    The lion laughed loudly. "You? Help me? That's funny." But the lion was feeling kind, so he let the mouse go free.<br><br>
-                    A few days later, the lion was walking through the jungle again when he fell into a trap. A net set by hunters caught him, and he couldn't escape. He tried to bite and tear the ropes, but they were too strong. The lion roared loudly, hoping someone would come.<br><br>
-                    The mouse heard the roar and ran to help. He saw the lion trapped and quickly started to chew the ropes with his sharp teeth. After some time, the net broke, and the lion was free.<br><br>
-                    The lion looked at the mouse with surprise and said, "Thank you! You really saved my life."<br><br>
-                    The mouse smiled and said, "I told you I would help you one day."<br><br>
-                    From that moment on, the lion and the mouse became close friends. The lion learned that even small creatures can do great things, and we all need help sometimes.
+                    <strong style="font-size: 16px;">Text 1: The Brave Little Parrot</strong><br><br>
+                    Once upon a time, a terrible fire broke out in a thick forest. The animals were terrified and ran in all directions, trying to escape the blazing flames. Among them was a little parrot. Instead of flying away to safety, the parrot flew to a nearby river, dipped his wings in the water, and flew back over the raging fire.<br><br>
+                    He shook his wings, dropping a few drops of water on the flames. He did this over and over again. His feathers were scorched, his eyes burned from the smoke, and his lungs ached, but the little bird did not stop.<br><br>
+                    High above, some gods were watching the scene. One of them laughed and said, "Look at that foolish bird! Does he really think a few drops of water can put out a massive forest fire?"<br><br>
+                    However, another god, moved by the parrot's courage, disguised himself as an eagle and flew down. "Little bird," the eagle said, "fly away! You cannot stop this fire. Save yourself!"<br><br>
+                    The parrot, without stopping, replied, "I do not need advice right now; I need help!"<br><br>
+                    Moved by the parrot's sheer determination and selflessness, the god began to weep. His tears fell like heavy rain upon the forest, putting out the fire completely and healing the scorched earth and animals.<br><br>
+                    The forest was saved, and the little parrot was rewarded with beautiful new feathers that shone with every color of the rainbow.
                 </div>`;
                 
                 return [
@@ -180,178 +177,172 @@
                         text: text1 + "Which option best summarizes the story?",
                         type: "single",
                         options: [
-                            "Beginning: A lion was walking through the jungle.<br>Problem: The mouse got lost.<br>Solution: The lion gave food.<br>Lesson: Always be generous.",
-                            "Beginning: A mouse accidentally disturbed a sleeping lion.<br>Problem: The lion was caught in a hunter's net.<br>Solution: The mouse chewed through the net and set the lion free.<br>Lesson: Even the smallest creature can be a great help.",
-                            "Beginning: The lion and mouse were best friends.<br>Problem: The lion got hurt in a fight.<br>Solution: The mouse helped him find water.<br>Lesson: Friendship is built on adventure.",
-                            "Beginning: A mouse was building a home.<br>Problem: A storm destroyed the tree.<br>Solution: The mouse called for help.<br>Lesson: Teamwork solves big problems.",
-                            "Beginning: A lion was hungry.<br>Problem: He couldn't catch any prey.<br>Solution: The mouse helped him find food.<br>Lesson: Hunger teaches humility."
+                            "Beginning: A forest fire started.<br>Problem: The gods were angry.<br>Solution: An eagle saved the forest.<br>Lesson: Listen to the gods.",
+                            "Beginning: A forest caught on fire.<br>Problem: A parrot tried to put it out alone with drops of water.<br>Solution: A god was moved by his bravery and cried rain to put out the fire.<br>Lesson: Courage and determination can bring unexpected help.",
+                            "Beginning: A parrot was swimming in the river.<br>Problem: His wings got burned.<br>Solution: The other animals helped him.<br>Lesson: Friendship is important.",
+                            "Beginning: The gods were watching a forest.<br>Problem: They laughed at a bird.<br>Solution: The bird proved them wrong by putting out the fire himself.<br>Lesson: Hard work pays off.",
+                            "Beginning: A parrot wanted colorful feathers.<br>Problem: He didn't know how to get them.<br>Solution: He fought an eagle to prove his worth.<br>Lesson: Bravery brings rewards."
                         ],
                         correct: [1],
-                        explanation: "Option 2 accurately covers the inciting incident (mouse disturbing lion), the main conflict (lion trapped), the resolution (mouse freeing him), and the explicit moral of the story."
+                        explanation: "Option 2 accurately covers the inciting incident (fire), the main conflict (parrot fighting the fire alone), the resolution (a god helping him), and the moral."
                     },
                     {
                         id: 2,
                         text: text1 + "Which of the following statements best conveys the message of the story?<br><em>(Choose all correct answers)</em>",
                         type: "multiple",
                         options: [
-                            "We should never wake up a sleeping animal",
-                            "Even the small and weak can help the strong",
-                            "It's always good to ask for help when we need it",
-                            "Lions are dangerous animals and should be avoided",
-                            "Never trust anyone who plays with your hair"
+                            "We should always fly away when danger comes",
+                            "Even the smallest effort matters when done with great courage",
+                            "Selfless actions can inspire others to step in and help",
+                            "Forest fires are dangerous and should be avoided",
+                            "You should never ask for help if you are capable of doing it yourself"
                         ],
                         correct: [1, 2],
-                        explanation: "The story explicitly concludes with: 'The lion learned that even small creatures can do great things (Option 2), and we all need help sometimes (Option 3).'"
+                        explanation: "The story highlights that despite being small, the parrot's effort mattered (Option 2) and his selfless determination moved the gods to help (Option 3)."
                     },
                     {
                         id: 3,
-                        text: text1 + "Why did the lion trust the mouse and decide to let him go instead of eating him?",
+                        text: text1 + "Why did the eagle (the god in disguise) initially tell the parrot to fly away?",
                         type: "single",
                         options: [
-                            "The lion was too tired to eat the mouse",
-                            "The mouse told the lion he might help him one day, which amused him",
-                            "The lion was feeling happy to see the mouse",
-                            "The lion heard someone coming and got scared",
-                            "The mouse promised to bring food for the lion"
+                            "He wanted the forest to burn down completely",
+                            "He thought the parrot's effort was impossible and wanted to save the bird's life",
+                            "He was angry that the parrot was making the fire worse",
+                            "He wanted to put out the fire himself without any help",
+                            "He wanted to steal the parrot's colorful feathers"
                         ],
                         correct: [1],
-                        explanation: "The text says the lion laughed at the mouse's promise to help him ('You? Help me? That's funny'), but it put him in a kind mood, causing him to let the mouse go free."
+                        explanation: "The eagle said, 'You cannot stop this fire. Save yourself!' indicating he believed the task was impossible for a small bird and wanted to spare its life."
                     },
                     {
                         id: 4,
-                        text: text1 + "As you read the part where the lion let the mouse go, which of the following plot developments do you anticipate happening next?<br><em>(Choose all correct answers)</em>",
+                        text: text1 + "As you read the part where the parrot says, <em>'I do not need advice right now; I need help!'</em>, which of the following plot developments do you anticipate happening next?<br><em>(Choose all correct answers)</em>",
                         type: "multiple",
                         options: [
-                            "The mouse forgets about the lion and never helps him",
-                            "The lion gets into trouble and needs someone to rescue him",
-                            "The lion becomes angry at all small animals",
-                            "The mouse keeps his promise and comes to the lion's aid",
-                            "The mouse becomes the lion's loyal assistant in hunting"
+                            "The eagle gets offended and flies away, leaving the parrot to die",
+                            "The eagle realizes the parrot's deep sincerity and decides to assist him",
+                            "The other animals return to the forest to mock the parrot",
+                            "The eagle/god uses his supernatural power to put out the fire",
+                            "The parrot gives up and finally flies away to safety"
                         ],
                         correct: [1, 3],
-                        explanation: "Foreshadowing in fables usually leads to the promise being fulfilled. When the mouse promises to help, the reader anticipates that the lion will eventually get into trouble (Option 2) and the mouse will save him (Option 4)."
+                        explanation: "Foreshadowing in such fables indicates that a brave, selfless declaration will touch the heart of a powerful entity. The reader anticipates that the eagle will be moved to help (Option 2) and use his power to extinguish the fire (Option 4)."
                     },
                     {
                         id: 5,
-                        text: text1 + "Which of the following sentences from the story help you understand the lion's dynamic character?<br><em>(Choose all correct answers)</em>",
+                        text: text1 + "Which of the following sentences from the story help you understand the parrot's brave and selfless character?<br><em>(Choose all correct answers)</em>",
                         type: "multiple",
                         options: [
-                            "\"The lion always took his afternoon nap under the shade of a big tree...\"",
-                            "\"He quickly caught the mouse in his big paw and roared...\"",
-                            "\"The lion laughed loudly... But the lion was feeling kind, so he let the mouse go free.\"",
-                            "\"With his sharp teeth, the mouse started to chew the ropes.\"",
-                            "\"The lion looked at the mouse with surprise and said, 'Thank you! You really saved my life.'\""
+                            "\"Once upon a time, a terrible fire broke out in a thick forest.\"",
+                            "\"Instead of flying away to safety, the parrot flew to a nearby river, dipped his wings...\"",
+                            "\"High above, some gods were watching the scene.\"",
+                            "\"His feathers were scorched, his eyes burned from the smoke... but the little bird did not stop.\"",
+                            "\"The parrot, without stopping, replied, 'I do not need advice right now; I need help!'\""
                         ],
-                        correct: [1, 2, 4],
-                        explanation: "Sentences 2, 3, and 5 reveal the lion's transition from a fierce and angry beast, to an amused and merciful ruler, and finally to a humble and grateful friend. Sentence 1 just shows his habit, and Sentence 4 shows the mouse's action."
+                        correct: [1, 3, 4],
+                        explanation: "Sentences 2, 4, and 5 clearly demonstrate the parrot's courage, resilience through pain, and determination. Sentences 1 and 3 just set the scene."
                     }
                 ];
             })(),
 
-            // --- TEXT 2: Effective Study Techniques ---
+            // --- TEXT 2: Cybersecurity for Teens ---
             ...(() => {
                 const text2 = `
                 <div style="background: #f8f9fa; padding: 15px; border-left: 4px solid #0056b3; margin-bottom: 20px; font-size: 14px; line-height: 1.6;">
-                    <strong style="font-size: 16px;">Text 2: Effective Study Techniques (Infographic)</strong><br><br>
+                    <strong style="font-size: 16px;">Text 2: Digital Shield: 5 Steps to Protect Your Online Privacy (Infographic)</strong><br><br>
                     <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 15px; margin-top: 10px;">
-                        <div style="background: #eef2f5; padding: 10px; border-radius: 6px;"><b>1. Know Your Learning Style</b><br>Understand whether you learn best by reading, listening, or watching.</div>
-                        <div style="background: #eef2f5; padding: 10px; border-radius: 6px;"><b>2. Set a Consistent Study Schedule</b><br>Study at the same time every day. Regularity helps build strong habits.</div>
-                        <div style="background: #eef2f5; padding: 10px; border-radius: 6px;"><b>3. Create a Comfortable Study Space</b><br>Find a quiet, well-lit, and distraction-free area. Have all your materials ready.</div>
-                        <div style="background: #eef2f5; padding: 10px; border-radius: 6px;"><b>4. Use the Pomodoro Technique</b><br>Study for 25 minutes, then take a 5-minute break. This keeps your mind fresh and focused.</div>
-                        <div style="background: #eef2f5; padding: 10px; border-radius: 6px;"><b>5. Take Effective Notes</b><br>Write key points using methods like mind maps or tables to help remember important information.</div>
-                        <div style="background: #eef2f5; padding: 10px; border-radius: 6px;"><b>6. Practice and Repeat</b><br>Regularly review your material and do practice questions to deepen understanding and improve retention.</div>
-                        <div style="background: #eef2f5; padding: 10px; border-radius: 6px;"><b>7. Join a Study Group</b><br>Discuss topics with friends to gain new insights and solve problems together.</div>
-                        <div style="background: #eef2f5; padding: 10px; border-radius: 6px;"><b>8. Get Enough Sleep</b><br>Aim for 7-8 hours.</div>
-                        <div style="background: #eef2f5; padding: 10px; border-radius: 6px;"><b>9. Leverage Technology</b><br>Use apps and websites for flashcards, video lessons, and online quizzes to support your study routine.</div>
-                        <div style="background: #eef2f5; padding: 10px; border-radius: 6px;"><b>10. Be Patient and Persistent</b><br>Learning takes time.</div>
+                        <div style="background: #eef2f5; padding: 10px; border-radius: 6px;"><b>1. Use Strong Passwords</b><br>Create passwords with a mix of letters, numbers, and symbols. Never use your birthdate or pet's name.</div>
+                        <div style="background: #eef2f5; padding: 10px; border-radius: 6px;"><b>2. Enable Two-Factor Authentication (2FA)</b><br>Add an extra layer of security. Even if someone guesses your password, they can't log in without the code sent to your phone.</div>
+                        <div style="background: #eef2f5; padding: 10px; border-radius: 6px;"><b>3. Think Before You Click</b><br>Avoid clicking on suspicious links in emails or texts, even if they seem to come from a friend. They could be phishing scams.</div>
+                        <div style="background: #eef2f5; padding: 10px; border-radius: 6px;"><b>4. Be Careful on Public Wi-Fi</b><br>Free cafe or mall Wi-Fi is rarely secure. Avoid logging into bank accounts or typing sensitive info while connected to them. Use a VPN if necessary.</div>
+                        <div style="background: #eef2f5; padding: 10px; border-radius: 6px;"><b>5. Update Your Software</b><br>Regularly update your apps and operating systems. These updates often contain patches for newly discovered security holes.</div>
                     </div>
                 </div>`;
                 
                 return [
                     {
                         id: 6,
-                        text: text2 + "Based on the information given, we can keep our mind focused and fresh by...",
+                        text: text2 + "Based on the information given, what is the main benefit of enabling Two-Factor Authentication (2FA)?",
                         type: "single",
                         options: [
-                            "knowing your learning style",
-                            "using the Pomodoro Technique",
-                            "using online quizzes apps",
-                            "reviewing materials",
-                            "creating mind maps"
+                            "It creates a strong password using a mix of letters and symbols automatically.",
+                            "It updates your software and patches security holes on your phone.",
+                            "It prevents hackers from logging in even if they know your password.",
+                            "It allows you to safely use public Wi-Fi without needing a VPN.",
+                            "It blocks phishing scams from reaching your email inbox."
                         ],
-                        correct: [1],
-                        explanation: "Tip #4 explicitly states: 'Use the Pomodoro Technique... This keeps your mind fresh and focused.'"
+                        correct: [2],
+                        explanation: "Step 2 explicitly states: 'Even if someone guesses your password, they can't log in without the code sent to your phone.'"
                     },
                     {
                         id: 7,
-                        text: text2 + "Based on the infographic, which of the following techniques fall specifically under the category of <strong>Time Management</strong>?<br><em>(Choose all correct answers)</em>",
+                        text: text2 + "Based on the infographic, which of the following techniques fall specifically under the category of <strong>Account Access Security</strong> (securing how you log in)?<br><em>(Choose all correct answers)</em>",
                         type: "multiple",
                         options: [
-                            "Be patient and persistent",
-                            "Use the Pomodoro technique",
-                            "Set a consistent study schedule",
-                            "Create a comfortable study space",
-                            "Join a study group"
+                            "Use Strong Passwords",
+                            "Enable Two-Factor Authentication (2FA)",
+                            "Think Before You Click",
+                            "Be Careful on Public Wi-Fi",
+                            "Update Your Software"
                         ],
-                        correct: [1, 2],
-                        explanation: "The Pomodoro technique (managing study/break intervals) and setting a consistent study schedule (managing when to study) are direct Time Management strategies. Patience is self-management, while space and groups are environmental/social strategies."
+                        correct: [0, 1],
+                        explanation: "Strong passwords and 2FA are mechanisms that directly secure the login access to an account. The others are browsing habits (3, 4) and device maintenance (5)."
                     },
                     {
                         id: 8,
-                        text: text2 + "From the options provided, choose the sequence that best reflects the chronological workflow of the information in the infographic.",
+                        text: text2 + "From the options provided, choose the sequence that best reflects the chronological order of information in the infographic.",
                         type: "single",
                         options: [
-                            "Set your goal &rarr; Watch lessons &rarr; Sleep well &rarr; Group chat &rarr; Eat nutritious meal",
-                            "Know your learning style &rarr; Plan study time &rarr; Find quiet area &rarr; Use Pomodoro &rarr; Take notes",
-                            "Take long breaks &rarr; Write a to do list &rarr; Write important points &rarr; Join group",
-                            "Find a quiet area &rarr; Set a timetable &rarr; Use less gadgets &rarr; Be patient",
-                            "Plan your study time &rarr; Practice and repeat &rarr; Take a break &rarr; Watch videos"
+                            "Create complex passwords &rarr; Add phone code security &rarr; Avoid weird links &rarr; Beware of free networks &rarr; Keep apps current",
+                            "Update your software &rarr; Use public Wi-Fi safely &rarr; Create strong passwords &rarr; Enable 2FA &rarr; Think before click",
+                            "Enable 2FA &rarr; Create complex passwords &rarr; Keep apps current &rarr; Avoid weird links &rarr; Beware of free networks",
+                            "Beware of free networks &rarr; Update your software &rarr; Avoid weird links &rarr; Add phone code security &rarr; Create complex passwords",
+                            "Avoid weird links &rarr; Add phone code security &rarr; Create complex passwords &rarr; Keep apps current &rarr; Beware of free networks"
                         ],
-                        correct: [1],
-                        explanation: "Option 2 perfectly mirrors steps 1 through 5 of the infographic: Know style (1) &rarr; Set schedule (2) &rarr; Comfortable space (3) &rarr; Pomodoro (4) &rarr; Effective Notes (5)."
+                        correct: [0],
+                        explanation: "Option 1 perfectly mirrors steps 1 through 5: Strong Passwords (1), 2FA (2), Think before click (3), Public Wi-Fi (4), Update software (5)."
                     },
                     {
                         id: 9,
                         text: text2 + "Which of the following statements best reflect the author's purpose in writing the text?<br><em>(Choose all correct answers)</em>",
                         type: "multiple",
                         options: [
-                            "To help students find fun strategies to play after studying",
-                            "To offer students guidance on how to learn more efficiently",
-                            "To encourage students to use simple habits to improve their learning",
-                            "To explain why studying tips are difficult for most students",
-                            "To show students that they can manage their time and focus better"
+                            "To offer readers practical guidance on how to secure their digital footprint",
+                            "To frighten teenagers away from using the internet completely",
+                            "To encourage users to adopt basic habits that protect against cyber threats",
+                            "To explain the complicated coding process behind computer viruses",
+                            "To raise awareness about the vulnerabilities of online activities"
                         ],
-                        correct: [1, 2, 4],
-                        explanation: "An infographic of tips is instructional and motivational. Its purpose is to guide efficiency (Option 2), encourage better habits (Option 3), and improve time/focus management (Option 5)."
+                        correct: [0, 2, 4],
+                        explanation: "The purpose of this infographic is instructional and preventative. It guides users (Option 1), encourages protective habits (Option 3), and raises awareness about online vulnerabilities (Option 5)."
                     },
                     {
                         id: 10,
-                        text: text2 + "If you are preparing for an important exam and want to improve your study routine, which of the following techniques can be implemented effectively in your personal study time?<br><em>(Choose all correct answers)</em>",
+                        text: text2 + "If you are sitting in a local coffee shop working on your laptop, which of the following techniques should be implemented effectively in that specific personal experience?<br><em>(Choose all correct answers)</em>",
                         type: "multiple",
                         options: [
-                            "Only study when you are in a group discussion with others",
-                            "Use technology during all study sessions without any breaks",
-                            "Use the Pomodoro Technique to structure your study and break time",
-                            "Practice and repeat study material regularly to retain information",
-                            "Create a quiet and comfortable study space to improve focus"
+                            "Immediately log into your mobile banking app to check your balance",
+                            "Avoid typing sensitive information unless you turn on a VPN",
+                            "Click on an unexpected email link because the cafe Wi-Fi will block viruses",
+                            "Be careful not to trust the free public network provided by the shop",
+                            "Share your social media passwords with the barista to get a free drink"
                         ],
-                        correct: [2, 3, 4],
-                        explanation: "Options 3, 4, and 5 are direct, effective applications of rules #4, #6, and #3. Option 1 is restrictive ('Only study when...'), and Option 2 promotes not taking breaks, which violates the Pomodoro rule."
+                        correct: [1, 3],
+                        explanation: "Rule #4 warns about public Wi-Fi in cafes. Therefore, you should use a VPN for sensitive info (Option 2) and be careful about trusting the network (Option 4). The other options violate the safety rules."
                     }
                 ];
             })(),
 
-            // --- TEXT 3: The False Lion King ---
+            // --- TEXT 3: The Proud Oak and the Reeds ---
             ...(() => {
                 const text3 = `
                 <div style="background: #f8f9fa; padding: 15px; border-left: 4px solid #0056b3; margin-bottom: 20px; font-size: 14px; line-height: 1.6;">
-                    <strong style="font-size: 16px;">Text 3: The False Lion King</strong><br><br>
-                    Once upon a time, in Africa, there lived two lion kings. One was named Hera and the other was Shero. Hera was very strong and handsome. All the animals loved and respected him. He was a great leader. Shero was not like Hera. He had a small mane and a funny, squeaky voice. Shero liked to pretend he was as powerful as Hera. He often copied Hera's roar, but it made the other animals laugh.<br><br>
-                    One day, the animals heard that some hyenas were causing trouble near the river. Hera quickly gathered his followers to stop the hyenas. Shero also wanted to come. He wanted to show everyone that he was strong too.<br><br>
-                    When they reached the river, Hera roared loudly. His roar was so powerful that the hyenas got scared. Shero also tried to roar, but his voice was high and silly. The hyenas laughed at him. Their leader, Hank the Hyena, made jokes about Shero.<br><br>
-                    Hera stayed calm and smiled. Shero did not give up. He said, "I am just as strong as Hera!" The hyenas laughed even louder. Shero tried to show his power by jumping on a small dirt hill. But he tripped and fell into the ground. The hyenas laughed so much they cried. Even Hera laughed a little.<br><br>
-                    At the end of the day, the hyenas left, still laughing about Shero. Hera told Shero, "You are not like me, but you make everyone happy with your jokes." Shero smiled and understood that he had his own special gift.<br><br>
-                    From that day, Shero became the kingdom's jester. He and Hera ruled together—one with strength, and one with laughter. The animals learned that both power and fun are important in life.
+                    <strong style="font-size: 16px;">Text 3: The Proud Oak and the Reeds</strong><br><br>
+                    A giant Oak tree stood proudly near a riverbank. It was tall, thick, and deeply rooted in the ground. Nearby, a patch of thin Reeds grew along the edge of the water. The Oak tree often boasted about its immense strength. "Look at me," the Oak would say, "I stand unbowed before any storm, while you tiny reeds bend and tremble at the slightest breeze!"<br><br>
+                    The Reeds would simply nod silently. They knew they were fragile, but they were content.<br><br>
+                    One evening, the sky turned black, and a fierce hurricane swept across the land. The wind howled furiously. The proud Oak tree fought against the gale, standing as stiff and rigid as possible to prove its strength. However, the wind was too powerful. With a deafening crack, the mighty Oak was uprooted and thrown violently to the ground.<br><br>
+                    Meanwhile, the thin Reeds did not fight the wind. As the hurricane blew, they bowed their heads low, bending all the way down to the water. The violent wind passed right over them.<br><br>
+                    When the storm finally ended, the Oak tree lay ruined in the mud, while the Reeds stood straight up again, unharmed. The Oak, taking its final breath, realized that strength is not always about being rigid, but sometimes about knowing when to yield.
                 </div>`;
                 
                 return [
@@ -360,83 +351,82 @@
                         text: text3 + "Which statement provides the most accurate chronological summary of the story's main events?",
                         type: "single",
                         options: [
-                            "Shero falls into the dirt &rarr; The hyenas cause trouble &rarr; Hera tells Shero he is funny &rarr; Shero copies Hera's roar.",
-                            "Hera is strong &rarr; Shero pretends to be strong &rarr; Hyenas cause trouble &rarr; Hera scares them, but Shero makes them laugh &rarr; Shero learns his special gift.",
-                            "Hera and Shero are strong leaders &rarr; Hyenas come to help &rarr; Shero tells funny stories &rarr; Hera is angry.",
-                            "Shero is a strong king &rarr; Hera is jealous &rarr; Hyenas attack &rarr; Shero defeats them.",
-                            "Shero wants to be king and fights Hera &rarr; Hyenas help Shero &rarr; Hera leaves &rarr; Shero becomes king."
+                            "A storm comes &rarr; The Oak falls &rarr; The Reeds survive &rarr; The Oak boasts about its strength.",
+                            "The Oak boasts about its strength &rarr; A hurricane strikes &rarr; The Oak fights the wind and falls &rarr; The Reeds bend and survive.",
+                            "The Reeds are thin &rarr; The Oak protects the Reeds &rarr; A hurricane strikes &rarr; The Oak dies saving the Reeds.",
+                            "The Oak is strong &rarr; The wind talks to the Oak &rarr; The Oak refuses to bend &rarr; The Reeds laugh at the Oak.",
+                            "A hurricane strikes &rarr; The Oak bends &rarr; The Reeds break &rarr; The Oak realizes its mistake."
                         ],
                         correct: [1],
-                        explanation: "Option 2 perfectly outlines the story's structure: introduction of characters, the inciting incident (hyenas), the climax (the dual roars), and the resolution (Shero accepting his comedic gift)."
+                        explanation: "Option 2 perfectly outlines the story's structure: introduction of characters (boasting Oak), the inciting incident (hurricane), the climax (Oak breaking), and the resolution (Reeds surviving by bending)."
                     },
                     {
                         id: 12,
-                        text: text3 + "What can we learn from the story of Hera and Shero?<br><em>(Choose all correct answers)</em>",
+                        text: text3 + "What can we learn from the story of the Oak and the Reeds?<br><em>(Choose all correct answers)</em>",
                         type: "multiple",
                         options: [
-                            "Everyone has something special to give, even if they are not the leader",
-                            "Being funny and making others smile is just as important as being strong",
-                            "Good friends will support you and help you see your real strengths",
-                            "Only the strongest and most handsome animals deserve to rule the kingdom",
-                            "You should always try to copy those who are better than you"
+                            "It is better to be flexible and adapt to hard times than to be stubborn and break",
+                            "True strength sometimes means knowing when to yield to a greater force",
+                            "Being proud and boasting about your abilities will guarantee survival",
+                            "Weak people will always be destroyed by the strong",
+                            "Pride and stubbornness can lead to one's downfall"
                         ],
-                        correct: [0, 1, 2],
-                        explanation: "The story concludes with 'both power and fun are important in life' (Options 1 & 2), and Hera acts as a supportive friend who helps Shero realize his true talent instead of mocking him maliciously (Option 3)."
+                        correct: [0, 1, 4],
+                        explanation: "The story concludes that flexibility (bending) ensures survival, while stubborn pride (rigidity) leads to destruction."
                     },
                     {
                         id: 13,
-                        text: text3 + "The hyenas laugh so much when Shero tries to roar like Hera because...",
+                        text: text3 + "The giant Oak tree was uprooted and thrown to the ground because...",
                         type: "single",
                         options: [
-                            "Shero tries to roar in a serious way but ends up surprising the hyenas with his strength",
-                            "Shero's roar is high, squeaky, and silly, which makes the hyenas think he is joking",
-                            "Hera tells a joke about Shero right before he roars to make the hyenas laugh",
-                            "Shero's acting is absolutely brilliant and intimidating",
-                            "Shero purposely tells a funny story to distract them from the fight"
+                            "the Reeds pushed it over during the storm",
+                            "it tried to protect the fragile Reeds from the wind",
+                            "it stubbornly fought against the wind, standing completely stiff and rigid",
+                            "its roots were completely eaten away by insects before the storm",
+                            "it purposely threw itself to the ground to avoid the hurricane"
                         ],
-                        correct: [1],
-                        explanation: "The text says: 'Shero also tried to roar, but his voice was high and silly. The hyenas laughed at him.'"
+                        correct: [2],
+                        explanation: "The text says: 'The proud Oak tree fought against the gale, standing as stiff and rigid as possible to prove its strength. However, the wind was too powerful. With a deafening crack, the mighty Oak was uprooted...'"
                     },
                     {
                         id: 14,
-                        text: text3 + "If in the beginning of the story, Shero was actually a strong lion with a loud roar just like Hera, what would have most likely happened at the end of the story?<br><em>(Choose all correct answers)</em>",
+                        text: text3 + "If during the storm, the Oak tree had humbled itself and found a way to bend its branches like the Reeds, what would have most likely happened at the end of the story?<br><em>(Choose all correct answers)</em>",
                         type: "multiple",
                         options: [
-                            "Shero and Hera would both scare the hyenas away together",
-                            "Shero would get respect from the other animals for his strength",
-                            "The hyenas would still laugh at Shero because he is naturally funny",
-                            "Shero would immediately banish Hera from the kingdom",
-                            "The story's lesson about 'fun and laughter being important' would no longer exist"
+                            "The Oak tree would likely have survived the hurricane without snapping",
+                            "The story's moral lesson about the danger of pride would no longer be the same",
+                            "The wind would have gotten angrier and burned the forest down",
+                            "The Reeds would have been uprooted instead of the Oak tree",
+                            "The Oak tree would realize that flexibility is indeed a form of strength"
                         ],
                         correct: [0, 1, 4],
-                        explanation: "If Shero was just as strong and fierce, he would have terrified the hyenas alongside Hera (Option 1) and gained respect for his might (Option 2). Consequently, the kingdom would not have discovered the value of laughter and a jester, changing the story's moral (Option 5)."
+                        explanation: "If the Oak bent, it would survive (Option 1) and learn the lesson of flexibility (Option 4). Consequently, the original tragic moral about stubborn pride causing downfall would change (Option 2)."
                     },
                     {
                         id: 15,
-                        text: text3 + "Shero is clumsy and naturally funny. This is shown when he...<br><em>(Choose all correct answers)</em>",
+                        text: text3 + "The Oak tree is arrogant and stubborn. This is shown when it...<br><em>(Choose all correct answers)</em>",
                         type: "multiple",
                         options: [
-                            "scares the hyenas away with his loud and powerful roar",
-                            "makes the other animals laugh by pretending to be a great, fierce king",
-                            "tries to roar like Hera, but his voice comes out small and squeaky",
-                            "walks calmly with Hera to confront the hyenas at the river",
-                            "tries to show his power but trips and falls into the dirt"
+                            "mocks the Reeds for trembling at the slightest breeze",
+                            "stands proudly near a riverbank doing nothing but growing roots",
+                            "boasts about its immense strength, claiming it stands unbowed before any storm",
+                            "bows its head low to the ground to greet the Reeds",
+                            "fights against the hurricane, standing stiff and rigid to prove its strength"
                         ],
-                        correct: [1, 2, 4],
-                        explanation: "His comedic clumsiness is highlighted when he pretends to be fierce but fails (Option 2), when his voice betrays him (Option 3), and physically when he trips over a dirt hill while trying to act tough (Option 5)."
+                        correct: [0, 2, 4],
+                        explanation: "Its arrogance is shown when it boasts (Option 3) and mocks the Reeds (Option 1). Its stubbornness is shown during the storm when it refuses to yield and stands stiffly just to prove a point (Option 4)."
                     }
                 ];
             })(),
 
-            // --- TEXT 4: The Great Barrier Reef ---
+            // --- TEXT 4: Raja Ampat ---
             ...(() => {
                 const text4 = `
                 <div style="background: #f8f9fa; padding: 15px; border-left: 4px solid #0056b3; margin-bottom: 20px; font-size: 14px; line-height: 1.6;">
-                    <strong style="font-size: 16px;">Text 4: The Great Barrier Reef</strong><br><br>
-                    The Great Barrier Reef is one of the most beautiful places in the world. It is located in the Pacific Ocean, near the northeast coast of Australia. The reef is very big. It stretches over 2,000 kilometers and can even be seen from space. There are many small coral islands and clear, warm waters around the reef.<br><br>
-                    This reef is full of life. There are many kinds of colorful fish, sea turtles, dolphins, and even sharks. Coral of different shapes and colors grows under the water. Sea birds fly over the reef and nest on small islands. People can see this beauty by swimming, diving, or joining a boat tour.<br><br>
-                    The colors under the water are amazing. Coral comes in red, yellow, green, and blue. Some coral looks like trees, and some looks like big round stones. Small fish swim in and out of the coral like they are playing a game. In some places, soft coral moves with the water like grass in the wind. When the sun shines, the reef looks bright and full of light. It feels like a different world under the sea.<br><br>
-                    The reef is not only beautiful, but also very important. It helps protect the coast from big waves and storms. It is a home for sea animals and a place where plants can grow. Many people also get food and jobs from the sea near the reef. Without the reef, the ocean would not be the same.
+                    <strong style="font-size: 16px;">Text 4: The Wonders of Raja Ampat</strong><br><br>
+                    Raja Ampat, located off the northwest tip of Bird's Head Peninsula on the island of New Guinea in Indonesia, is widely regarded as one of the most spectacular destinations on Earth. The name Raja Ampat translates to "Four Kings," referring to its four main islands: Misool, Salawati, Batanta, and Waigeo. The landscape is characterized by hundreds of jungle-covered limestone islands rising dramatically from the turquoise sea.<br><br>
+                    Beneath the surface, Raja Ampat is often called an "underwater Amazon." It is recognized as the global epicenter of marine biodiversity. Scientists have recorded over 1,500 species of fish, 537 species of coral, and numerous types of sea turtles and sharks living in its waters. The coral reefs here are highly resilient and boast colors so vibrant that divers from all over the world travel specifically to witness them.<br><br>
+                    Beyond its breathtaking beauty, Raja Ampat is deeply vital to the local Papuan communities who rely on the ocean for their food and livelihood. The local government and various conservation groups enforce strict eco-tourism rules to ensure that the reefs remain undamaged by the influx of tourists. Visiting Raja Ampat is not just a holiday; it is an experience that teaches humanity the importance of preserving pristine natural ecosystems.
                 </div>`;
                 
                 return [
@@ -445,121 +435,113 @@
                         text: text4 + "Which of the following descriptions are mentioned clearly in the text?<br><em>(Choose all correct answers)</em>",
                         type: "multiple",
                         options: [
-                            "The reef was built by local communities over hundreds of years",
-                            "The reef is located in the Pacific Ocean near Australia",
-                            "The reef can help protect the coast from big waves and storms",
-                            "The reef is home to sea turtles, dolphins, and sharks",
-                            "The reef contains exactly 10,000 specific coral islands"
+                            "Raja Ampat translates to 'Four Kings' because of its four main islands",
+                            "The destination is located off the northwest tip of Bird's Head Peninsula",
+                            "Over 3,000 species of coral can be found in Raja Ampat",
+                            "The landscape features jungle-covered limestone islands rising from the sea",
+                            "Tourists are allowed to take coral reefs home as souvenirs"
                         ],
-                        correct: [1, 2, 3],
-                        explanation: "The text explicitly states the location (Option 2), its protective function against waves (Option 3), and its marine life (Option 4). It is a natural formation, not man-made (Option 1), and it mentions 'many' islands, not exactly 10,000 (Option 5)."
+                        correct: [0, 1, 3],
+                        explanation: "The text explicitly states the meaning of the name (Option 1), its location (Option 2), and the limestone islands (Option 4). It mentions 537 coral species (not 3,000), and there are strict eco-tourism rules, not permission to take coral."
                     },
                     {
                         id: 17,
-                        text: text4 + "The author mentioned <em>'It feels like a different world under the sea'</em>. What does the phrase most likely mean?",
+                        text: text4 + "The author mentioned that Raja Ampat is often called an <em>'underwater Amazon'</em>. What does the phrase most likely mean?",
                         type: "single",
                         options: [
-                            "A safe place that has a bright, artificial reef",
-                            "A peaceful place where humans have built underwater cities",
-                            "A colorful place that looks exactly the same as dry land",
-                            "A shining reef that is entirely quiet and devoid of life",
-                            "A unique, vibrant, and entirely distinct ecosystem compared to the surface"
+                            "It has a massive, fast-flowing river running beneath the ocean floor.",
+                            "It was discovered by explorers from South America.",
+                            "It possesses a vast, incredibly diverse, and vibrant biological ecosystem under the sea.",
+                            "It is filled with dangerous underwater snakes and piranhas.",
+                            "It is completely owned and sponsored by a large online retail company."
                         ],
-                        correct: [4],
-                        explanation: "The phrase is a metaphor indicating that the underwater environment is so vibrantly colorful, alive, and distinct (with coral resembling trees and stones) that it feels alien or 'different' compared to the human world above water."
+                        correct: [2],
+                        explanation: "The Amazon rainforest is famous for its extreme biodiversity. Calling it an 'underwater Amazon' is a metaphor meaning it has an incredibly rich and diverse marine ecosystem."
                     },
                     {
                         id: 18,
                         text: text4 + "Which of the following best represents the main idea implied by the text?",
                         type: "single",
                         options: [
-                            "The reef is primarily useful for industrial fishing and shipping",
-                            "The reef is extremely large, but holds little importance to humans",
-                            "The reef is a beautiful natural treasure and a vital ecosystem that must be cared for",
-                            "The reef is a dangerous place only meant for scientists and researchers to explore",
-                            "The reef is a protected area that should be completely closed to all visitors"
+                            "Raja Ampat is a dangerous region with too many sharks.",
+                            "The Papuan communities must stop fishing to save the coral.",
+                            "Raja Ampat is a breathtakingly beautiful and ecologically vital region that requires strict conservation.",
+                            "Divers from all over the world are ruining the turquoise sea of Indonesia.",
+                            "The four main islands of Raja Ampat are entirely made of pure limestone."
                         ],
                         correct: [2],
-                        explanation: "The text emphasizes two main points: the reef's incredible beauty (first 3 paragraphs) and its immense ecological and economic importance (last paragraph). Therefore, it is a treasure that is vital to the world."
+                        explanation: "The text highlights its beauty, its extreme biodiversity, its importance to locals, and the necessity of conservation efforts, pointing to Option 3 as the central theme."
                     },
                     {
                         id: 19,
-                        text: text4 + "Which detail provided in the text would best encourage tourists to visit the Great Barrier Reef?",
+                        text: text4 + "Which detail provided in the text would best encourage nature lovers and divers to visit Raja Ampat?",
                         type: "single",
                         options: [
-                            "Visitors can observe an Australian national park from space",
-                            "Visitors can stay in luxury five-star hotels around the reef",
-                            "Visitors can experience the amazing coral colors by diving, swimming, or boat tours",
-                            "Visitors can help scientists protect the coral from ocean storms",
-                            "Visitors can harvest their own seafood and get jobs near the reef"
+                            "The local government enforces strict rules on the Papuan communities.",
+                            "The destination is located far off the northwest tip of a peninsula.",
+                            "The coral reefs boast vibrant colors and host over 1,500 species of fish.",
+                            "The name translates to 'Four Kings'.",
+                            "The islands are made of jungle-covered limestone."
                         ],
                         correct: [2],
-                        explanation: "The text explicitly markets the tourist experience by stating: 'People can see this beauty by swimming, diving, or joining a boat tour.'"
+                        explanation: "For divers and nature lovers, the most encouraging detail is the extreme marine biodiversity and vibrant colors ('over 1,500 species of fish... colors so vibrant')."
                     },
                     {
                         id: 20,
-                        text: text4 + "Which parts of the text best support the idea that the Great Barrier Reef is both <strong>beautiful and important</strong>?<br><em>(Choose all correct answers)</em>",
+                        text: text4 + "Which parts of the text best support the idea that Raja Ampat is both <strong>beautiful and important</strong>?<br><em>(Choose all correct answers)</em>",
                         type: "multiple",
                         options: [
-                            "The reef helps protect the coast from big waves",
-                            "It is full of amazing colors and is a home to sea turtles, dolphins, and colorful fish",
-                            "The coral reefs grow best in cold, deep water environments",
-                            "Some areas of the reef are damaged by starfish and warm water",
-                            "Many people get food and jobs from the sea near the reef"
+                            "The landscape features dramatic limestone islands and turquoise seas",
+                            "It serves as the global epicenter of marine biodiversity",
+                            "It is vital to the local Papuan communities for food and livelihood",
+                            "The name Raja Ampat translates to 'Four Kings'",
+                            "It teaches humanity the importance of preserving pristine natural ecosystems"
                         ],
-                        correct: [0, 1, 4],
-                        explanation: "Coastal protection (Option 1) and providing jobs/food (Option 5) show its importance. The amazing colors and marine life (Option 2) show its beauty and importance as a habitat. Options 3 and 4 are not mentioned in the text."
+                        correct: [0, 1, 2, 4],
+                        explanation: "Beauty is supported by Option 1. Ecological importance is supported by Option 2. Economic/social importance is supported by Option 3. Global educational importance is supported by Option 5. The translation of its name (Option 4) does not support its beauty or importance."
                     }
                 ];
             })(),
 
-            // --- TEXT 5: Why Teenagers Should Learn to Manage Their Money ---
+            // --- TEXT 5: Extracurricular Activities ---
             ...(() => {
                 const text5 = `
                 <div style="background: #f8f9fa; padding: 15px; border-left: 4px solid #0056b3; margin-bottom: 20px; font-size: 14px; line-height: 1.6;">
-                    <strong style="font-size: 16px;">Text 5: Why Teenagers Should Learn to Manage Their Money</strong><br><br>
-                    Many young people today often spend money on things they like, such as snacks, clothes, or fun activities. But learning to handle money from a young age is very important. Good money habits can help students make a better future.<br><br>
-                    Having a clear plan for the future can show teenagers how to use their money. Students should think about short-term goals, like getting a new phone, and long-term goals, like saving for college or starting a business. Writing these goals down can help students stay motivated and focused.<br><br>
-                    A budget helps students see where their money goes every month. It's important to list basic needs like food and travel, and also other costs like clothes or presents. A budget makes it easier to decide how much money to save, spend, or keep for unexpected problems.<br><br>
-                    Sometimes, students don't know how much they spend on small things. Keeping track of spending with notes or apps can help students understand their habits. This helps them stay within their budget and make changes if needed.<br><br>
-                    Teenagers should also learn the difference between saving money and investing money. Saving is safer but slower, while investing has more risk but can earn more money. Knowing both can help students choose the best way for their money goals.<br><br>
-                    To sum up, students who learn to plan, budget, track, and understand saving choices are more ready for the future. That is why learning about money should start early and be done often.<br><br>
-                    <strong>Table 1. How do students manage their money?</strong>
+                    <strong style="font-size: 16px;">Text 5: The Value of Extracurricular Activities for Students</strong><br><br>
+                    High school can be a stressful time focused heavily on grades and test scores. However, educators strongly argue that joining extracurricular activities—such as sports, arts, or debate clubs—is just as important as academic studying. Extracurriculars provide practical life skills that textbooks simply cannot offer.<br><br>
+                    Firstly, participating in clubs helps students develop crucial soft skills like teamwork, leadership, and effective communication. These activities force students out of their comfort zones, teaching them how to interact with peers from different backgrounds. Secondly, extracurricular activities teach students excellent time management. Balancing a school schedule with afternoon practices or club meetings forces teenagers to prioritize their tasks and stop procrastinating.<br><br>
+                    Furthermore, universities and future employers actively look for candidates who demonstrate commitment and a well-rounded personality, not just those with perfect test scores. While some parents worry that club activities will distract students and lower their grades, data actually shows the opposite. Students who are actively engaged outside the classroom tend to have higher GPAs and better mental health.<br><br>
+                    <strong>Table 1. Student Involvement and Academic Performance</strong>
                     <table style="width:100%; border-collapse: collapse; margin-top: 10px; font-size: 13px;">
                         <tr style="background-color: #0056b3; color: white;">
                             <th style="padding: 8px; border: 1px solid #ccc; text-align: left;">Category</th>
-                            <th style="padding: 8px; border: 1px solid #ccc; text-align: center;">Percentage</th>
-                            <th style="padding: 8px; border: 1px solid #ccc; text-align: left;">Notes</th>
+                            <th style="padding: 8px; border: 1px solid #ccc; text-align: center;">Percentage of Students</th>
+                            <th style="padding: 8px; border: 1px solid #ccc; text-align: center;">Average GPA (out of 4.0)</th>
+                            <th style="padding: 8px; border: 1px solid #ccc; text-align: left;">Notes on Skills Gained</th>
                         </tr>
                         <tr>
-                            <td style="padding: 8px; border: 1px solid #ccc;">Students who save regularly</td>
-                            <td style="padding: 8px; border: 1px solid #ccc; text-align: center;">45%</td>
-                            <td style="padding: 8px; border: 1px solid #ccc;">Save at least 10% of allowance</td>
+                            <td style="padding: 8px; border: 1px solid #ccc;">Students in Sports</td>
+                            <td style="padding: 8px; border: 1px solid #ccc; text-align: center;">40%</td>
+                            <td style="padding: 8px; border: 1px solid #ccc; text-align: center;">3.4</td>
+                            <td style="padding: 8px; border: 1px solid #ccc;">Better teamwork, discipline</td>
                         </tr>
                         <tr style="background-color: #f1f1f1;">
-                            <td style="padding: 8px; border: 1px solid #ccc;">Students who track expenses</td>
-                            <td style="padding: 8px; border: 1px solid #ccc; text-align: center;">35%</td>
-                            <td style="padding: 8px; border: 1px solid #ccc;">Use apps or notes</td>
-                        </tr>
-                        <tr>
-                            <td style="padding: 8px; border: 1px solid #ccc;">Students with financial education</td>
-                            <td style="padding: 8px; border: 1px solid #ccc; text-align: center;">25%</td>
-                            <td style="padding: 8px; border: 1px solid #ccc;">Have learned budgeting in class</td>
-                        </tr>
-                        <tr style="background-color: #f1f1f1;">
-                            <td style="padding: 8px; border: 1px solid #ccc;">Students who often borrow from friends</td>
+                            <td style="padding: 8px; border: 1px solid #ccc;">Students in Arts/Music</td>
                             <td style="padding: 8px; border: 1px solid #ccc; text-align: center;">30%</td>
-                            <td style="padding: 8px; border: 1px solid #ccc;">Due to running out of money</td>
+                            <td style="padding: 8px; border: 1px solid #ccc; text-align: center;">3.6</td>
+                            <td style="padding: 8px; border: 1px solid #ccc;">High creativity, focus</td>
                         </tr>
                         <tr>
-                            <td style="padding: 8px; border: 1px solid #ccc;">Students who spend most on food & drinks</td>
-                            <td style="padding: 8px; border: 1px solid #ccc; text-align: center;">50%</td>
-                            <td style="padding: 8px; border: 1px solid #ccc;">Largest category of spending</td>
+                            <td style="padding: 8px; border: 1px solid #ccc;">Students in Academic Clubs</td>
+                            <td style="padding: 8px; border: 1px solid #ccc; text-align: center;">20%</td>
+                            <td style="padding: 8px; border: 1px solid #ccc; text-align: center;">3.8</td>
+                            <td style="padding: 8px; border: 1px solid #ccc;">Leadership, analytical skills</td>
                         </tr>
                         <tr style="background-color: #f1f1f1;">
-                            <td style="padding: 8px; border: 1px solid #ccc;">Students who plan monthly budgets</td>
-                            <td style="padding: 8px; border: 1px solid #ccc; text-align: center;">28%</td>
-                            <td style="padding: 8px; border: 1px solid #ccc;">Usually better savers</td>
+                            <td style="padding: 8px; border: 1px solid #ccc;">Students not involved</td>
+                            <td style="padding: 8px; border: 1px solid #ccc; text-align: center;">10%</td>
+                            <td style="padding: 8px; border: 1px solid #ccc; text-align: center;">2.9</td>
+                            <td style="padding: 8px; border: 1px solid #ccc;">More free time, higher risk of apathy</td>
                         </tr>
                     </table>
                 </div>`;
@@ -567,73 +549,73 @@
                 return [
                     {
                         id: 21,
-                        text: text5 + "Based on the text, which of the following activities are categorized as <strong>Long-term financial goals</strong>?<br><em>(Choose all correct answers)</em>",
+                        text: text5 + "Based on the text, which of the following are categorized as <strong>Soft Skills</strong> gained from extracurriculars?<br><em>(Choose all correct answers)</em>",
                         type: "multiple",
                         options: [
-                            "Saving to buy a new phone",
-                            "Saving money for university/college",
-                            "Starting a business",
-                            "Buying snacks and clothes",
-                            "Borrowing money from friends"
+                            "Perfect test scores",
+                            "Teamwork",
+                            "Leadership",
+                            "Effective communication",
+                            "Reading textbooks quickly"
                         ],
-                        correct: [1, 2],
-                        explanation: "The second paragraph explicitly identifies 'getting a new phone' as a short-term goal, while 'saving for college or starting a business' are long-term goals."
+                        correct: [1, 2, 3],
+                        explanation: "The second paragraph explicitly identifies 'teamwork, leadership, and effective communication' as crucial soft skills gained from participating in clubs."
                     },
                     {
                         id: 22,
-                        text: text5 + "According to the text, which of the following actions actively support smart money management for students?<br><em>(Choose all correct answers)</em>",
+                        text: text5 + "According to the text, which of the following actions actively support a student's personal and academic growth?<br><em>(Choose all correct answers)</em>",
                         type: "multiple",
                         options: [
-                            "Tracking daily expenses using a notebook or app",
-                            "Spending more money than the monthly budget allows",
-                            "Setting financial goals for the short and long term",
-                            "Borrowing money whenever there is not enough left",
-                            "Dividing money into saving, spending, and emergency funds"
+                            "Balancing a school schedule with afternoon practices to learn time management",
+                            "Avoiding clubs entirely to ensure a perfect 4.0 GPA",
+                            "Interacting with peers from different backgrounds to get out of comfort zones",
+                            "Procrastinating on assignments because sports take up too much time",
+                            "Demonstrating commitment to an activity to impress future employers"
                         ],
                         correct: [0, 2, 4],
-                        explanation: "Tracking expenses (Option 1), setting goals (Option 3), and budgeting for saving/spending/emergencies (Option 5) are all recommended in the text. Overspending (Option 2) and borrowing (Option 4) are negative habits."
+                        explanation: "Balancing schedules (Option 1), interacting with diverse peers (Option 3), and demonstrating commitment (Option 5) are all framed positively by the author as actions that support growth. Avoiding clubs (Option 2) actually correlates with a lower GPA according to the table, and procrastinating (Option 4) is exactly what the text says extracurriculars help *stop*."
                     },
                     {
                         id: 23,
                         text: text5 + "Who is most likely to be the target audience of this text?<br><em>(Choose all correct answers)</em>",
                         type: "multiple",
                         options: [
-                            "Teenagers who are learning to manage their money",
-                            "Parents looking for tips on how to control their children's spending",
-                            "Students who want to plan for their financial future",
-                            "High school readers who need to understand saving and budgeting",
-                            "Bankers and professional corporate financial experts"
+                            "High school students deciding whether to join a club",
+                            "Parents who are worried that clubs will distract their children from studying",
+                            "Professional athletes looking for new training methods",
+                            "School counselors encouraging students to be more involved",
+                            "Kindergarten teachers designing a new recess curriculum"
                         ],
-                        correct: [0, 2, 3],
-                        explanation: "The tone, language, and direct references to 'students', 'teenagers', 'allowance', and 'saving for college' indicate the text is written directly for young people (Options 1, 3, and 4)."
+                        correct: [0, 1, 3],
+                        explanation: "The text directly addresses high school life, student benefits, and specifically mentions 'parents who worry that club activities will distract students', making students, parents, and school educators the primary audience."
                     },
                     {
                         id: 24,
-                        text: text5 + "Which additional piece of information would make the text more informative regarding student spending habits?",
+                        text: text5 + "Which additional piece of information would make the text more informative regarding the impact of extracurriculars on mental health?",
                         type: "single",
                         options: [
-                            "A paragraph about the history of the global banking system",
-                            "A detailed breakdown showing common monthly expenses for high school students",
-                            "A chart showing how corporate businesses manage their yearly taxes",
-                            "A paragraph discussing the psychological effects of video games",
-                            "A list of the best places to borrow money with high interest rates"
+                            "A list of the most popular video games played by students who aren't in clubs",
+                            "A chart comparing the stress and anxiety levels of active students versus uninvolved students",
+                            "A paragraph explaining the detailed history of the debate club in America",
+                            "A schedule showing exactly what time football practice ends",
+                            "A table showing the salaries of university professors"
                         ],
                         correct: [1],
-                        explanation: "Since the text discusses student budgeting and mentions they spend heavily on food/drinks (50%), a detailed breakdown of their actual monthly expenses would perfectly complement the data and make the text more informative."
+                        explanation: "The third paragraph mentions that active students have 'better mental health', but provides no data for it (unlike the GPA claim, which is backed by Table 1). A chart comparing stress/anxiety levels would directly support and inform that specific claim."
                     },
                     {
                         id: 25,
                         text: text5 + "Which of the following statements are supported by clear data or facts in the text and Table 1?<br><em>(Choose all correct answers)</em>",
                         type: "multiple",
                         options: [
-                            "45% of students save money regularly by setting aside at least 10% of their allowance",
-                            "Tracking expenses with apps or notes can help students understand their spending habits",
-                            "Most students do not care about money at all and never save",
-                            "The largest category of spending among the surveyed students is food & drinks (50%)",
-                            "Spending on fun activities is always a better investment than saving for college"
+                            "Students involved in Academic Clubs have the highest average GPA (3.8).",
+                            "Uninvolved students make up 10% of the population and have the lowest average GPA (2.9).",
+                            "Students in Arts/Music generally have lower GPAs than students in Sports.",
+                            "Extracurricular activities guarantee that every single student will get accepted into a top university.",
+                            "40% of students participate in Sports, gaining better teamwork and discipline."
                         ],
-                        correct: [0, 1, 3],
-                        explanation: "Option 1 is true (from the first row of the table). Option 2 is true (from paragraph 4). Option 4 is true (from the fifth row of the table). Options 3 and 5 contradict the text."
+                        correct: [0, 1, 4],
+                        explanation: "Option 1 is true (Row 3 of the table). Option 2 is true (Row 4). Option 4 is an exaggeration not in the text. Option 5 is true (Row 1). Option 3 is false, as the table shows Arts/Music students have a higher GPA (3.6) than Sports students (3.4)."
                     }
                 ];
             })()
@@ -641,350 +623,353 @@
             math: [
             {
                 id: 1,
-                text: "<strong>Matematika Q1: Bilangan Real (Himpunan)</strong><br><br>Diberikan tiga himpunan bilangan sebagai berikut:<br>A = {x | x &lt; 6, x &isin; Bilangan Asli}<br>B = {x | x &le; 10, x &isin; Bilangan Genap Positif}<br>C = {x | x &le; 7, x &isin; Bilangan Prima}<br><br>Berdasarkan himpunan-himpunan tersebut, hasil dari (A &cap; B) &cup; C adalah...",
+                text: "<strong>Matematika Q1: Logaritma</strong><br><br>Diketahui <sup>3</sup>log 5 = p dan <sup>5</sup>log 2 = q. Maka nilai dari <sup>15</sup>log 40 jika dinyatakan dalam bentuk p dan q adalah...",
                 type: "single",
                 options: [
-                    "{2, 4}",
-                    "{2, 3, 5, 7}",
-                    "{2, 3, 4, 5, 7}",
-                    "{1, 2, 3, 4, 5, 7}",
-                    "{2, 3, 4, 5, 7, 8, 10}"
+                    "(3pq + p) / (p + 1)",
+                    "(p + q) / (3p + 1)",
+                    "(3p + q) / (p + 1)",
+                    "(pq + 3p) / (q + 1)",
+                    "(p + 3q) / (pq + 1)"
                 ],
-                correct: [2],
-                explanation: "A = {1, 2, 3, 4, 5}, B = {2, 4, 6, 8, 10}, C = {2, 3, 5, 7}.<br>A &cap; B (irisan A dan B) = {2, 4}.<br>Digabung dengan C: {2, 4} &cup; {2, 3, 5, 7} = {2, 3, 4, 5, 7}."
+                correct: [0],
+                explanation: "Gunakan sifat perubahan basis logaritma: <sup>15</sup>log 40 = (<sup>5</sup>log 40) / (<sup>5</sup>log 15).<br>Urai pembilang: <sup>5</sup>log(8 &times; 5) = <sup>5</sup>log 2<sup>3</sup> + <sup>5</sup>log 5 = 3(<sup>5</sup>log 2) + 1 = 3q + 1.<br>Urai penyebut: <sup>5</sup>log(3 &times; 5) = <sup>5</sup>log 3 + <sup>5</sup>log 5 = (1/p) + 1.<br>Bagi keduanya: (3q + 1) / (1/p + 1). Kalikan atas dan bawah dengan p, hasilnya (3pq + p) / (1 + p)."
             },
             {
                 id: 2,
-                text: "<strong>Matematika Q2: Sifat Operasi Bilangan Berpangkat</strong><br><br>Bentuk sederhana dari ( (2<sup>3</sup>)<sup>2/3</sup> &times; (3<sup>2</sup>)<sup>3/2</sup> ) / ( 2<sup>2</sup> &times; 3<sup>2</sup> ) adalah...",
+                text: "<strong>Matematika Q2: Persamaan Kuadrat</strong><br><br>Akar-akar dari persamaan kuadrat 2x<sup>2</sup> - 6x + 3 = 0 adalah &alpha; dan &beta;. Persamaan kuadrat baru yang memiliki akar-akar (&alpha; + 1) dan (&beta; + 1) adalah...",
                 type: "single",
                 options: [
-                    "2",
-                    "3",
-                    "6",
-                    "9",
-                    "18"
+                    "2x<sup>2</sup> - 10x + 11 = 0",
+                    "2x<sup>2</sup> - 10x + 7 = 0",
+                    "2x<sup>2</sup> + 10x - 11 = 0",
+                    "x<sup>2</sup> - 5x + 11 = 0",
+                    "x<sup>2</sup> + 5x - 7 = 0"
                 ],
-                correct: [1],
-                explanation: "Sederhanakan pembilang: (2<sup>3</sup>)<sup>2/3</sup> = 2<sup>2</sup>. Kemudian (3<sup>2</sup>)<sup>3/2</sup> = 3<sup>3</sup>.<br>Maka: (2<sup>2</sup> &times; 3<sup>3</sup>) / (2<sup>2</sup> &times; 3<sup>2</sup>). Coret 2<sup>2</sup>, tersisa 3<sup>3</sup> / 3<sup>2</sup> = 3<sup>1</sup> = 3."
+                correct: [0],
+                explanation: "Gunakan metode invers fungsi akar (substitusi). Misalkan akar baru y = x + 1, sehingga x = y - 1.<br>Substitusikan x ke persamaan awal:<br>2(y - 1)<sup>2</sup> - 6(y - 1) + 3 = 0<br>2(y<sup>2</sup> - 2y + 1) - 6y + 6 + 3 = 0<br>2y<sup>2</sup> - 4y + 2 - 6y + 9 = 0<br>2y<sup>2</sup> - 10y + 11 = 0. Kembalikan variabel y menjadi x."
             },
             {
                 id: 3,
-                text: "<strong>Matematika Q3: Operasi Biner</strong><br><br>Operasi biner &oplus; pada himpunan bilangan real positif didefinisikan sebagai a &oplus; b = (a<sup>2</sup> - b) / 2.<br>Jika diketahui x &oplus; 5 = 10, manakah dari pernyataan berikut yang TEPAT mengenai nilai x?<br><br>Pilih setiap jawaban benar! (Jawaban benar dapat lebih dari satu).",
-                type: "multiple",
+                text: "<strong>Matematika Q3: Fungsi Komposisi & Invers</strong><br><br>Diketahui fungsi f(x) = (2x + 1) / (x - 3) untuk x &ne; 3, dan fungsi g(x) = 3x - 2. Nilai dari fungsi invers komposisi (f &comp; g)<sup>-1</sup>(x) adalah...",
+                type: "single",
                 options: [
-                    "x merupakan kelipatan 5.",
-                    "x merupakan bilangan ganjil.",
-                    "x merupakan bilangan prima.",
-                    "Nilai x &oplus; 11 = 7."
+                    "(5x - 3) / (3x - 6)",
+                    "(3x + 5) / (6x - 3)",
+                    "(5x + 3) / (3x - 6)",
+                    "(6x - 3) / (3x + 5)",
+                    "(3x - 6) / (5x - 3)"
                 ],
-                correct: [0, 2, 3],
-                explanation: "(x<sup>2</sup> - 5) / 2 = 10 &rarr; x<sup>2</sup> - 5 = 20 &rarr; x<sup>2</sup> = 25. Karena x positif, maka x = 5.<br>Evaluasi: (1) 5 kelipatan 5 (Benar). (2) 5 ganjil (Benar). (3) 5 prima (Benar). (4) 5 &oplus; 11 = (25-11)/2 = 14/2 = 7 (Benar)."
+                correct: [0],
+                explanation: "Cari (f &comp; g)(x) terlebih dahulu:<br>f(g(x)) = f(3x - 2) = [2(3x - 2) + 1] / [(3x - 2) - 3] = (6x - 4 + 1) / (3x - 5) = (6x - 3) / (3x - 5).<br>Gunakan rumus cepat invers fungsi rasional f(x) = (ax + b) / (cx + d) menjadi f<sup>-1</sup>(x) = (-dx + b) / (cx - a).<br>Maka invers dari (6x - 3) / (3x - 5) adalah (5x - 3) / (3x - 6)."
             },
             {
                 id: 4,
-                text: "<strong>Matematika Q4: Fungsi dan Invers</strong><br><br>Sebuah pabrik memodelkan penyusutan harga mesin produksinya dengan fungsi linear: y = -2,5x + 500, dengan x mewakili tahun penggunaan dan y mewakili harga mesin dalam jutaan rupiah.<br>Pada tahun ke berapakah harga mesin diperkirakan menyentuh angka Rp 350.000.000,00?",
+                text: "<strong>Matematika Q4: Operasi Matriks</strong><br><br>Diketahui dua buah matriks ordo 2x2:<br>A = <br>| 2  &nbsp;&nbsp;3 |<br>|-1 &nbsp;&nbsp;4 |<br><br>B = <br>| 1 &nbsp;-2 |<br>| 3 &nbsp;&nbsp;&nbsp;0 |<br><br>Berapakah nilai determinan dari matriks hasil perkalian (A &times; B)?",
                 type: "single",
                 options: [
-                    "Tahun ke-30",
-                    "Tahun ke-40",
-                    "Tahun ke-50",
-                    "Tahun ke-60",
-                    "Tahun ke-70"
+                    "-66",
+                    "-11",
+                    "33",
+                    "66",
+                    "121"
                 ],
-                correct: [2],
-                explanation: "Harga mesin (y) = 350 juta.<br>350 = -2,5x + 500 &rarr; 2,5x = 500 - 350 &rarr; 2,5x = 150 &rarr; x = 150 / 2,5 = 60 tahun."
+                correct: [3],
+                explanation: "Sifat determinan perkalian matriks adalah Det(A &times; B) = Det(A) &times; Det(B).<br>Det(A) = (2 &times; 4) - (3 &times; -1) = 8 - (-3) = 11.<br>Det(B) = (1 &times; 0) - (-2 &times; 3) = 0 - (-6) = 6.<br>Maka, Det(A &times; B) = 11 &times; 6 = 66."
             },
             {
                 id: 5,
-                text: "<strong>Matematika Q5: Fungsi Komposisi</strong><br><br>Toko elektronik 'Maju Jaya' memberikan diskon akhir tahun sebesar 20% untuk semua laptop, yang dimodelkan dengan y = 0,8x (x adalah harga awal). Khusus pelajar yang menunjukkan kartu pelajar, mendapat tambahan potongan harga mutlak sebesar Rp 250.000,00, yang dimodelkan dengan g(y) = y - 250.000.<br>Jika Budi seorang pelajar dan ia membayar di kasir sebesar Rp 5.750.000,00 untuk sebuah laptop, berapakah harga awal laptop tersebut sebelum ada promo?",
+                text: "<strong>Matematika Q5: Program Linear</strong><br><br>Perhatikan grafik daerah penyelesaian sistem pertidaksamaan di bawah ini (daerah yang diarsir):<br><br><div style='text-align:center;'><svg width='250' height='250' viewBox='-1 -1 10 10' style='background:#fff; border:1px solid #ccc; border-radius:5px;'> <defs> <marker id='arrow5' markerWidth='5' markerHeight='5' refX='4' refY='2.5' orient='auto'> <polygon points='0,0 5,2.5 0,5' fill='black'/> </marker> </defs> <line x1='-0.5' y1='0' x2='9.5' y2='0' stroke='black' stroke-width='0.05' marker-end='url(#arrow5)'/> <line x1='0' y1='-0.5' x2='0' y2='9.5' stroke='black' stroke-width='0.05' marker-end='url(#arrow5)'/> <polygon points='0,0 3,0 2,3 0,4' fill='rgba(0,128,0,0.3)' stroke='#008000' stroke-width='0.05'/> <text x='9' y='-0.2' font-size='0.4' fill='black'>X</text> <text x='-0.5' y='9.4' font-size='0.4' fill='black'>Y</text> <line x1='3' y1='0' x2='0' y2='9' stroke='red' stroke-width='0.05'/> <line x1='8' y1='0' x2='0' y2='4' stroke='blue' stroke-width='0.05'/> <text x='2.8' y='-0.3' font-size='0.4' fill='black'>3</text> <text x='7.8' y='-0.3' font-size='0.4' fill='black'>8</text> <text x='-0.5' y='4.2' font-size='0.4' fill='black'>4</text> <text x='-0.5' y='9.2' font-size='0.4' fill='black'>9</text> <circle cx='2' cy='3' r='0.1' fill='black'/> <text x='2.3' y='3.3' font-size='0.4' fill='black'>(2, 3)</text> </svg></div><br>Daerah penyelesaian tersebut dibatasi oleh garis 3x + y &le; 9 dan x + 2y &le; 8 pada kuadran pertama. Tentukan nilai maksimum dari fungsi objektif f(x, y) = 5x + 4y!",
                 type: "single",
                 options: [
-                    "Rp 6.500.000,00",
-                    "Rp 7.000.000,00",
-                    "Rp 7.250.000,00",
-                    "Rp 7.500.000,00",
-                    "Rp 8.000.000,00"
+                    "15",
+                    "16",
+                    "20",
+                    "22",
+                    "26"
                 ],
                 correct: [3],
-                explanation: "Fungsi komposisi total yang dibayar: g(f(x)) = 0,8x - 250.000.<br>5.750.000 = 0,8x - 250.000 &rarr; 6.000.000 = 0,8x &rarr; x = 6.000.000 / 0,8 = Rp 7.500.000,00."
+                explanation: "Uji nilai f(x, y) = 5x + 4y pada setiap titik sudut daerah yang diarsir:<br>- Titik Pusat (0,0) &rarr; 5(0) + 4(0) = 0<br>- Titik Bawah (3,0) &rarr; 5(3) + 4(0) = 15<br>- Titik Kiri Atas (0,4) &rarr; 5(0) + 4(4) = 16<br>- Titik Potong (2,3) &rarr; 5(2) + 4(3) = 10 + 12 = 22.<br>Nilai paling besar adalah 22."
             },
             {
                 id: 6,
-                text: "<strong>Matematika Q6: Barisan Aritmetika</strong><br><br>Dalam sebuah gedung pertunjukan, susunan kursi penonton dibuat melengkung. Baris paling depan (baris ke-1) memiliki 20 kursi. Baris ke-2 memiliki 24 kursi, dan baris ke-3 memiliki 28 kursi. Penambahan kursi untuk baris-baris berikutnya selalu mengikuti pola yang sama.<br>Jika gedung tersebut memiliki tepat 15 baris kursi, berapakah kapasitas total kursi di dalam gedung tersebut?",
+                text: "<strong>Matematika Q6: Barisan Aritmetika</strong><br><br>Diketahui suku ke-4 dan suku ke-9 suatu barisan aritmetika berturut-turut adalah 17 dan 37. Jumlah 20 suku pertama (S<sub>20</sub>) dari deret tersebut adalah...",
                 type: "single",
                 options: [
-                    "640 kursi",
-                    "700 kursi",
-                    "720 kursi",
-                    "760 kursi",
-                    "800 kursi"
+                    "840",
+                    "860",
+                    "880",
+                    "900",
+                    "920"
                 ],
-                correct: [2],
-                explanation: "Ini adalah deret aritmetika dengan a = 20 dan b = 4.<br>S<sub>n</sub> = (n/2) &times; [2a + (n-1)b]<br>S<sub>15</sub> = (15/2) &times; [40 + 14(4)] = (15/2) &times; [40 + 56] = (15/2) &times; 96 = 15 &times; 48 = 720 kursi."
+                correct: [1],
+                explanation: "U<sub>4</sub> = a + 3b = 17<br>U<sub>9</sub> = a + 8b = 37<br>Kurangkan kedua persamaan: 5b = 20 &rarr; b = 4.<br>Substitusi b ke U<sub>4</sub>: a + 3(4) = 17 &rarr; a = 5.<br>Rumus S<sub>n</sub> = n/2 &times; [2a + (n-1)b].<br>S<sub>20</sub> = 20/2 &times; [2(5) + 19(4)] = 10 &times; [10 + 76] = 10 &times; 86 = 860."
             },
             {
                 id: 7,
-                text: "<strong>Matematika Q7: Barisan Geometri</strong><br><br>Suatu zat radioaktif memiliki massa awal 160 gram. Zat tersebut mengalami peluruhan (penyusutan massa) sebesar 50% setiap 3 jam.<br>Berapa gram sisa massa zat radioaktif tersebut setelah dibiarkan selama 12 jam?",
+                text: "<strong>Matematika Q7: Deret Geometri Tak Hingga</strong><br><br>Sebuah bola karet dijatuhkan dari ketinggian 10 meter ke lantai. Setiap kali memantul, ketinggian bola mencapai 3/4 dari ketinggian pentalan sebelumnya. Panjang total lintasan bola dari awal jatuh sampai benar-benar berhenti memantul adalah...",
                 type: "single",
                 options: [
-                    "5 gram",
-                    "10 gram",
-                    "20 gram",
-                    "40 gram",
-                    "80 gram"
+                    "40 meter",
+                    "60 meter",
+                    "70 meter",
+                    "80 meter",
+                    "90 meter"
                 ],
-                correct: [1],
-                explanation: "Peluruhan mengikuti barisan geometri. Rasio r = 1/2. Waktu total = 12 jam, interval = 3 jam. Maka terjadi n = 12/3 = 4 kali peluruhan.<br>U<sub>n</sub> = a &times; r<sup>n</sup> = 160 &times; (1/2)<sup>4</sup> = 160 &times; (1/16) = 10 gram."
+                correct: [2],
+                explanation: "Gunakan rumus cepat panjang lintasan bola jatuh: S = h &times; (y + x) / (y - x), di mana r = x/y.<br>Diketahui h = 10 m, r = 3/4 (x=3, y=4).<br>S = 10 &times; (4 + 3) / (4 - 3) = 10 &times; (7 / 1) = 70 meter."
             },
             {
                 id: 8,
-                text: "<strong>Matematika Q8: Sistem Pertidaksamaan Linear</strong><br><br>Perhatikan daerah yang diarsir (warna biru) pada grafik koordinat Cartesius di bawah ini:<br><br><div style='text-align:center;'><svg width='250' height='250' viewBox='-1 -1 6 6' style='background:#fff; border:1px solid #ccc; border-radius:5px;'> <defs> <marker id='arrow' markerWidth='5' markerHeight='5' refX='4' refY='2.5' orient='auto'> <polygon points='0,0 5,2.5 0,5' fill='black'/> </marker> </defs> <line x1='0' y1='0' x2='0' y2='5' stroke='#ddd' stroke-width='0.02'/> <line x1='1' y1='0' x2='1' y2='5' stroke='#ddd' stroke-width='0.02'/> <line x1='2' y1='0' x2='2' y2='5' stroke='#ddd' stroke-width='0.02'/> <line x1='3' y1='0' x2='3' y2='5' stroke='#ddd' stroke-width='0.02'/> <line x1='4' y1='0' x2='4' y2='5' stroke='#ddd' stroke-width='0.02'/> <line x1='0' y1='1' x2='5' y2='1' stroke='#ddd' stroke-width='0.02'/> <line x1='0' y1='2' x2='5' y2='2' stroke='#ddd' stroke-width='0.02'/> <line x1='0' y1='3' x2='5' y2='3' stroke='#ddd' stroke-width='0.02'/> <line x1='0' y1='4' x2='5' y2='4' stroke='#ddd' stroke-width='0.02'/> <line x1='-0.5' y1='0' x2='5.5' y2='0' stroke='black' stroke-width='0.05' marker-end='url(#arrow)'/> <line x1='0' y1='-0.5' x2='0' y2='5.5' stroke='black' stroke-width='0.05' marker-end='url(#arrow)'/> <polygon points='0,0 4,0 0,3' fill='rgba(0,86,179,0.3)' stroke='#0056b3' stroke-width='0.05'/> <text x='5.2' y='-0.2' font-size='0.3' fill='black'>X</text> <text x='-0.4' y='5.4' font-size='0.3' fill='black'>Y</text> <text x='3.9' y='-0.2' font-size='0.3' fill='black'>4</text> <text x='-0.3' y='3.1' font-size='0.3' fill='black'>3</text> </svg></div><br>Daerah yang diarsir tersebut merupakan himpunan penyelesaian dari sistem pertidaksamaan...",
+                text: "<strong>Matematika Q8: Teorema Sisa (Suku Banyak)</strong><br><br>Suku banyak P(x) = x<sup>3</sup> + ax<sup>2</sup> - 13x + b habis dibagi oleh (x - 2) dan akan bersisa 50 jika dibagi oleh (x + 3). Nilai dari a + b adalah...",
                 type: "single",
                 options: [
-                    "3x + 4y &le; 12 ; x &ge; 0 ; y &ge; 0",
-                    "4x + 3y &le; 12 ; x &ge; 0 ; y &ge; 0",
-                    "3x + 4y &ge; 12 ; x &ge; 0 ; y &ge; 0",
-                    "4x + 3y &ge; 12 ; x &le; 0 ; y &ge; 0",
-                    "3x - 4y &le; 12 ; x &ge; 0 ; y &le; 0"
+                    "4",
+                    "6",
+                    "8",
+                    "10",
+                    "12"
                 ],
-                correct: [0],
-                explanation: "Garis yang memotong sumbu X di 4 dan sumbu Y di 3 memiliki persamaan 3x + 4y = 12.<br>Karena daerah yang diarsir berada di bawah garis dan dibatasi oleh kuadran 1, maka sistem pertidaksamaannya adalah 3x + 4y &le; 12, x &ge; 0, y &ge; 0."
+                correct: [1],
+                explanation: "Sesuai Teorema Sisa:<br>1) P(2) = 0 &rarr; 2<sup>3</sup> + a(2)<sup>2</sup> - 13(2) + b = 0 &rarr; 8 + 4a - 26 + b = 0 &rarr; 4a + b = 18.<br>2) P(-3) = 50 &rarr; (-3)<sup>3</sup> + a(-3)<sup>2</sup> - 13(-3) + b = 50 &rarr; -27 + 9a + 39 + b = 50 &rarr; 9a + b = 38.<br>Eliminasi (9a + b = 38) dikurang (4a + b = 18) &rarr; 5a = 20 &rarr; a = 4.<br>Substitusi a: 4(4) + b = 18 &rarr; 16 + b = 18 &rarr; b = 2.<br>Maka a + b = 4 + 2 = 6."
             },
             {
                 id: 9,
-                text: "<strong>Matematika Q9: Program Linear</strong><br><br>Di sebuah pameran UMKM, seorang penjual membuat dua jenis parsel buah.<br>Parsel A berisi 2 kg Apel dan 1 kg Jeruk seharga Rp 100.000,00.<br>Parsel B berisi 1 kg Apel dan 2 kg Jeruk seharga Rp 110.000,00.<br>Bila seorang pembeli ingin meracik parsel *custom* yang berisi 3 kg Apel dan 3 kg Jeruk dengan harga satuan yang sama seperti promo di atas, berapakah total harga yang harus dibayarnya?",
-                type: "single",
-                options: [
-                    "Rp 150.000,00",
-                    "Rp 180.000,00",
-                    "Rp 200.000,00",
-                    "Rp 210.000,00",
-                    "Rp 250.000,00"
-                ],
-                correct: [3],
-                explanation: "Misalkan Apel = A, Jeruk = J.<br>2A + 1J = 100.000<br>1A + 2J = 110.000<br>Jika kedua persamaan ditambahkan: 3A + 3J = 210.000. Pembeli langsung bisa membayar Rp 210.000,00 tanpa harus mencari harga 1 kg-nya."
-            },
-            {
-                id: 10,
-                text: "<strong>Matematika Q10: Hubungan Dua Sudut & Dua Garis</strong><br><br>Perhatikan gambar persilangan dua garis lurus di bawah ini:<br><br><div style='text-align:center;'><svg width='200' height='150' viewBox='0 0 200 150' style='background:#f9f9f9; border:1px solid #ccc; border-radius:5px;'> <line x1='20' y1='120' x2='180' y2='30' stroke='black' stroke-width='2'/> <line x1='40' y1='30' x2='160' y2='130' stroke='black' stroke-width='2'/> <text x='95' y='60' font-size='16' font-weight='bold' fill='#0056b3'>P</text> <text x='65' y='90' font-size='16' font-weight='bold' fill='#0056b3'>Q</text> <text x='125' y='85' font-size='16' font-weight='bold' fill='#0056b3'>R</text> <text x='100' y='115' font-size='16' font-weight='bold' fill='#0056b3'>S</text> </svg></div><br>Berdasarkan gambar tersebut, manakah pasangan sudut yang jumlahnya pasti membentuk 180&deg; (Saling Berpelurus)?<br>Pilih setiap jawaban benar! (Jawaban benar lebih dari satu).",
-                type: "multiple",
-                options: [
-                    "Sudut P dan Sudut Q",
-                    "Sudut P dan Sudut R",
-                    "Sudut P dan Sudut S",
-                    "Sudut Q dan Sudut S"
-                ],
-                correct: [0, 1, 3],
-                explanation: "Sudut berpelurus (suplemen) adalah dua sudut yang berdampingan pada satu garis lurus dan berjumlah 180&deg;.<br>Pasangan yang memenuhi: (P dan Q), (P dan R), (R dan S), (Q dan S).<br>Sudut P dan S adalah sudut bertolak belakang (besarnya sama, bukan 180&deg;)."
-            },
-            {
-                id: 11,
-                text: "<strong>Matematika Q11: Hubungan Objek Geometri pada Bangun Ruang</strong><br><br>Sebuah brankas berbentuk balok sempurna dinamai ABCD.EFGH (A,B,C,D adalah titik sudut alas, dan E,F,G,H adalah titik sudut tutup).<br>Jika pintu brankas terletak di bidang bagian depan yaitu <strong>ABFE</strong>, manakah bidang dinding brankas yang posisinya <strong>sejajar</strong> dengan pintu tersebut?",
-                type: "single",
-                options: [
-                    "ABCD",
-                    "BCGF",
-                    "DCGH",
-                    "ADHE",
-                    "EFGH"
-                ],
-                correct: [2],
-                explanation: "Pada balok ABCD.EFGH, bidang alas (ABCD) sejajar atap (EFGH), sisi kiri (ADHE) sejajar sisi kanan (BCGF), dan sisi depan (ABFE) sejajar dengan sisi belakang (DCGH)."
-            },
-            {
-                id: 12,
-                text: "<strong>Matematika Q12: Kesebangunan Geometri</strong><br><br>Seorang insinyur mengamati bayangan sebuah pohon dan sebuah tiang pancang.<br><br><div style='text-align:center;'><svg width='300' height='150' viewBox='0 0 300 150' style='background:#fff; border:1px solid #ccc; border-radius:5px;'> <polygon points='20,130 140,130 140,40' fill='rgba(0,128,0,0.2)' stroke='green' stroke-width='2'/> <polygon points='180,130 240,130 240,85' fill='rgba(128,128,128,0.2)' stroke='gray' stroke-width='2'/> <text x='65' y='145' font-size='12'>Bayangan = 12m</text> <text x='145' y='90' font-size='12'>Pohon (T)</text> <text x='195' y='145' font-size='12'>Bygn = 6m</text> <text x='245' y='110' font-size='12'>Tiang = 4.5m</text> </svg></div><br>Tiang pancang yang tingginya 4,5 meter memiliki panjang bayangan 6 meter. Pada waktu yang sama (sehingga sudut matahari identik), sebuah pohon memiliki panjang bayangan 12 meter.<br>Berapakah tinggi pohon (T) tersebut berdasarkan prinsip kesebangunan segitiga?",
-                type: "single",
-                options: [
-                    "8 meter",
-                    "9 meter",
-                    "10 meter",
-                    "12 meter",
-                    "16 meter"
-                ],
-                correct: [1],
-                explanation: "Karena kesebangunan: Tinggi Pohon / Bayangan Pohon = Tinggi Tiang / Bayangan Tiang.<br>T / 12 = 4,5 / 6 &rarr; T = (4,5 &times; 12) / 6 = 54 / 6 = 9 meter."
-            },
-            {
-                id: 13,
-                text: "<strong>Matematika Q13: Teorema Pythagoras</strong><br><br>Sebuah tangga yang panjangnya 13 meter disandarkan pada dinding sebuah gedung. Jika jarak dari kaki tangga ke pangkal dinding adalah 5 meter, berapakah tinggi dinding dari tanah hingga ke ujung atas tangga tersebut?",
-                type: "single",
-                options: [
-                    "8 meter",
-                    "10 meter",
-                    "11 meter",
-                    "12 meter",
-                    "14 meter"
-                ],
-                correct: [3],
-                explanation: "Sesuai Tripel Pythagoras (a<sup>2</sup> + b<sup>2</sup> = c<sup>2</sup>). Sisi miring (c) = 13, sisi datar (a) = 5.<br>b<sup>2</sup> = 13<sup>2</sup> - 5<sup>2</sup> = 169 - 25 = 144. Maka b = &radic;144 = 12 meter."
-            },
-            {
-                id: 14,
-                text: "<strong>Matematika Q14: Transformasi Geometri (Translasi)</strong><br><br>Sebuah drone pemantau berada pada koordinat titik P(-3, 4) dalam radar. Operator memberikan instruksi translasi otomatis sebesar T = (5, -6), yang artinya drone bergerak 5 unit ke timur (sumbu X positif) dan 6 unit ke selatan (sumbu Y negatif).<br>Di manakah titik koordinat akhir (P') dari drone tersebut?",
-                type: "single",
-                options: [
-                    "P'(2, 2)",
-                    "P'(2, -2)",
-                    "P'(-8, 10)",
-                    "P'(8, -10)",
-                    "P'(-2, 2)"
-                ],
-                correct: [1],
-                explanation: "Translasi titik P(x, y) dengan T(a, b) menjadi P'(x+a, y+b).<br>x' = -3 + 5 = 2.<br>y' = 4 + (-6) = -2.<br>Maka posisi akhirnya adalah P'(2, -2)."
-            },
-            {
-                id: 15,
-                text: "<strong>Matematika Q15: Jarak Objek Geometri Ruang</strong><br><br>Kamar Doni berbentuk kubus sempurna dengan panjang rusuk 4 meter. Doni ingin menarik seutas tali lampu hias dari salah satu pojok bawah lantai kamar (Titik A) lurus melintasi ruangan menuju pojok atas plafon yang letaknya saling berseberangan secara diagonal ruang (Titik G).<br>Berapakah panjang tali minimal yang dibutuhkan Doni?",
-                type: "single",
-                options: [
-                    "4&radic;2 meter",
-                    "4&radic;3 meter",
-                    "8 meter",
-                    "8&radic;2 meter",
-                    "12 meter"
-                ],
-                correct: [1],
-                explanation: "Jarak dari pojok bawah (A) ke pojok atas yang saling berseberangan (G) pada sebuah kubus adalah Diagonal Ruang.<br>Rumus panjang diagonal ruang kubus dengan rusuk 's' adalah s&radic;3.<br>Karena rusuk = 4 meter, maka jaraknya adalah 4&radic;3 meter."
-            },
-            {
-                id: 16,
-                text: "<strong>Matematika Q16: Luas & Keliling Bangun Datar Gabungan</strong><br><br>Sebuah taman berbentuk gabungan persegi panjang dan setengah lingkaran seperti ilustrasi di bawah ini:<br><br><div style='text-align:center;'><svg width='200' height='220' viewBox='0 0 200 220' style='background:#f8f9fa; border-radius:5px;'> <path d='M 40 100 A 60 60 0 0 1 160 100 L 160 200 L 40 200 Z' fill='rgba(0,180,0,0.2)' stroke='green' stroke-width='2'/> <text x='20' y='150' font-size='12'>10 m</text> <text x='85' y='215' font-size='12'>14 m</text> </svg></div><br>Panjang persegi panjang adalah 14 meter (yang sekaligus menjadi diameter setengah lingkaran), dan lebarnya adalah 10 meter. Pengelola ingin memasang pagar besi tepat di <strong>seluruh keliling sisi luar</strong> taman tersebut. (Gunakan &pi; = 22/7).<br>Berapakah total panjang pagar besi yang harus dibeli?",
-                type: "single",
-                options: [
-                    "34 meter",
-                    "46 meter",
-                    "56 meter",
-                    "66 meter",
-                    "70 meter"
-                ],
-                correct: [2],
-                explanation: "Keliling luar taman = 3 sisi luar persegi panjang + panjang busur setengah lingkaran.<br>3 sisi persegi = 10 (kiri) + 14 (bawah) + 10 (kanan) = 34 m. (Sisi atas tidak dihitung karena tertutup setengah lingkaran).<br>Busur 1/2 Lingkaran = 1/2 &times; &pi; &times; d = 1/2 &times; (22/7) &times; 14 = 22 m.<br>Total keliling = 34 + 22 = 56 meter."
-            },
-            {
-                id: 17,
-                text: "<strong>Matematika Q17: Volume dan Luas Permukaan</strong><br><br>Sebuah pabrik cokelat memproduksi kemasan karton berbentuk balok dengan panjang 20 cm, lebar 10 cm, dan tinggi 5 cm. <br>Untuk menghemat biaya cetak, pihak pabrik ingin mengetahui total <strong>luas permukaan</strong> karton yang digunakan untuk membuat 1 kemasan cokelat (tanpa menghitung lipatan sambungan). Berapakah luas permukaan kemasan tersebut?",
-                type: "single",
-                options: [
-                    "350 cm&sup2;",
-                    "500 cm&sup2;",
-                    "700 cm&sup2;",
-                    "1000 cm&sup2;",
-                    "1400 cm&sup2;"
-                ],
-                correct: [2],
-                explanation: "Luas Permukaan Balok = 2 &times; (pl + pt + lt)<br>= 2 &times; [ (20&times;10) + (20&times;5) + (10&times;5) ]<br>= 2 &times; [ 200 + 100 + 50 ]<br>= 2 &times; 350 = 700 cm&sup2;."
-            },
-            {
-                id: 18,
-                text: "<strong>Matematika Q18: Volume Bangun Ruang Lanjutan (Kapasitas Kemasan)</strong><br><br>Pak Andi memiliki sebuah akuarium kosong berbentuk kubus besar dengan panjang sisi bagian dalamnya adalah 120 cm. Ia ingin menyusun kotak-kotak kecil berisi makanan ikan ke dalam akuarium tersebut. Setiap kotak makanan ikan juga berbentuk kubus dengan rusuk 30 cm.<br>Berapa banyak kotak kecil maksimal yang bisa dimasukkan ke dalam akuarium kubus besar tersebut hingga terisi penuh tanpa celah?",
-                type: "single",
-                options: [
-                    "4 kotak",
-                    "16 kotak",
-                    "32 kotak",
-                    "64 kotak",
-                    "128 kotak"
-                ],
-                correct: [3],
-                explanation: "Volume Akuarium = 120 &times; 120 &times; 120 cm<sup>3</sup>.<br>Volume 1 kotak = 30 &times; 30 &times; 30 cm<sup>3</sup>.<br>Banyak kotak = (120/30) &times; (120/30) &times; (120/30) = 4 &times; 4 &times; 4 = 64 kotak."
-            },
-            {
-                id: 19,
-                text: "<strong>Matematika Q19: Perbandingan Trigonometri Dasar</strong><br><br>Perhatikan segitiga siku-siku di bawah ini:<br><br><div style='text-align:center;'><svg width='200' height='150' viewBox='0 0 200 150' style='background:#f9f9f9; border-radius:5px;'> <polygon points='40,120 160,120 160,30' fill='none' stroke='black' stroke-width='2'/> <rect x='145' y='105' width='15' height='15' fill='none' stroke='black' stroke-width='1'/> <text x='25' y='130' font-size='14'>A</text> <text x='165' y='130' font-size='14'>B</text> <text x='165' y='25' font-size='14'>C</text> <text x='65' y='110' font-size='12'>&alpha;</text> </svg></div><br>Segitiga ABC siku-siku di B. Jika panjang sisi BC (depan) = 8 cm dan sisi AB (samping) = 6 cm. <br>Manakah pernyataan yang BENAR terkait nilai perbandingan trigonometri sudut &alpha; (Sudut BAC)?<br><br>Pilih setiap jawaban benar! (Jawaban benar dapat lebih dari satu).",
-                type: "multiple",
-                options: [
-                    "Sisi miring (AC) = 10 cm",
-                    "Nilai sin &alpha; = 4/5",
-                    "Nilai cos &alpha; = 3/5",
-                    "Nilai tan &alpha; = 3/4"
-                ],
-                correct: [0, 1, 2],
-                explanation: "Segitiga siku-siku AB = 6, BC = 8. Pythagoras AC = &radic;(6&sup2; + 8&sup2;) = &radic;100 = 10 cm. (Opsi 1 Benar)<br>sin &alpha; = Depan/Miring = 8/10 = 4/5. (Opsi 2 Benar)<br>cos &alpha; = Samping/Miring = 6/10 = 3/5. (Opsi 3 Benar)<br>tan &alpha; = Depan/Samping = 8/6 = 4/3. (Opsi 4 Salah)."
-            },
-            {
-                id: 20,
-                text: "<strong>Matematika Q20: Limit Fungsi (Aljabar Konseptual)</strong><br><br>Dalam evaluasi laju reaksi kimia mesin, sebuah komputer menghitung fungsi kecepatan partikel berdasarkan batas (limit) suatu waktu pendekatan. Jika fungsi kecepatan didefinisikan sebagai:<br>v(x) = (x<sup>2</sup> - 16) / (x - 4).<br>Berapakah nilai kecepatan mesin ketika x mendekati 4?",
+                text: "<strong>Matematika Q9: Limit Fungsi Aljabar (Bentuk Akar)</strong><br><br>Nilai dari limit x &rarr; 4 untuk fungsi (x - 4) / (&radic;x - 2) adalah...",
                 type: "single",
                 options: [
                     "0",
+                    "2",
                     "4",
                     "8",
-                    "16",
-                    "Tidak Terdefinisi"
+                    "Tak Terhingga"
                 ],
                 correct: [2],
-                explanation: "Limit untuk x &rarr; 4 dari (x<sup>2</sup> - 16) / (x - 4).<br>Jika disubstitusi langsung hasilnya 0/0. Lakukan pemfaktoran:<br>(x - 4)(x + 4) / (x - 4) = x + 4.<br>Substitusi x = 4 &rarr; 4 + 4 = 8."
+                explanation: "Jika disubstitusi langsung hasilnya adalah bentuk tak tentu 0/0.<br>Kalikan dengan akar sekawannya: (&radic;x + 2) / (&radic;x + 2).<br>L = lim (x-4)(&radic;x + 2) / (x - 4).<br>Coret (x-4), tersisa L = lim (&radic;x + 2).<br>Substitusi x = 4 &rarr; &radic;4 + 2 = 2 + 2 = 4."
+            },
+            {
+                id: 10,
+                text: "<strong>Matematika Q10: Limit Fungsi Tak Hingga</strong><br><br>Nilai dari limit x &rarr; &infin; [ &radic;(4x<sup>2</sup> + 8x - 5) - (2x - 1) ] adalah...",
+                type: "single",
+                options: [
+                    "1",
+                    "2",
+                    "3",
+                    "4",
+                    "5"
+                ],
+                correct: [2],
+                explanation: "Ubah (2x - 1) ke dalam bentuk akar kuadrat: &radic;((2x - 1)<sup>2</sup>) = &radic;(4x<sup>2</sup> - 4x + 1).<br>Bentuk limit sekarang adalah &radic;(ax<sup>2</sup> + bx + c) - &radic;(px<sup>2</sup> + qx + r) dengan a = p = 4.<br>Gunakan rumus cepat: L = (b - q) / (2&radic;a).<br>L = (8 - (-4)) / (2&radic;4) = 12 / (2 &times; 2) = 12 / 4 = 3."
+            },
+            {
+                id: 11,
+                text: "<strong>Matematika Q11: Aplikasi Turunan (Nilai Minimum)</strong><br><br>Suatu proyek pembangunan jalan dapat diselesaikan dalam waktu x hari. Diketahui fungsi biaya proyek per harinya adalah C(x) = (3x + 1200/x - 60) juta rupiah. Agar total biaya proyek mencapai batas minimum, proyek tersebut harus diselesaikan dalam waktu...",
+                type: "single",
+                options: [
+                    "10 hari",
+                    "15 hari",
+                    "20 hari",
+                    "25 hari",
+                    "30 hari"
+                ],
+                correct: [0],
+                explanation: "Total biaya proyek B(x) = x &times; Biaya per hari.<br>B(x) = x &times; (3x + 1200/x - 60) = 3x<sup>2</sup> - 60x + 1200.<br>Untuk mencari nilai minimum, turunkan fungsi B(x) dan samakan dengan nol (B'(x) = 0).<br>B'(x) = 6x - 60 = 0 &rarr; 6x = 60 &rarr; x = 10 hari."
+            },
+            {
+                id: 12,
+                text: "<strong>Matematika Q12: Persamaan Garis Singgung Kurva</strong><br><br>Persamaan garis singgung pada kurva y = x<sup>2</sup> - 4x + 5 di titik singgung yang memiliki absis (x) = 3 adalah...",
+                type: "single",
+                options: [
+                    "y = 2x - 1",
+                    "y = 2x - 4",
+                    "y = -2x + 4",
+                    "y = 3x - 5",
+                    "y = 4x - 6"
+                ],
+                correct: [1],
+                explanation: "Pertama cari koordinat (y) dengan mensubstitusi x = 3 ke fungsi awal: y = 3<sup>2</sup> - 4(3) + 5 = 9 - 12 + 5 = 2. Titik singgungnya (3, 2).<br>Gradien (m) adalah turunan pertama y' = 2x - 4. Substitusi x = 3 &rarr; m = 2(3) - 4 = 2.<br>Gunakan rumus y - y1 = m(x - x1) &rarr; y - 2 = 2(x - 3) &rarr; y = 2x - 6 + 2 &rarr; y = 2x - 4."
+            },
+            {
+                id: 13,
+                text: "<strong>Matematika Q13: Integral Substitusi</strong><br><br>Hasil dari &int; 6x(x<sup>2</sup> + 1)<sup>4</sup> dx adalah...",
+                type: "single",
+                options: [
+                    "3/5 (x<sup>2</sup> + 1)<sup>5</sup> + C",
+                    "6/5 (x<sup>2</sup> + 1)<sup>5</sup> + C",
+                    "3/4 (x<sup>2</sup> + 1)<sup>4</sup> + C",
+                    "(x<sup>2</sup> + 1)<sup>5</sup> + C",
+                    "3 (x<sup>2</sup> + 1)<sup>5</sup> + C"
+                ],
+                correct: [0],
+                explanation: "Gunakan metode substitusi. Misalkan u = x<sup>2</sup> + 1, maka du/dx = 2x atau du = 2x dx.<br>Pada soal terdapat 6x dx, yang ekuivalen dengan 3 &times; (2x dx) = 3 du.<br>Ubah integral menjadi &int; u<sup>4</sup> (3 du) = 3 &int; u<sup>4</sup> du = 3 &times; (1/5 u<sup>5</sup>) + C.<br>Kembalikan variabel u: 3/5 (x<sup>2</sup> + 1)<sup>5</sup> + C."
+            },
+            {
+                id: 14,
+                text: "<strong>Matematika Q14: Integral (Luas Daerah)</strong><br><br>Perhatikan sketsa grafik parabola di bawah ini:<br><br><div style='text-align:center;'><svg width='250' height='150' viewBox='-1 -1 6 5' style='background:#f8f9fa; border:1px solid #ccc; border-radius:5px;'> <defs> <marker id='arrow14' markerWidth='4' markerHeight='4' refX='3' refY='2' orient='auto'> <polygon points='0,0 4,2 0,4' fill='black'/> </marker> </defs> <line x1='-0.5' y1='4' x2='5.5' y2='4' stroke='black' stroke-width='0.05' marker-end='url(#arrow14)'/> <line x1='0' y1='4.5' x2='0' y2='-0.5' stroke='black' stroke-width='0.05' marker-end='url(#arrow14)'/> <path d='M 0 4 Q 2 -1 4 4' fill='rgba(0,86,179,0.3)' stroke='#0056b3' stroke-width='0.05'/> <text x='5.2' y='3.8' font-size='0.3' fill='black'>X</text> <text x='0.2' y='0' font-size='0.3' fill='black'>Y</text> <text x='-0.2' y='4.3' font-size='0.3' fill='black'>0</text> <text x='3.9' y='4.3' font-size='0.3' fill='black'>4</text> <text x='1.5' y='2' font-size='0.3' fill='black'>y = -x&sup2; + 4x</text> </svg></div><br>Luas daerah yang diarsir biru, yang dibatasi oleh kurva parabola y = -x<sup>2</sup> + 4x dan sumbu X adalah...",
+                type: "single",
+                options: [
+                    "8 satuan luas",
+                    "10 2/3 satuan luas",
+                    "12 satuan luas",
+                    "16 1/3 satuan luas",
+                    "32 satuan luas"
+                ],
+                correct: [1],
+                explanation: "Tentukan batas integral dengan mencari titik potong kurva dengan sumbu x (y = 0): -x(x - 4) = 0 &rarr; x = 0 dan x = 4.<br>Luas (L) = &int;<sub>0</sub><sup>4</sup> (-x<sup>2</sup> + 4x) dx = [-1/3 x<sup>3</sup> + 2x<sup>2</sup>] dari 0 sampai 4.<br>Substitusi batas atas: -1/3(64) + 2(16) = -64/3 + 32 = -64/3 + 96/3 = 32/3.<br>32/3 ekuivalen dengan 10 2/3 satuan luas."
+            },
+            {
+                id: 15,
+                text: "<strong>Matematika Q15: Persamaan Trigonometri</strong><br><br>Manakah saja yang merupakan himpunan penyelesaian dari persamaan 2 cos<sup>2</sup> x - 3 cos x + 1 = 0, pada interval 0&deg; &le; x &le; 360&deg;?<br><em>(Pilih semua jawaban benar)</em>",
+                type: "multiple",
+                options: [
+                    "0&deg;",
+                    "30&deg;",
+                    "60&deg;",
+                    "300&deg;",
+                    "360&deg;"
+                ],
+                correct: [0, 2, 3, 4],
+                explanation: "Faktorkan persamaan kuadrat tersebut dengan memisalkan p = cos x: 2p<sup>2</sup> - 3p + 1 = 0 &rarr; (2p - 1)(p - 1) = 0.<br>Akar pertama: cos x = 1/2 &rarr; x yang memenuhi adalah kuadran I (60&deg;) dan kuadran IV (300&deg;).<br>Akar kedua: cos x = 1 &rarr; x yang memenuhi adalah 0&deg; dan 360&deg;."
+            },
+            {
+                id: 16,
+                text: "<strong>Matematika Q16: Aturan Cosinus Segitiga</strong><br><br>Dua buah kapal berangkat dari pelabuhan yang sama secara bersamaan. Kapal A berlayar dengan arah (jurusan tiga angka) 030&deg; sejauh 40 km, sedangkan Kapal B berlayar dengan arah 150&deg; sejauh 60 km. Berapakah jarak lurus antara kedua kapal tersebut saat ini?",
+                type: "single",
+                options: [
+                    "20&radic;7 km",
+                    "20&radic;19 km",
+                    "40&radic;3 km",
+                    "80 km",
+                    "100 km"
+                ],
+                correct: [1],
+                explanation: "Sudut yang diapit oleh lintasan kedua kapal adalah 150&deg; - 30&deg; = 120&deg;.<br>Gunakan Aturan Cosinus: c<sup>2</sup> = a<sup>2</sup> + b<sup>2</sup> - 2ab(cos C).<br>c<sup>2</sup> = 40<sup>2</sup> + 60<sup>2</sup> - 2(40)(60) cos(120&deg;)<br>c<sup>2</sup> = 1600 + 3600 - 4800(-1/2) = 5200 + 2400 = 7600.<br>Jarak c = &radic;7600 = &radic;(400 &times; 19) = 20&radic;19 km."
+            },
+            {
+                id: 17,
+                text: "<strong>Matematika Q17: Dimensi Tiga (Jarak)</strong><br><br>Diketahui sebuah bangun ruang kubus ABCD.EFGH dengan panjang rusuk konstan 6 cm. Jarak terpendek dari titik E menuju bidang BDG adalah...",
+                type: "single",
+                options: [
+                    "2&radic;3 cm",
+                    "3&radic;2 cm",
+                    "4&radic;3 cm",
+                    "6&radic;2 cm",
+                    "6&radic;3 cm"
+                ],
+                correct: [2],
+                explanation: "Garis diagonal ruang CE menembus bidang tegak lurus BDG. Pada kubus berusuk 'a', jarak titik sudut terdekat (C) ke bidang BDG adalah 1/3 a&radic;3. Sedangkan jarak dari titik sudut terjauh yang berseberangan (E) ke bidang BDG adalah sisanya, yaitu 2/3 a&radic;3.<br>Karena a = 6, jaraknya = 2/3 &times; 6&radic;3 = 4&radic;3 cm."
+            },
+            {
+                id: 18,
+                text: "<strong>Matematika Q18: Statistika (Rata-rata Gabungan)</strong><br><br>Nilai rata-rata ulangan Matematika dari 30 orang siswa adalah 75. Beberapa hari kemudian, 5 orang siswa yang sempat absen mengikuti ulangan susulan. Setelah nilai kelima siswa susulan tersebut digabungkan ke dalam perhitungan, rata-rata kelas melonjak naik menjadi 77. Rata-rata nilai ulangan dari 5 siswa susulan tersebut adalah...",
+                type: "single",
+                options: [
+                    "82",
+                    "85",
+                    "87",
+                    "89",
+                    "91"
+                ],
+                correct: [3],
+                explanation: "Total nilai awal (30 siswa) = 30 &times; 75 = 2250.<br>Total nilai akhir gabungan (35 siswa) = 35 &times; 77 = 2695.<br>Total nilai murni dari 5 siswa susulan = 2695 - 2250 = 445.<br>Rata-rata kelima siswa tersebut = 445 / 5 = 89."
+            },
+            {
+                id: 19,
+                text: "<strong>Matematika Q19: Statistika (Median Data Berkelompok)</strong><br><br>Tabel berikut menyajikan data tinggi badan (dalam cm) sekumpulan siswa:<br><table style='width:50%; margin:10px auto; border-collapse: collapse; text-align:center;'><tr><th style='border:1px solid #ccc; padding:5px;'>Tinggi Badan</th><th style='border:1px solid #ccc; padding:5px;'>Frekuensi</th></tr><tr><td style='border:1px solid #ccc; padding:5px;'>141 - 150</td><td style='border:1px solid #ccc; padding:5px;'>5</td></tr><tr><td style='border:1px solid #ccc; padding:5px;'>151 - 160</td><td style='border:1px solid #ccc; padding:5px;'>7</td></tr><tr><td style='border:1px solid #ccc; padding:5px;'>161 - 170</td><td style='border:1px solid #ccc; padding:5px;'>16</td></tr><tr><td style='border:1px solid #ccc; padding:5px;'>171 - 180</td><td style='border:1px solid #ccc; padding:5px;'>8</td></tr><tr><td style='border:1px solid #ccc; padding:5px;'>181 - 190</td><td style='border:1px solid #ccc; padding:5px;'>4</td></tr></table><br>Nilai median dari data pada tabel frekuensi di atas adalah...",
+                type: "single",
+                options: [
+                    "164,5 cm",
+                    "165,5 cm",
+                    "166,0 cm",
+                    "166,5 cm",
+                    "167,0 cm"
+                ],
+                correct: [1],
+                explanation: "Total frekuensi (N) = 5+7+16+8+4 = 40. Posisi Median ada di data ke-20 (N/2).<br>Frekuensi kumulatif kelas ke-1 dan 2 adalah 5+7 = 12. Karena 20 belum tercapai, median berada di kelas 161 - 170 (F kumulatif di sini sampai 28).<br>Tepi bawah (Tb) = 160,5. Panjang kelas (p) = 10. Frekuensi kelas median (f) = 16. Frekuensi kumulatif sebelum median (Fk) = 12.<br>Median = Tb + [ (N/2 - Fk) / f ] &times; p = 160,5 + [ (20 - 12) / 16 ] &times; 10 = 160,5 + [8/16] &times; 10 = 160,5 + 5 = 165,5 cm."
+            },
+            {
+                id: 20,
+                text: "<strong>Matematika Q20: Peluang Kejadian Majemuk</strong><br><br>Di dalam sebuah kotak tertutup yang tidak tembus pandang, terdapat 5 buah bola merah dan 3 buah bola biru. Jika Dika mengambil 2 buah bola sekaligus secara acak dari dalam kotak tersebut, berapakah peluang terambilnya KEDUA bola berwarna merah?",
+                type: "single",
+                options: [
+                    "5/28",
+                    "10/28 (atau 5/14)",
+                    "15/28",
+                    "20/28",
+                    "25/64"
+                ],
+                correct: [1],
+                explanation: "Gunakan aturan Kombinasi karena urutan bola terambil tidak diperhatikan.<br>Total sampel = C(8, 2) = 8! / (2! &times; 6!) = (8 &times; 7) / 2 = 28 cara.<br>Kejadian terambil 2 merah dari total 5 merah = C(5, 2) = 5! / (2! &times; 3!) = (5 &times; 4) / 2 = 10 cara.<br>Peluang P = 10 / 28 (jika disederhanakan dibagi dua menjadi 5/14)."
             },
             {
                 id: 21,
-                text: "<strong>Matematika Q21: Interpretasi Data & Peluang (Diagram)</strong><br><br>Data pengunjung perpustakaan sekolah dicatat sebagai berikut:<br>Senin: 25 siswa<br>Selasa: 30 siswa<br>Rabu: x siswa<br>Kamis: 20 siswa<br>Jumat: 45 siswa<br><br>Jika rata-rata (mean) pengunjung harian selama 5 hari tersebut adalah 30 siswa, berapakah jumlah pengunjung pada hari Rabu (x)?",
+                text: "<strong>Matematika Q21: Aturan Pencacahan (Permutasi Siklis)</strong><br><br>Sebuah keluarga inti yang terdiri dari Ayah, Ibu, dan 4 orang anak sedang makan malam bersama. Mereka duduk mengelilingi sebuah meja bundar. Jika disyaratkan bahwa kursi Ayah dan Ibu harus selalu berdampingan agar mudah mengobrol, banyak kemungkinan susunan posisi duduk mereka adalah...",
                 type: "single",
                 options: [
-                    "20 siswa",
-                    "25 siswa",
-                    "30 siswa",
-                    "35 siswa",
-                    "40 siswa"
+                    "24 cara",
+                    "48 cara",
+                    "120 cara",
+                    "240 cara",
+                    "720 cara"
                 ],
-                correct: [2],
-                explanation: "Rata-rata = Total Data / Banyak Hari.<br>30 = (25 + 30 + x + 20 + 45) / 5<br>30 &times; 5 = 120 + x<br>150 = 120 + x &rarr; x = 30 siswa."
+                correct: [1],
+                explanation: "Ini adalah kasus Permutasi Siklis dengan objek terikat.<br>Karena Ayah dan Ibu harus berdampingan, ikat mereka menjadi 1 kesatuan (blok). Sisa anggota keluarga adalah 4 anak. Total entitas melingkar = 4 anak + 1 blok = 5 entitas.<br>Posisi siklis dari 5 entitas = (5 - 1)! = 4! = 24 cara.<br>Di dalam blok tersebut, posisi Ayah dan Ibu bisa saling bertukar tempat duduk (2! = 2 cara).<br>Total keseluruhan = 24 &times; 2 = 48 cara susunan."
             },
             {
                 id: 22,
-                text: "<strong>Matematika Q22: Aturan Pencacahan (Permutasi)</strong><br><br>Sebuah panitia OSIS terdiri dari 6 orang. Mereka sedang mengadakan rapat di sebuah meja bundar. Ketua dan Wakil Ketua OSIS meminta agar kursi mereka selalu berdampingan saat rapat.<br>Ada berapa banyak susunan posisi duduk berbeda yang dapat terjadi?",
+                text: "<strong>Matematika Q22: Turunan Fungsi Trigonometri</strong><br><br>Diketahui sebuah fungsi trigonometri f(x) = sin<sup>3</sup>(2x - &pi;/4). Turunan pertama dari fungsi tersebut f'(x) adalah...",
                 type: "single",
                 options: [
-                    "24 susunan",
-                    "48 susunan",
-                    "120 susunan",
-                    "240 susunan",
-                    "720 susunan"
+                    "6 sin(2x - &pi;/4) cos(2x - &pi;/4)",
+                    "6 sin<sup>2</sup>(2x - &pi;/4) cos(2x - &pi;/4)",
+                    "3 sin<sup>2</sup>(2x - &pi;/4) cos(2x - &pi;/4)",
+                    "-6 sin<sup>2</sup>(2x - &pi;/4) cos(2x - &pi;/4)",
+                    "6 cos<sup>3</sup>(2x - &pi;/4)"
                 ],
                 correct: [1],
-                explanation: "Ini adalah Permutasi Siklis (melingkar).<br>Karena Ketua dan Wakil harus berdampingan, mereka dihitung sebagai 1 unit. Maka tersisa (4 orang + 1 unit) = 5 entitas.<br>Posisi duduk melingkar 5 entitas = (5 - 1)! = 4! = 24 cara.<br>Di dalam unit tersebut, Ketua dan Wakil bisa bertukar tempat = 2! = 2 cara.<br>Total susunan = 24 &times; 2 = 48 susunan."
+                explanation: "Gunakan Aturan Rantai (Chain Rule): Turunkan pangkat terlebih dahulu, lalu turunkan fungsi trigonometrinya, lalu turunkan sudut di dalamnya.<br>1. Pangkat: 3 sin<sup>2</sup>(2x - &pi;/4)<br>2. Fungsi sin: cos(2x - &pi;/4)<br>3. Sudut 2x: 2<br>Kalikan semuanya: 3 &times; 2 &times; sin<sup>2</sup>(2x - &pi;/4) &times; cos(2x - &pi;/4) = 6 sin<sup>2</sup>(2x - &pi;/4) cos(2x - &pi;/4)."
             },
             {
                 id: 23,
-                text: "<strong>Matematika Q23: Aturan Pencacahan (Kombinasi)</strong><br><br>Seorang pelatih bulu tangkis memiliki 8 pemain berbakat. Ia ingin memilih 3 pemain untuk diikutkan dalam pertandingan persahabatan antar sekolah (posisi ketiga pemain dianggap setara tanpa perbedaan spesifik).<br>Berapa banyak kombinasi tim berbeda yang dapat dibentuk oleh pelatih tersebut?",
-                type: "single",
+                text: "<strong>Matematika Q23: Analisis Grafik Fungsi Kuadrat</strong><br><br>Diberikan sebuah fungsi kuadrat aljabar f(x) = x<sup>2</sup> - 4x + 3. Di antara pernyataan terkait analisis geometri grafik fungsi tersebut, manakah pernyataan yang BENAR?<br><em>(Pilih semua jawaban benar)</em>",
+                type: "multiple",
                 options: [
-                    "24 tim",
-                    "56 tim",
-                    "112 tim",
-                    "336 tim",
-                    "512 tim"
+                    "Kurva memotong sumbu X secara presisi di titik (1,0) dan (3,0).",
+                    "Titik puncak kurva (ekstrem minimum) berkoordinat di (2, -1).",
+                    "Kurva memotong sumbu Y di koordinat titik (0, -3).",
+                    "Kurva grafiknya terbuka ke arah bawah menyerupai huruf 'n'.",
+                    "Fungsi f(x) selalu bergerak monoton naik pada interval x > 2."
                 ],
-                correct: [1],
-                explanation: "Gunakan Kombinasi (karena urutan pemain dalam tim tidak penting).<br>C(8,3) = 8! / [3! &times; (8-3)!] = (8 &times; 7 &times; 6 &times; 5!) / (3 &times; 2 &times; 1 &times; 5!)<br>= (8 &times; 7 &times; 6) / 6 = 56 tim."
+                correct: [0, 1, 4],
+                explanation: "1) Potong sb X (y=0): (x-1)(x-3) = 0 &rarr; x=1, x=3 (Opsi 1 Benar).<br>2) Titik puncak: x = -b/2a = 4/2 = 2. y = 2<sup>2</sup> - 4(2) + 3 = 4 - 8 + 3 = -1. Puncak di (2, -1) (Opsi 2 Benar).<br>3) Potong sb Y (x=0): f(0) = 3 &rarr; (0, 3), bukan (0, -3) (Opsi 3 Salah).<br>4) Karena koefisien x<sup>2</sup> positif (a = 1 > 0), kurva terbuka ke atas / senyum (Opsi 4 Salah).<br>5) Karena puncak minimum ada di x = 2, grafik akan terus naik untuk semua nilai yang lebih besar dari 2 (Opsi 5 Benar)."
             },
             {
                 id: 24,
-                text: "<strong>Matematika Q24: Peluang Kejadian Tunggal</strong><br><br>Dalam sebuah program *doorprize* sekolah, terdapat sebuah kotak kaca berisi 20 bola undian. Rinciannya:<br>5 bola berwarna Emas (Hadiah Utama)<br>7 bola berwarna Perak (Hadiah Hiburan)<br>8 bola berwarna Putih (Kosong/Gagal)<br><br>Jika Dika mendapat giliran pertama untuk mengambil 1 bola secara acak dari kotak tertutup tersebut, berapakah peluang Dika gagal mendapatkan hadiah (mendapat bola putih)?",
+                text: "<strong>Matematika Q24: Trigonometri Ruang 3 Dimensi</strong><br><br>Diberikan sebuah balok kubus ABCD.EFGH dengan panjang seluruh rusuk konstan 4 cm. Nilai <strong>kosinus</strong> sudut yang dibentuk antara garis CG dengan bidang BDG adalah...",
                 type: "single",
                 options: [
-                    "1/4",
-                    "1/5",
-                    "2/5",
-                    "7/20",
-                    "8/25"
+                    "1/2",
+                    "1/3 &radic;3",
+                    "1/3 &radic;6",
+                    "1/2 &radic;2",
+                    "1/2 &radic;3"
                 ],
                 correct: [2],
-                explanation: "Peluang (P) = Banyak kejadian yang diinginkan / Total sampel.<br>Total bola = 5 + 7 + 8 = 20 bola.<br>Banyak bola putih = 8 bola.<br>P(Putih) = 8 / 20. Sederhanakan dibagi 4 &rarr; 2/5."
+                explanation: "Sudut antara garis tegak CG dengan bidang tegak miring BDG identik dengan sudut pada segitiga siku-siku CPG, di mana titik P adalah titik tengah diagonal alas BD.<br>Panjang sisi datar CP adalah setengah dari diagonal sisi miring persegi = 1/2 &times; 4&radic;2 = 2&radic;2 cm.<br>Tinggi sisi tegak CG = 4 cm.<br>Sisi miring segitiga ruang (PG) dapat dicari menggunakan Pythagoras: &radic;(CP<sup>2</sup> + CG<sup>2</sup>) = &radic;(8 + 16) = &radic;24 = 2&radic;6 cm.<br>Kosinus sudut di titik G = Sisi Samping (CG) / Sisi Miring (PG) = 4 / 2&radic;6 = 2 / &radic;6.<br>Rasionalkan penyebut: (2/6)&radic;6 = 1/3 &radic;6."
             },
             {
                 id: 25,
-                text: "<strong>Matematika Q25: Peluang Kejadian Majemuk</strong><br><br>Dua buah dadu enam sisi bersisi wajar dilempar secara bersamaan di atas meja.<br>Berapakah peluang munculnya kedua mata dadu yang jika dijumlahkan bernilai genap 8?",
+                text: "<strong>Matematika Q25: Sistem Persamaan Linear Kontekstual</strong><br><br>Sebuah koperasi fotokopi sekolah menjual paket ATK. Harga Paket A yang berisi 2 buku tulis, 1 pulpen, dan 1 pensil adalah Rp 12.000,00. Harga Paket B yang berisi 1 buku tulis, 2 pulpen, dan 1 pensil adalah Rp 13.000,00. Harga Paket C berisi 3 buku tulis, 2 pulpen, dan 2 pensil dijual Rp 21.000,00.<br><br>Jika Dika hanya ingin membeli 1 buku tulis, 1 pulpen, dan 1 pensil secara eceran sesuai harga unit di dalam paket, uang yang harus ia bayarkan adalah...",
                 type: "single",
                 options: [
-                    "3/36",
-                    "4/36",
-                    "5/36",
-                    "6/36",
-                    "8/36"
+                    "Rp 8.000,00",
+                    "Rp 9.000,00",
+                    "Rp 10.000,00",
+                    "Rp 11.000,00",
+                    "Rp 12.000,00"
                 ],
-                correct: [2],
-                explanation: "Total ruang sampel pelemparan 2 dadu = 6 &times; 6 = 36.<br>Pasangan mata dadu yang jumlahnya 8: (2,6), (3,5), (4,4), (5,3), (6,2).<br>Banyak kejadian = 5.<br>Maka peluangnya = 5 / 36."
+                correct: [1],
+                explanation: "Sistem Persamaan Linear Tiga Variabel (SPLTV):<br>1) 2b + p + s = 12<br>2) b + 2p + s = 13<br>3) 3b + 2p + 2s = 21<br>Trik cepat eliminasi: Coba kurangkan persamaan (3) dengan persamaan (1).<br>(3b + 2p + 2s) - (2b + p + s) = b + p + s.<br>21 - 12 = 9.<br>Secara langsung terbukti bahwa harga 1 buku + 1 pulpen + 1 pensil (b+p+s) = 9. Dinyatakan dalam ribuan menjadi Rp 9.000,00."
             }
         ],
             indonesian: [
